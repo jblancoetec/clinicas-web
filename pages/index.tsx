@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Container } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import Image from "next/image";
 import promoPrincipal from "../public/img/main_promo.png";
 import imgdedo from "../public/img/imgdedo.png";

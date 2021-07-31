@@ -1,9 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
 html,
 body {
+  font-size: 16px;
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
 a {
@@ -13,4 +14,17 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+:root {
+  --fuente-texto: "PT Serif", serif;
+  --width-max: 1024px;
+  --violeta: #31008b;
+  --azul: #0061db;
+  --verde: #85e68f;
+  --naranja: #FFBD5;
+  --amarillo: #ffe784;
+  --rojo: #c80000;
+  --rosa: #e3c7ed;
+  --gris: #f7f7f7;
 }

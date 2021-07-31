@@ -46,3 +46,12 @@ comando
 
 Ahora puede usar cualquier editor de código para continuar con el desarrollo.
 
+## Construido con :hammer_and_wrench:
+
+- [NextJS](https://nextjs.org/)
+- [ReactJS](https://es.reactjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [MongoDB](https://www.mongodb.com/es)
+- [Bootstrap](https://getbootstrap.com/)
+- [FontAwesome](https://fontawesome.com/v5.15/how-to-use/on-the-web/using-with/react)
+

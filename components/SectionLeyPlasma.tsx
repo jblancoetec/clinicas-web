@@ -1,6 +1,7 @@
-import { Container } from "react-bootstrap";
+import { Container, Row } from "react-bootstrap";
 import Image from "next/image";
 import promodonar1 from "../public/img/promodonar1.png";
+import React from "react";
 
 export default function SectionLayPlasma() {
   return (
@@ -8,11 +9,11 @@ export default function SectionLayPlasma() {
       <section>
         <Container>
           <h2>¿Conocias algo sobre la ley de donación de plasma?</h2>
-          <div className="row">
-            <div className="col-md-6">
+          <Row md={2}>
+            <div>
               <Image src={promodonar1} alt="imagen" layout="responsive" />
             </div>
-            <div className="col-md-6">
+            <div>
               <p>
                 La ley de donación de plasma dice que los trabajadores tendrán
                 derecho a dos días de descanso por cada donación de plasma que
@@ -43,7 +44,7 @@ export default function SectionLayPlasma() {
                 recuperados de covid-19.
               </p>
             </div>
-          </div>
+          </Row>
         </Container>
       </section>
     </>

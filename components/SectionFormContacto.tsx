@@ -1,21 +1,22 @@
-import { Container } from "react-bootstrap";
-import Image from "next/image";
-import promodonar2 from "../public/img/promodonar2.png";
+import { Container, Row, Image } from "react-bootstrap";
 
-export default function SectionFormContacto() {
+export default function SectionFormContacto(): JSX.Element {
   return (
     <>
       <section>
         <Container>
           <h2> ¿Queres que te contactemos? </h2>
-          <div className="row">
-            <div className="col-md-6">
-              Forumulario a crear cuando se plantee la api
-            </div>
-            <div className="col-md-6">
-              <Image src={promodonar2} alt="imagen" layout="responsive" />
-            </div>
-          </div>
+          <Row md={2}>
+            <div>Forumulario a crear cuando se plantee la api</div>
+            <Image
+              src="./img/promodonar2.png"
+              alt="imagen"
+              thumbnail
+              style={{
+                border: "none",
+              }}
+            />
+          </Row>
         </Container>
       </section>
     </>

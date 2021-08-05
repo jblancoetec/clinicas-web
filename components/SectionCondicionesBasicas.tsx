@@ -1,64 +1,59 @@
-import { Container } from "react-bootstrap";
-import Image from "next/image";
-import imgdedo from "../public/img/imgdedo.png";
-import imgedad from "../public/img/imgedad.png";
-import imgembarazo from "../public/img/imgembarazo.png";
-import imgenfermedad from "../public/img/imgenfermedad.png";
-import imgpeso from "../public/img/imgpeso.png";
-import imgtransfusion from "../public/img/imgtransfucion.png";
+import { Card, Container, Row } from "react-bootstrap";
+import React from "react";
 
-const condiciones = [
+type Condicion = {
+  icono: string;
+  condicion: string;
+};
+
+const condiciones: Condicion[] = [
   {
-    icono: imgdedo,
+    icono: "/img/imgdedo.png",
     condicion: "condicion",
   },
   {
-    icono: imgedad,
+    icono: "/img/imgedad.png",
     condicion: "condicion",
   },
   {
-    icono: imgembarazo,
+    icono: "/img/imgembarazo.png",
     condicion: "condicion",
   },
   {
-    icono: imgenfermedad,
+    icono: "/img/imgenfermedad.png",
     condicion: "condicion",
   },
   {
-    icono: imgpeso,
+    icono: "/img/imgpeso.png",
     condicion: "condicion",
   },
   {
-    icono: imgtransfusion,
+    icono: "/img/imgtransfucion.png",
     condicion: "condicion",
   },
 ];
-export default function SectionCondicionesBasicas() {
+const renderCondiciones = condiciones.map(
+  ({ icono, condicion }: Condicion, index: number): JSX.Element => {
+    return (
+      <Card key={index}>
+        <Card.Img variant="top" src={icono}></Card.Img>
+        <Card.Body>
+          <Card.Text>{condicion}</Card.Text>
+        </Card.Body>
+      </Card>
+    );
+  }
+);
+
+export default function SectionCondicionesBasicas(): JSX.Element {
   return (
-    <>
-      <section>
-        <Container>
-          <h2>Condiciones basicas para ser donador</h2>
-          <div className="row">
-            {condiciones.map(({ icono, condicion }, index) => {
-              return (
-                <div key={index} className="col-sm-6 col-md-4">
-                  <div
-                    style={{
-                      width: "25%",
-                      marginLeft: "auto",
-                      marginRight: "auto",
-                    }}
-                  >
-                    <Image src={icono} alt="img" layout="responsive" />
-                  </div>
-                  <p>{condicion}</p>
-                </div>
-              );
-            })}
-          </div>
-        </Container>
-      </section>
-    </>
+    <section>
+      <Container>
+        <h2>Condiciones basicas para ser donador</h2>
+        <Row sm={1} md={3}>
+          {renderCondiciones}
+        </Row>
+      </Container>
+    </section>
   );
 }

@@ -4,6 +4,8 @@ import SectionPromoIndex from "../components/SectionPromoIndex";
 import SectionCondicionesBasicas from "../components/SectionCondicionesBasicas";
 import SectionLeyPlasma from "../components/SectionLeyPlasma";
 import SectionFormContacto from "../components/SectionFormContacto";
+import SectionMaterialCompartir from "../components/SectionMaterialCompartir";
+
 export default function Index() {
   return (
     <>
@@ -11,9 +13,7 @@ export default function Index() {
       <SectionCondicionesBasicas />
       <SectionLeyPlasma />
       <SectionFormContacto />
-      <section>
-        <Container>Material para compartir</Container>
-      </section>
+      <SectionMaterialCompartir />
     </>
   );
 }

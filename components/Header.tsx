@@ -1,7 +1,12 @@
 import React from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
 
-const links = [
+type Link = {
+  texto: string;
+  href: string;
+};
+
+const links: Link[] = [
   {
     texto: "Conocias la ley de donacion de plasma",
     href: "#",
@@ -16,7 +21,20 @@ const links = [
   },
 ];
 
-export default function Header() {
+const renderLinks = links.map(
+  ({ texto, href }: Link, index: number): JSX.Element => {
+    return (
+      <Nav.Link
+        href={href}
+        key={index}
+        style={{ color: "white", textAlign: "center" }}
+      >
+        {texto}
+      </Nav.Link>
+    );
+  }
+);
+export default function Header(): JSX.Element {
   return (
     <header>
       <Navbar
@@ -50,19 +68,7 @@ export default function Header() {
             id="basic-navbar-nav "
             className=" justify-content-end"
           >
-            <Nav className="justify-content-end">
-              {links.map(({ texto, href }, index) => {
-                return (
-                  <Nav.Link
-                    href={href}
-                    key={index}
-                    style={{ color: "white", textAlign: "center" }}
-                  >
-                    {texto}
-                  </Nav.Link>
-                );
-              })}
-            </Nav>
+            <Nav className="justify-content-end">{renderLinks}</Nav>
           </Navbar.Collapse>
         </Container>
       </Navbar>

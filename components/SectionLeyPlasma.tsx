@@ -1,17 +1,24 @@
 import { Container, Row } from "react-bootstrap";
-import Image from "next/image";
-import promodonar1 from "../public/img/promodonar1.png";
+import { Image } from "react-bootstrap";
 import React from "react";
+import styles from "../styles/Section.module.css";
 
 export default function SectionLayPlasma() {
   return (
     <>
-      <section>
-        <Container>
-          <h2>¿Conocias algo sobre la ley de donación de plasma?</h2>
+      <section id="section-ley" className={styles.Section}>
+        <Container className={styles.Container}>
+          <h2 className={styles.Title}>
+            ¿Conocias algo sobre la ley de donación de plasma?
+          </h2>
           <Row md={2}>
             <div>
-              <Image src={promodonar1} alt="imagen" layout="responsive" />
+              <Image
+                style={{ border: "none" }}
+                src="./img/promodonar1.png"
+                alt="imagen"
+                thumbnail
+              />
             </div>
             <div>
               <p>

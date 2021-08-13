@@ -1,12 +1,13 @@
 import React from "react";
-import { Card, CardGroup, Container, Row } from "react-bootstrap";
-import Image from "next/image";
+import { Card, Container, Nav, Row } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFacebook,
   faTwitter,
   faWhatsapp,
+  IconDefinition,
 } from "@fortawesome/free-brands-svg-icons";
+import styles from "../styles/Section.module.css";
 
 const material = [
   "https://i.ibb.co/0f6SVDQ/DONA.png",
@@ -18,9 +19,43 @@ const material = [
   "https://i.ibb.co/qYHRfRc/Microsoft-Teams-image-2.png",
 ];
 
-const renderMaterial = material.map((flayer, index) => {
+const atrr: string = "&feature=emb_logo";
+
+type linkSocialShare = {
+  icon: IconDefinition;
+  href: string;
+};
+
+const linksSocialShare: linkSocialShare[] = [
+  {
+    icon: faFacebook,
+    href: `https://www.facebook.com/sharer/sharer.php?u=`,
+  },
+  {
+    icon: faWhatsapp,
+    href: `https://api.whatsapp.com/send?text=`,
+  },
+  {
+    icon: faTwitter,
+    href: `https://twitter.com/home?status=`,
+  },
+];
+
+const renderLinkSocialShare = (flayer: string): JSX.Element[] => {
+  return linksSocialShare.map(({ icon, href }, index) => {
+    return (
+      <Nav.Item key={index}>
+        <Nav.Link style={{ color: "black" }} href={href + flayer + atrr}>
+          <FontAwesomeIcon style={{ fontSize: "2rem" }} icon={icon} />
+        </Nav.Link>
+      </Nav.Item>
+    );
+  });
+};
+
+const renderMaterial: JSX.Element[] = material.map((flayer, index) => {
   return (
-    <Card key={index}>
+    <Card key={index} style={{ border: "none" }}>
       <Card.Img variant="top" src={flayer}></Card.Img>
       <div
         style={{
@@ -30,35 +65,22 @@ const renderMaterial = material.map((flayer, index) => {
         }}
       >
         <h3>Compartir</h3>
-        <a
-          href={`https://www.facebook.com/sharer/sharer.php?u=${flayer}&feature=emb_logo`}
-        >
-          <FontAwesomeIcon icon={faFacebook} />
-        </a>
-        <a
-          href={`https://api.whatsapp.com/send?text=${flayer}&feature=emb_logo`}
-        >
-          <FontAwesomeIcon icon={faWhatsapp} />
-        </a>
-        <a href={`https://twitter.com/home?status=${flayer}&feature=emb_logo`}>
-          <FontAwesomeIcon icon={faTwitter} />
-        </a>
+        <Nav>{renderLinkSocialShare(flayer)}</Nav>
       </div>
     </Card>
   );
 });
 
-export default function SectionMaterialCompartir() {
+const SectionMaterialCompartir = (): JSX.Element => {
   return (
-    <>
-      <section>
-        <Container>
-          <h2>Material para compartir</h2>
-          <Row sm={1} md={3}>
-            {renderMaterial}
-          </Row>
-        </Container>
-      </section>
-    </>
+    <section id="section-material" className={styles.Section}>
+      <Container className={styles.Container}>
+        <h2 className={styles.Title}>Material para compartir</h2>
+        <Row sm={1} md={3}>
+          {renderMaterial}
+        </Row>
+      </Container>
+    </section>
   );
-}
+};
+export default SectionMaterialCompartir;

@@ -1,0 +1,20 @@
+.Section {
+  background-color: transparent;
+  margin: 2rem auto 1rem auto;
+}
+.Section * {
+  background-color: transparent;
+}
+
+.Container {
+  background-color: white;
+  border-radius: 1rem;
+  overflow: auto;
+  padding: 1rem;
+}
+
+.Title {
+  text-align: center;
+  color: var(--violeta);
+  margin: 1rem auto 2rem auto;
+}

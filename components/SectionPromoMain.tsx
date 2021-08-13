@@ -3,7 +3,7 @@ import { Container } from "react-bootstrap";
 import Image from "next/image";
 import imgPromoPrincipal from "../public/img/promoprincipal.png";
 
-export default function SectionPromoIndex() {
+export default function SectionPromoMain() {
   return (
     <>
       <section

@@ -1,50 +1,53 @@
 import React from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
 
-type Link = {
+type LinkHeader = {
   texto: string;
   href: string;
 };
 
-const links: Link[] = [
+const links: LinkHeader[] = [
   {
-    texto: "Conocias la ley de donacion de plasma",
-    href: "#",
+    texto: "¿Conocias la ley de donación de plasma?",
+    href: "#section-ley",
   },
   {
-    texto: "Conocias la ley de donacion de plasma",
-    href: "#",
+    texto: "¿Queres que te contactemos?",
+    href: "#section-contacto",
   },
   {
-    texto: "Conocias la ley de donacion de plasma",
-    href: "#",
+    texto: "Condiciones basicas para ser donador",
+    href: "#section-condiciones",
+  },
+  {
+    texto: "Material para compartir",
+    href: "#section-material",
   },
 ];
 
-const renderLinks = links.map(
-  ({ texto, href }: Link, index: number): JSX.Element => {
-    return (
-      <Nav.Link
-        href={href}
-        key={index}
-        style={{ color: "white", textAlign: "center" }}
-      >
-        {texto}
-      </Nav.Link>
-    );
-  }
-);
-export default function Header(): JSX.Element {
+const renderLinks: JSX.Element[] = links.map(({ texto, href }, index) => {
   return (
-    <header>
+    <Nav.Link
+      href={href}
+      key={index}
+      style={{ color: "white", textAlign: "center", cursor: "pointer" }}
+    >
+      {texto}
+    </Nav.Link>
+  );
+});
+
+const Header = (): JSX.Element => {
+  return (
+    <header style={{}}>
       <Navbar
         expand="lg"
         style={{
           background: "var(--violeta)",
         }}
-        className="navbar-dark"
+        variant="dark"
       >
-        <Container style={{}}>
+        <Container>
           <Navbar.Brand
             href="/"
             style={{
@@ -66,12 +69,14 @@ export default function Header(): JSX.Element {
           />
           <Navbar.Collapse
             id="basic-navbar-nav "
-            className=" justify-content-end"
+            className="justify-content-end"
           >
-            <Nav className="justify-content-end">{renderLinks}</Nav>
+            <Nav>{renderLinks}</Nav>
           </Navbar.Collapse>
         </Container>
       </Navbar>
     </header>
   );
-}
+};
+
+export default Header;

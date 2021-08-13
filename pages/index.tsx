@@ -1,16 +1,15 @@
 import React from "react";
-import { Container } from "react-bootstrap";
-import SectionPromoIndex from "../components/SectionPromoIndex";
-import SectionCondicionesBasicas from "../components/SectionCondicionesBasicas";
+import SectionPromoMain from "../components/SectionPromoMain";
+import SectionCondiciones from "../components/SectionCondiciones";
 import SectionLeyPlasma from "../components/SectionLeyPlasma";
-import SectionFormContacto from "../components/SectionFormContacto";
+import SectionFormContacto from "../components/SectionContacto";
 import SectionMaterialCompartir from "../components/SectionMaterialCompartir";
 
 export default function Index() {
   return (
     <>
-      <SectionPromoIndex />
-      <SectionCondicionesBasicas />
+      <SectionPromoMain />
+      <SectionCondiciones />
       <SectionLeyPlasma />
       <SectionFormContacto />
       <SectionMaterialCompartir />

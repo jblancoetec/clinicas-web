@@ -10,7 +10,7 @@ import {
   faWeight,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import styles from "../styles/Section.module.css";
+import styles from "../styles/Seccion.module.css";
 
 type Condicion = {
   icono: IconDefinition;
@@ -68,9 +68,9 @@ const renderCondiciones: JSX.Element[] = condiciones.map(
 
 const SectionCondicionesBasicas = (): JSX.Element => {
   return (
-    <section id="section-condiciones" className={styles.Section}>
-      <Container className={styles.Container}>
-        <h2 className={styles.Title}>Condiciones basicas para ser donador</h2>
+    <section id="section-condiciones" className={styles.Seccion}>
+      <Container className={styles.Contenedor}>
+        <h2 className={styles.Titulo}>Condiciones basicas para ser donador</h2>
         <Row sm={1} md={3}>
           {renderCondiciones}
         </Row>

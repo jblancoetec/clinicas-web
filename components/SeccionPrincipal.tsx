@@ -1,5 +1,6 @@
 import React from "react";
-import { Container } from "react-bootstrap";
+import Link from "next/link";
+import { Container, Row, Col } from "react-bootstrap";
 import Image from "next/image";
 import imgPromoPrincipal from "../public/img/promoprincipal.png";
 
@@ -12,14 +13,13 @@ export default function SectionPromoMain() {
         }}
       >
         <Container>
-          <div
-            className="row"
+          <Row
             style={{
               paddingBottom: "1rem",
             }}
           >
-            <div
-              className="d-none d-md-inline col-md-8"
+            <Col
+              md={8}
               style={{
                 marginTop: "auto",
                 marginBottom: "auto",
@@ -30,9 +30,10 @@ export default function SectionPromoMain() {
                 alt="Promo principal"
                 layout="responsive"
               />
-            </div>
-            <div
-              className="col-sm-12 col-md-4"
+            </Col>
+            <Col
+              sm={12}
+              md={4}
               style={{
                 textAlign: "center",
                 marginTop: "auto",
@@ -48,14 +49,13 @@ export default function SectionPromoMain() {
               <h1 style={{ color: "white" }}>
                 El/Ella <span style={{ color: "var(--amarillo)" }}>VIVE</span>
               </h1>
-              <a
-                className="btn btn-outline-danger text-red btn-donar"
-                href="/entrevista"
-              >
-                Animate a donar!!
-              </a>
-            </div>
-          </div>
+              <Link href="/entrevista">
+                <a className="btn btn-outline-danger text-red ">
+                  Animate a donar!!
+                </a>
+              </Link>
+            </Col>
+          </Row>
         </Container>
       </section>
     </>

@@ -1,0 +1,18 @@
+.Contenedor {
+  display: flex;
+  justify-content: center;
+}
+
+.BotonSi {
+  background-color: var(--violeta);
+  color: white;
+  outline-color: var(--violeta);
+  border-color: var(--violeta);
+}
+
+.BotonNo {
+  background-color: white;
+  color: var(--violeta);
+  outline-color: var(--violeta);
+  border-color: var(--violeta);
+}

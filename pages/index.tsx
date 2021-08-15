@@ -1,18 +1,19 @@
 import React from "react";
-import SectionPromoMain from "../components/SectionPromoMain";
-import SectionCondiciones from "../components/SectionCondiciones";
-import SectionLeyPlasma from "../components/SectionLeyPlasma";
-import SectionFormContacto from "../components/SectionContacto";
-import SectionMaterialCompartir from "../components/SectionMaterialCompartir";
+import SeccionPrincipal from "../components/SeccionPrincipal";
+import SeccionCondiciones from "../components/SeccionCondiciones";
+import SeccionLeyPlasma from "../components/SeccionLeyPlasma";
+import SeccionContacto from "../components/SeccionContacto";
+import SeccionMaterialCompartir from "../components/SeccionMaterialCompartir";
 
-export default function Index() {
+const index = (): JSX.Element => {
   return (
     <>
-      <SectionPromoMain />
-      <SectionCondiciones />
-      <SectionLeyPlasma />
-      <SectionFormContacto />
-      <SectionMaterialCompartir />
+      <SeccionPrincipal />
+      <SeccionCondiciones />
+      <SeccionLeyPlasma />
+      <SeccionContacto />
+      <SeccionMaterialCompartir />
     </>
   );
-}
+};
+export default index;

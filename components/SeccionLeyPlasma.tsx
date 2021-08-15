@@ -1,14 +1,14 @@
 import { Container, Row } from "react-bootstrap";
 import { Image } from "react-bootstrap";
 import React from "react";
-import styles from "../styles/Section.module.css";
+import styles from "../styles/Seccion.module.css";
 
 export default function SectionLayPlasma() {
   return (
     <>
-      <section id="section-ley" className={styles.Section}>
-        <Container className={styles.Container}>
-          <h2 className={styles.Title}>
+      <section id="section-ley" className={styles.Seccion}>
+        <Container className={styles.Contenedor}>
+          <h2 className={styles.Titulo}>
             ¿Conocias algo sobre la ley de donación de plasma?
           </h2>
           <Row md={2}>

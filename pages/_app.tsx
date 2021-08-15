@@ -5,8 +5,8 @@ import "../styles/globals.css";
 import "../styles/normalize.css";
 import type { AppProps } from "next/app";
 import Head from "next/head";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+import Encabezado from "../components/Encabezado";
+import PieDePagina from "../components/PieDePagina";
 
 config.autoAddCss = false;
 
@@ -22,11 +22,13 @@ function MyApp({ Component, pageProps }: AppProps) {
           Martín&quot;
         </title>
       </Head>
-      <Header />
-      <main style={{ backgroundColor: "var(--gris)", overflow: "auto" }}>
-        <Component {...pageProps} />
-      </main>
-      <Footer />
+      <div id="cuerpo">
+        <Encabezado />
+        <main style={{ backgroundColor: "var(--gris)", overflow: "auto" }}>
+          <Component {...pageProps} />
+        </main>
+        <PieDePagina />
+      </div>
     </>
   );
 }

@@ -7,7 +7,7 @@ import {
   faWhatsapp,
   IconDefinition,
 } from "@fortawesome/free-brands-svg-icons";
-import styles from "../styles/Section.module.css";
+import styles from "../styles/Seccion.module.css";
 
 const material = [
   "https://i.ibb.co/0f6SVDQ/DONA.png",
@@ -73,9 +73,9 @@ const renderMaterial: JSX.Element[] = material.map((flayer, index) => {
 
 const SectionMaterialCompartir = (): JSX.Element => {
   return (
-    <section id="section-material" className={styles.Section}>
-      <Container className={styles.Container}>
-        <h2 className={styles.Title}>Material para compartir</h2>
+    <section id="section-material" className={styles.Seccion}>
+      <Container className={styles.Contenedor}>
+        <h2 className={styles.Titulo}>Material para compartir</h2>
         <Row sm={1} md={3}>
           {renderMaterial}
         </Row>

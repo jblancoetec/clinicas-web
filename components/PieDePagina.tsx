@@ -32,7 +32,7 @@ const links: LinkFooter[] = [
   {
     href: "https://www.google.com/maps/place/Hospital+de+Cl%C3%ADnicas+Jos%C3%A9+de+San+Mart%C3%ADn/@-34.5989536,-58.4021109,17z/data=!3m1!4b1!4m5!3m4!1s0x95bcca9474de07c3:0x6d168bee0e66f0b5!8m2!3d-34.5989536!4d-58.3999222",
     icon: faMap,
-    value: "Av. Córdoba 2351 (C1120AAR) Ciudad Autónoma de Buenos Aires",
+    value: "Av. Córdoba 2351 (C1120AAR) CABA",
   },
   {
     href: "tel:5950-8000",

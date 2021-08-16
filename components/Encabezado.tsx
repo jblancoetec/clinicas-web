@@ -9,19 +9,19 @@ type LinkHeader = {
 const links: LinkHeader[] = [
   {
     texto: "¿Conocias la ley de donación de plasma?",
-    href: "#section-ley",
+    href: "/#section-ley",
   },
   {
     texto: "¿Queres que te contactemos?",
-    href: "#section-contacto",
+    href: "/#section-contacto",
   },
   {
     texto: "Condiciones basicas para ser donador",
-    href: "#section-condiciones",
+    href: "/#section-condiciones",
   },
   {
     texto: "Material para compartir",
-    href: "#section-material",
+    href: "/#section-material",
   },
 ];
 

@@ -1,54 +1,13 @@
 import React, { useState } from "react";
 import { Container, ButtonGroup, Button, Modal, Alert } from "react-bootstrap";
-import Link from "next/link";
-import stylesSection from "../styles/Seccion.module.css";
-import stylesPregunta from "../styles/SeccionPregunta.module.css";
+import stylesSeccion from "../styles/Seccion.module.css";
+import styles from "../styles/SeccionPregunta.module.css";
 
 interface PropsPreguntaSimple {
   pregunta: string;
   justificacion: string;
-  clickSi?: () => void;
+  pasarPregunta?: () => void;
 }
-
-const PreguntaSimple: React.FC<PropsPreguntaSimple> = ({
-  pregunta,
-  justificacion,
-  clickSi,
-}) => {
-  const [error, setError] = useState(false);
-  const mostrarJustificacion = () => setError(true);
-  const ocultarJustifiacion = () => setError(false);
-
-  return (
-    <>
-      <h2 className={stylesSection.Titulo}>{pregunta}</h2>
-      <div className={stylesPregunta.Contenedor}>
-        <ButtonGroup>
-          <Button className={stylesPregunta.BotonSi} onClick={clickSi}>
-            Si
-          </Button>
-          <Button
-            className={stylesPregunta.BotonNo}
-            onClick={mostrarJustificacion}
-          >
-            No
-          </Button>
-        </ButtonGroup>
-      </div>
-
-      <Modal
-        show={error}
-        onHide={ocultarJustifiacion}
-        aria-labelledby="contained-modal-title-vcenter"
-        centered
-      >
-        <Alert variant="danger" style={{ margin: "1rem" }}>
-          {justificacion}
-        </Alert>
-      </Modal>
-    </>
-  );
-};
 
 const cuestionario: PropsPreguntaSimple[] = [
   {
@@ -63,26 +22,66 @@ const cuestionario: PropsPreguntaSimple[] = [
   },
 ];
 
+const PreguntaSimple: React.FC<PropsPreguntaSimple> = ({
+  pregunta,
+  justificacion,
+  pasarPregunta,
+}: PropsPreguntaSimple) => {
+  // propiedades
+  const [negada, setNegada] = useState(false);
+  // metodos
+  const mostrarJustificacion = () => setNegada(true);
+  const ocultarJustifiacion = () => setNegada(false);
+
+  return (
+    <>
+      <h2 className={stylesSeccion.Titulo}>{pregunta}</h2>
+      <div className={styles.Contenedor}>
+        <ButtonGroup>
+          <Button className={styles.BotonSi} onClick={pasarPregunta}>
+            Si
+          </Button>
+          <Button className={styles.BotonNo} onClick={mostrarJustificacion}>
+            No
+          </Button>
+        </ButtonGroup>
+      </div>
+
+      <Modal
+        show={negada}
+        onHide={ocultarJustifiacion}
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+      >
+        <Alert variant="danger" style={{ margin: "1rem" }}>
+          {justificacion}
+        </Alert>
+      </Modal>
+    </>
+  );
+};
+
 const SectionPregunta = () => {
+  // propiedades
   const [idPregunta, setIdPregunta] = useState(0);
   const [finalizado, setFinalizado] = useState(false);
-  const siguiente = () => {
+  // metodos
+  const pasarPregunta = () => {
     const nextIdPregunta = Math.min(cuestionario.length - 1, idPregunta + 1);
     setIdPregunta(nextIdPregunta);
     setFinalizado(idPregunta + 1 >= cuestionario.length);
   };
-  const renderCuestionario: JSX.Element[] = cuestionario.map(
-    (pregunta, index) => {
-      pregunta.clickSi = siguiente;
-      return <PreguntaSimple {...pregunta} key={index} />;
-    }
-  );
+
+  const renderPregunta: JSX.Element[] = cuestionario.map((pregunta, index) => {
+    pregunta.pasarPregunta = pasarPregunta;
+    return <PreguntaSimple {...pregunta} key={index} />;
+  });
 
   return (
     <>
-      <section className={stylesSection.Seccion}>
-        <Container className={stylesSection.Contenedor}>
-          {renderCuestionario[idPregunta]}
+      <section className={stylesSeccion.Seccion}>
+        <Container className={stylesSeccion.Contenedor}>
+          {renderPregunta[idPregunta]}
         </Container>
       </section>
 

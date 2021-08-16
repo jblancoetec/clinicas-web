@@ -1,7 +1,7 @@
 import React from "react";
 import { Container } from "react-bootstrap";
 import styles from "../styles/Seccion.module.css";
-import SectionPregunta from "../components/SeccionPregunta";
+import SeccionPregunta from "../components/SeccionPregunta";
 
 const entrevista = () => {
   return (
@@ -29,7 +29,7 @@ const entrevista = () => {
           </p>
         </Container>
       </section>
-      <SectionPregunta />
+      <SeccionPregunta />
     </>
   );
 };

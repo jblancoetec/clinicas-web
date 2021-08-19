@@ -9,7 +9,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import styles from "../styles/Seccion.module.css";
 
-const material = [
+const urlsFlayers: string[] = [
   "https://i.ibb.co/0f6SVDQ/DONA.png",
   "https://i.ibb.co/DRGgC0v/2.png",
   "https://i.ibb.co/C6JqH9c/Eliam-Ana-1-1-Pasos-a-seguir-1.png",
@@ -19,65 +19,70 @@ const material = [
   "https://i.ibb.co/qYHRfRc/Microsoft-Teams-image-2.png",
 ];
 
-const atrr: string = "&feature=emb_logo";
+const complementoURL: string = "&feature=emb_logo";
 
-type linkSocialShare = {
-  icon: IconDefinition;
-  href: string;
-};
+interface linkRedSocial {
+  icono: IconDefinition;
+  urlRedSocial: string;
+}
 
-const linksSocialShare: linkSocialShare[] = [
+const linksRedesSociales: linkRedSocial[] = [
   {
-    icon: faFacebook,
-    href: `https://www.facebook.com/sharer/sharer.php?u=`,
+    icono: faFacebook,
+    urlRedSocial: `https://www.facebook.com/sharer/sharer.php?u=`,
   },
   {
-    icon: faWhatsapp,
-    href: `https://api.whatsapp.com/send?text=`,
+    icono: faWhatsapp,
+    urlRedSocial: `https://api.whatsapp.com/send?text=`,
   },
   {
-    icon: faTwitter,
-    href: `https://twitter.com/home?status=`,
+    icono: faTwitter,
+    urlRedSocial: `https://twitter.com/home?status=`,
   },
 ];
 
-const renderLinkSocialShare = (flayer: string): JSX.Element[] => {
-  return linksSocialShare.map(({ icon, href }, index) => {
+const agregarLinksRedesSociales = (urlFlayer: string): JSX.Element[] => {
+  return linksRedesSociales.map(({ icono, urlRedSocial }, index) => {
     return (
       <Nav.Item key={index}>
-        <Nav.Link style={{ color: "black" }} href={href + flayer + atrr}>
-          <FontAwesomeIcon style={{ fontSize: "2rem" }} icon={icon} />
+        <Nav.Link
+          style={{ color: "black" }}
+          href={urlRedSocial + urlFlayer + complementoURL}
+        >
+          <FontAwesomeIcon style={{ fontSize: "2rem" }} icon={icono} />
         </Nav.Link>
       </Nav.Item>
     );
   });
 };
 
-const renderMaterial: JSX.Element[] = material.map((flayer, index) => {
-  return (
-    <Card key={index} style={{ border: "none" }}>
-      <Card.Img variant="top" src={flayer}></Card.Img>
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-        }}
-      >
-        <h3>Compartir</h3>
-        <Nav>{renderLinkSocialShare(flayer)}</Nav>
-      </div>
-    </Card>
-  );
-});
+const flayersARenderizar: JSX.Element[] = urlsFlayers.map(
+  (urlFlayer, index) => {
+    return (
+      <Card key={index} style={{ border: "none" }}>
+        <Card.Img variant="top" src={urlFlayer}></Card.Img>
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+          }}
+        >
+          <h3>Compartir</h3>
+          <Nav>{agregarLinksRedesSociales(urlFlayer)}</Nav>
+        </div>
+      </Card>
+    );
+  }
+);
 
-const SectionMaterialCompartir = (): JSX.Element => {
+const SectionMaterialCompartir: React.FC = (): JSX.Element => {
   return (
     <section id="section-material" className={styles.Seccion}>
       <Container className={styles.Contenedor}>
         <h2 className={styles.Titulo}>Material para compartir</h2>
         <Row sm={1} md={3}>
-          {renderMaterial}
+          {flayersARenderizar}
         </Row>
       </Container>
     </section>

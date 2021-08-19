@@ -46,8 +46,8 @@ const condiciones: Condicion[] = [
   },
 ];
 
-const renderCondiciones: JSX.Element[] = condiciones.map(
-  ({ icono, condicion }: Condicion, index: number): JSX.Element => {
+const condicionesARenderizar: JSX.Element[] = condiciones.map(
+  ({ icono, condicion }, index) => {
     return (
       <Card key={index} style={{ border: "none" }}>
         <FontAwesomeIcon
@@ -66,17 +66,17 @@ const renderCondiciones: JSX.Element[] = condiciones.map(
   }
 );
 
-const SectionCondicionesBasicas = (): JSX.Element => {
+const SeccionCondicionesBasicas = (): JSX.Element => {
   return (
     <section id="section-condiciones" className={styles.Seccion}>
       <Container className={styles.Contenedor}>
         <h2 className={styles.Titulo}>Condiciones basicas para ser donador</h2>
         <Row sm={1} md={3}>
-          {renderCondiciones}
+          {condicionesARenderizar}
         </Row>
       </Container>
     </section>
   );
 };
 
-export default SectionCondicionesBasicas;
+export default SeccionCondicionesBasicas;

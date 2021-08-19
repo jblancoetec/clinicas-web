@@ -3,7 +3,7 @@ import { Image } from "react-bootstrap";
 import React from "react";
 import styles from "../styles/Seccion.module.css";
 
-export default function SectionLayPlasma() {
+const SeccionLeyPlasma: React.FC = (): JSX.Element => {
   return (
     <>
       <section id="section-ley" className={styles.Seccion}>
@@ -15,7 +15,7 @@ export default function SectionLayPlasma() {
             <div>
               <Image
                 style={{ border: "none" }}
-                src="./img/promodonar1.png"
+                src="https://i.ibb.co/DRGgC0v/2.png"
                 alt="imagen"
                 thumbnail
               />
@@ -56,4 +56,6 @@ export default function SectionLayPlasma() {
       </section>
     </>
   );
-}
+};
+
+export default SeccionLeyPlasma;

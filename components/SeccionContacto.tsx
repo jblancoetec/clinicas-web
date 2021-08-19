@@ -1,16 +1,74 @@
-import { Container, Row, Image } from "react-bootstrap";
+import React from "react";
+import {
+  Container,
+  Row,
+  Image,
+  Form,
+  FormGroup,
+  Button,
+} from "react-bootstrap";
 import styles from "../styles/Seccion.module.css";
 
-export default function SectionFormContacto(): JSX.Element {
+const SeccionContacto: React.FC = (): JSX.Element => {
   return (
     <>
       <section id="section-contacto" className={styles.Seccion}>
         <Container className={styles.Contenedor}>
           <h2 className={styles.Titulo}> ¿Queres que te contactemos? </h2>
           <Row md={2}>
-            <div>Forumulario a crear cuando se plantee la api</div>
+            <Form>
+              <FormGroup style={{ marginBottom: "1rem" }}>
+                <Form.Label>Tipo de donador</Form.Label>
+                <Form.Select>
+                  <option value="Donador de sangre">Donador de sangre</option>
+                  <option value="Donador de plasma">Donador de plasma</option>
+                </Form.Select>
+              </FormGroup>
+              <Form.Group controlId="nombre" style={{ marginBottom: "1rem" }}>
+                <Form.Label>Nombre</Form.Label>
+                <Form.Control
+                  type="text"
+                  placeholder="Por ejemplo: Juan"
+                  id="nombre"
+                  name="nombre"
+                />
+              </Form.Group>
+              <Form.Group controlId="apellido" style={{ marginBottom: "1rem" }}>
+                <Form.Label>Apellido</Form.Label>
+                <Form.Control
+                  type="text"
+                  placeholder="Por ejemplo: Perez"
+                  id="apellido"
+                  name="apellido"
+                />
+              </Form.Group>
+              <Form.Group controlId="telefono" style={{ marginBottom: "1rem" }}>
+                <Form.Label>Telefono</Form.Label>
+                <Form.Control
+                  type="tel"
+                  placeholder="(Código de área) Número"
+                  id="telefono"
+                  name="telefono"
+                />
+              </Form.Group>
+              <Form.Group controlId="email" style={{ marginBottom: "1rem" }}>
+                <Form.Label>Correo electronico</Form.Label>
+                <Form.Control
+                  type="email"
+                  placeholder="Por ejemplo: jperez@gmail.com"
+                  id="email"
+                  name="email"
+                />
+              </Form.Group>
+              <Button
+                type="submit"
+                style={{ backgroundColor: "var(--violeta)" }}
+              >
+                Enviar
+              </Button>
+            </Form>
             <Image
-              src="./img/promodonar2.png"
+              src="https://i.ibb.co/0f6SVDQ/DONA.png"
               alt="imagen"
               thumbnail
               style={{
@@ -22,4 +80,6 @@ export default function SectionFormContacto(): JSX.Element {
       </section>
     </>
   );
-}
+};
+
+export default SeccionContacto;

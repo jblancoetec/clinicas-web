@@ -4,7 +4,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import Image from "next/image";
 import imgPromoPrincipal from "../public/img/promoprincipal.png";
 
-export default function SectionPromoMain() {
+const SeccionPrincipal: React.FC = (): JSX.Element => {
   return (
     <>
       <section
@@ -60,4 +60,6 @@ export default function SectionPromoMain() {
       </section>
     </>
   );
-}
+};
+
+export default SeccionPrincipal;

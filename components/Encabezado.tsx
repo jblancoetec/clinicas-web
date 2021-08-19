@@ -25,7 +25,7 @@ const links: LinkHeader[] = [
   },
 ];
 
-const renderLinks: JSX.Element[] = links.map(({ texto, href }, index) => {
+const linksARenderizar: JSX.Element[] = links.map(({ texto, href }, index) => {
   return (
     <Nav.Link
       href={href}
@@ -37,9 +37,9 @@ const renderLinks: JSX.Element[] = links.map(({ texto, href }, index) => {
   );
 });
 
-const Header = (): JSX.Element => {
+const Header: React.FC = (): JSX.Element => {
   return (
-    <header style={{}}>
+    <header>
       <Navbar
         expand="lg"
         style={{
@@ -71,7 +71,7 @@ const Header = (): JSX.Element => {
             id="basic-navbar-nav "
             className="justify-content-end"
           >
-            <Nav>{renderLinks}</Nav>
+            <Nav>{linksARenderizar}</Nav>
           </Navbar.Collapse>
         </Container>
       </Navbar>

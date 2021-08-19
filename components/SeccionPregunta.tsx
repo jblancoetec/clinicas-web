@@ -13,7 +13,7 @@ const propsPreguntas: PropsPreguntaSimple[] = Cuestionario.map((pregunta) => {
 
 const cantidadPreguntas: number = Cuestionario.length;
 
-const SeccionPregunta = (): JSX.Element => {
+const SeccionPregunta: React.FC = (): JSX.Element => {
   const [idPregunta, setIdPregunta] = useState(0);
   const [finalizado, setFinalizado] = useState(false);
 

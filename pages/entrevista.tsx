@@ -3,7 +3,7 @@ import { Container } from "react-bootstrap";
 import styles from "../styles/Seccion.module.css";
 import SeccionPregunta from "../components/SeccionPregunta";
 
-const entrevista = () => {
+const entrevista = (): JSX.Element => {
   return (
     <>
       <section className={styles.Seccion}>

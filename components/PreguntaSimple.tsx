@@ -12,7 +12,7 @@ export interface PropsPreguntaSimple {
 const PreguntaSimple: React.FC<PropsPreguntaSimple> = ({
   pregunta,
   pasarPregunta,
-}: PropsPreguntaSimple) => {
+}: PropsPreguntaSimple): JSX.Element => {
   const [negada, setNegada] = useState(false);
 
   const mostrarJustificacion = () => setNegada(true);

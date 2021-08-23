@@ -24,7 +24,7 @@ const SeccionContacto: React.FC = (): JSX.Element => {
                   <option value="Donador de plasma">Donador de plasma</option>
                 </Form.Select>
               </FormGroup>
-              <Form.Group controlId="nombre" style={{ marginBottom: "1rem" }}>
+              <Form.Group style={{ marginBottom: "1rem" }}>
                 <Form.Label>Nombre</Form.Label>
                 <Form.Control
                   type="text"
@@ -33,7 +33,7 @@ const SeccionContacto: React.FC = (): JSX.Element => {
                   name="nombre"
                 />
               </Form.Group>
-              <Form.Group controlId="apellido" style={{ marginBottom: "1rem" }}>
+              <Form.Group style={{ marginBottom: "1rem" }}>
                 <Form.Label>Apellido</Form.Label>
                 <Form.Control
                   type="text"
@@ -42,7 +42,7 @@ const SeccionContacto: React.FC = (): JSX.Element => {
                   name="apellido"
                 />
               </Form.Group>
-              <Form.Group controlId="telefono" style={{ marginBottom: "1rem" }}>
+              <Form.Group style={{ marginBottom: "1rem" }}>
                 <Form.Label>Telefono</Form.Label>
                 <Form.Control
                   type="tel"
@@ -51,7 +51,7 @@ const SeccionContacto: React.FC = (): JSX.Element => {
                   name="telefono"
                 />
               </Form.Group>
-              <Form.Group controlId="email" style={{ marginBottom: "1rem" }}>
+              <Form.Group style={{ marginBottom: "1rem" }}>
                 <Form.Label>Correo electronico</Form.Label>
                 <Form.Control
                   type="email"

@@ -40,7 +40,7 @@ const links: LinkFooter[] = [
     texto: "5950-8000 las 24 horas",
   },
   {
-    href: "",
+    href: "/login",
     icono: faHospitalUser,
     texto: "Uso interno - Hospital de Clinicas.",
   },

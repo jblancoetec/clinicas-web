@@ -11,6 +11,29 @@ Aplicación web de gestión de datos de donadores para el Hospital de Clínicas 
 ## Instalación :wrench:
 
 > Nota: La aplicación se ejecuta bajo entorno [`nodejs`](https://nodejs.org/es/). Asegúrese tener instalado el mismo para poder continuar. 
+>
+> Para instalar en `nodejs` en Windows 10, solo debe descargar e instalar el ejecutable `lts` del siguiente [enlace](https://nodejs.org/es/).
+>
+> Para instalar `nodejs` en Linux, se recomienda instalar previamente `nvm` mediante alguno de los siguientes comandos
+>
+> ```
+> curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
+> ```
+>
+> ```
+> wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
+> ```
+>
+> Luego, en una terminal separada ejecutar el siguiente comando para terminar de instalar `nodejs`
+>
+> ```
+> nvm install --lts
+> ```
+>
+> 
+
+
+
 
 Una vez descargado el código fuente, se debe ejecutar siguiente comando para instalar las dependencias del sistema.
 
@@ -28,24 +51,6 @@ npm run dev
 
 Es muy probable que esto habrá un navegador con una dirección en el `http://localhost:3000`. Si no es así, habrá un navegador en la dirección mencionada.
 
-## Instalación alternativa - Docker :wrench:
-
-> Nota: Esta alternativa se ejecuta en un entorno [Docker](https://hub.docker.com/) con una imagen basada en linux. Asegúrese tener instalado el mismo para poder continuar 
-
-Es posible descargar la imagen del proyecto de [DockerHub](https://hub.docker.com/) con el siguiente comando.
-
-```shell
-comando
-```
-
-Una vez descargada, puede correr la imagen con el siguiente comando
-
-```shell
-comando
-```
-
-Ahora puede usar cualquier editor de código para continuar con el desarrollo.
-
 ## Construido con :hammer_and_wrench:
 
 - [NextJS](https://nextjs.org/)
@@ -54,4 +59,14 @@ Ahora puede usar cualquier editor de código para continuar con el desarrollo.
 - [MongoDB](https://www.mongodb.com/es)
 - [Bootstrap](https://getbootstrap.com/)
 - [FontAwesome](https://fontawesome.com/v5.15/how-to-use/on-the-web/using-with/react)
+
+## Material de consulta para la construcción de la aplicación
+
+- [Curso de React.js](https://www.youtube.com/watch?v=Di4eAxkPNp0)
+- [Guía practica para React.js](https://bluuweb.github.io/react-udemy/)
+- [Curso de Next.js](https://www.youtube.com/watch?v=AOpcZdYeUAs&list=PLPl81lqbj-4JgsUXNxAK2wQ2ynbfg0L5X)
+- [Curso de Next.js (Fundamentos)](https://bluuweb.github.io/nextjs/01-fundamentos/#requisitos)
+- [Guías practicas para desarrollo web](https://bluuweb.github.io/)
+
+> Agradecimientos a [Bluuweb!](https://bluuweb.github.io/) por todo el material subido.
 

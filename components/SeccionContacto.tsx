@@ -14,7 +14,7 @@ const SeccionContacto: React.FC = (): JSX.Element => {
     <>
       <section id="section-contacto" className={styles.Seccion}>
         <Container className={styles.Contenedor}>
-          <h2 className={styles.Titulo}> ¿Queres que te contactemos? </h2>
+          <h2 className={styles.Titulo}> Contacto </h2>
           <Row md={2}>
             <Form>
               <FormGroup style={{ marginBottom: "1rem" }}>

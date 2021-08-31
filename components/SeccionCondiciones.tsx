@@ -55,6 +55,7 @@ const condicionesARenderizar: JSX.Element[] = condiciones.map(
             marginRight: "auto",
             marginLeft: "auto",
             fontSize: "4rem",
+            color: "var(--violeta)",
           }}
           icon={icono}
         />

@@ -50,7 +50,7 @@ const SeccionPrincipal: React.FC = (): JSX.Element => {
                 El/Ella <span style={{ color: "var(--amarillo)" }}>VIVE</span>
               </h1>
               <Link href="/entrevista">
-                <a className="btn btn-outline-danger text-red ">
+                <a className="btn active btn-outline-danger text-white ">
                   ¡Animate a donar!
                 </a>
               </Link>

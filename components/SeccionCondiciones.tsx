@@ -71,7 +71,7 @@ const SeccionCondicionesBasicas = (): JSX.Element => {
   return (
     <section id="section-condiciones" className={styles.Seccion}>
       <Container className={styles.Contenedor}>
-        <h2 className={styles.Titulo}>Condiciones basicas para ser donador</h2>
+        <h2 className={styles.Titulo}>Requisito para ser donador</h2>
         <Row sm={1} md={3}>
           {condicionesARenderizar}
         </Row>

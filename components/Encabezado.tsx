@@ -12,7 +12,7 @@ const links: LinkHeader[] = [
     href: "/#section-ley",
   },
   {
-    texto: "Contacto",
+    texto: "Formulario",
     href: "/#section-contacto",
   },
   {

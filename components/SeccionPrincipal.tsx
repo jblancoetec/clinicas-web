@@ -51,7 +51,7 @@ const SeccionPrincipal: React.FC = (): JSX.Element => {
               </h1>
               <Link href="/entrevista">
                 <a className="btn btn-outline-danger text-red ">
-                  Animate a donar!!
+                  ¡Animate a donar!
                 </a>
               </Link>
             </Col>

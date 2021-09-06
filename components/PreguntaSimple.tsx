@@ -20,7 +20,7 @@ const PreguntaSimple: React.FC<PropsPreguntaSimple> = ({
 
   return (
     <>
-      <h2 className={stylesSeccion.Titulo}>{pregunta.pregunta}</h2>
+      <h4 className={stylesSeccion.Titulo}>{pregunta.pregunta}</h4>
       <div className={styles.Contenedor}>
         <ButtonGroup>
           <Button className={styles.BotonSi} onClick={pasarPregunta}>

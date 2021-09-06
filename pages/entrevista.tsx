@@ -9,7 +9,7 @@ const entrevista = (): JSX.Element => {
       <section className={styles.Seccion}>
         <Container className={styles.Contenedor}>
           <h2 className={styles.Titulo}>Formulario de aptitud</h2>
-          <h3>Estimado donante:</h3>
+          <h5>Estimado donante:</h5>
           <p>
             Ante todo le agradecemos su solidaria concurrencia y colaboración.
             Nuestra principal preocupación es proteger al receptor de su sangre,

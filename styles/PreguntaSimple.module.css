@@ -15,4 +15,8 @@
   color: var(--violeta);
   outline-color: var(--violeta);
   border-color: var(--violeta);
+
+}
+.BotonSi, .BotonNo {
+  width: 3em ;
 }

@@ -9,7 +9,7 @@ const SeccionLeyPlasma: React.FC = (): JSX.Element => {
       <section id="section-ley" className={styles.Seccion}>
         <Container className={styles.Contenedor}>
           <h2 className={styles.Titulo}>
-            ¿Conocias algo sobre la ley de donación de plasma?
+            Información
           </h2>
           <Row md={2}>
             <div>

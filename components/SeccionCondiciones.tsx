@@ -8,6 +8,7 @@ import {
   faViruses,
   faVirusSlash,
   faWeight,
+  faClinicMedical,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styles from "../styles/Seccion.module.css";
@@ -41,7 +42,7 @@ const condiciones: Condicion[] = [
       "No poseer enfermedades prexistente como hepatitis, alguna neoplasia o enfermedades cardiovasculares",
   },
   {
-    icono: faStarOfLife,
+    icono: faClinicMedical,
     condicion: "No haber tenido abortos, ni antecedentes gestionales",
   },
 ];
@@ -55,7 +56,6 @@ const condicionesARenderizar: JSX.Element[] = condiciones.map(
             marginRight: "auto",
             marginLeft: "auto",
             fontSize: "4rem",
-            color: "var(--violeta)",
           }}
           icon={icono}
         />

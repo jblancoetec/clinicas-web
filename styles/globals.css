@@ -39,3 +39,7 @@ a {
   --rosa: #e3c7ed;
   --gris: #f7f7f7;
 }
+
+.progress-bar {
+  background-color: var(--violeta);
+}

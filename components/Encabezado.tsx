@@ -52,10 +52,10 @@ const Header: React.FC = (): JSX.Element => {
             href="/"
             style={{
               color: "white",
-              fontFamily: "var(--fuente-texto)",
+              fontFamily: "var(--fuente)",
             }}
           >
-            Home
+            Inicio
           </Navbar.Brand>
           <Navbar.Toggle
             aria-controls="basic-navbar-nav"

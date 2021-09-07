@@ -1,5 +1,12 @@
 import React, { useState } from "react";
-import { Container, ButtonGroup, Button, Modal, Alert } from "react-bootstrap";
+import {
+  Container,
+  ButtonGroup,
+  Button,
+  Modal,
+  Alert,
+  ProgressBar,
+} from "react-bootstrap";
 import stylesSeccion from "../styles/Seccion.module.css";
 import PreguntaSimple, { PropsPreguntaSimple } from "./PreguntaSimple";
 import Cuestionario from "./Cuestionario";
@@ -10,6 +17,10 @@ const propsPreguntas: PropsPreguntaSimple[] = Cuestionario.map((pregunta) => {
   };
   return props;
 });
+
+interface PropsBarraProgresar {
+  porcentaje: number
+}
 
 const cantidadPreguntas: number = Cuestionario.length;
 
@@ -28,11 +39,18 @@ const SeccionPregunta: React.FC = (): JSX.Element => {
     return <PreguntaSimple {...pregunta} key={index} />;
   });
 
+  const BarraProgreso: React.FC<PropsBarraProgresar> = ({porcentaje}: PropsBarraProgresar): JSX.Element => {
+    return <ProgressBar now={porcentaje} label={`${porcentaje}%`} style={{ marginTop: "3rem" , backgroundColor: "var (--violeta)"}}/>;
+  };
+
+  const propsBarraProgresar: PropsBarraProgresar = {porcentaje:(idPregunta / cantidadPreguntas) * 100}
+
   return (
     <>
       <section className={stylesSeccion.Seccion}>
         <Container className={stylesSeccion.Contenedor}>
           {preguntas[idPregunta]}
+          <BarraProgreso {...propsBarraProgresar} ></BarraProgreso>
         </Container>
       </section>
 

@@ -1,5 +1,14 @@
 import React from "react";
-import { Button, Card, Container, Form, FormGroup } from "react-bootstrap";
+import {
+  Button,
+  Card,
+  Col,
+  Container,
+  Form,
+  FormGroup,
+  Row,
+  Image,
+} from "react-bootstrap";
 import stylesSeccion from "../styles/Seccion.module.css";
 
 const login = () => {
@@ -8,11 +17,33 @@ const login = () => {
       <Container className={stylesSeccion.Contenedor}>
         <div
           style={{
-            width: "20rem",
+            width: "30rem",
             margin: "auto",
           }}
         >
           <h2 className={stylesSeccion.Titulo}>Iniciar Sesion</h2>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+            }}
+          >
+            <Image
+              src="clinicLogo.png"
+              thumbnail
+              alt="logo del hospital de clinica"
+              style={{
+                width: "30rem",
+              }}
+            />
+          </div>
+
+          <Container>
+            <Row>
+              <Col xs={6} md={4}></Col>
+            </Row>
+          </Container>
+
           <Form
             style={{
               display: "flex",

@@ -11,7 +11,6 @@ const index = (): JSX.Element => {
       <SeccionPrincipal />
       <SeccionCondiciones />
       <SeccionLeyPlasma />
-      <SeccionContacto />
       <SeccionMaterialCompartir />
     </>
   );

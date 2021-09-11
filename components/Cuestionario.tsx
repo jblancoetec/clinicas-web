@@ -1,20 +1,18 @@
 export interface Pregunta {
-  pregunta: string;
+  texto: string;
   recomendacion: string;
 }
 const Cuestionario: Pregunta[] = [
   {
-    pregunta: "¿Sos mayor de 18 años?",
-
+    texto: "¿Sos mayor de 18 años?",
     recomendacion:
       "Lamentablemente, la edad mínima para donar es mayor a 18 excepto que tenga entre 16 y 18, deberá tener una autorización escrita del responsable legal",
   },
   {
-    pregunta: "¿Pesas más de 50kg?",
+    texto: "¿Pesas más de 50kg?",
     recomendacion:
       "Lamentablemente, por cuestiones de salud, el peso mínimo para poder donar es de 50kg",
   },
 ];
-
 
 export default Cuestionario;

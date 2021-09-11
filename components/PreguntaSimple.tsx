@@ -4,15 +4,15 @@ import styles from "../styles/PreguntaSimple.module.css";
 import { ButtonGroup, Button, Modal, Alert } from "react-bootstrap";
 import { Pregunta } from "./Cuestionario";
 
-export interface PropsPreguntaSimple {
+interface PropsPreguntaSimple {
   pregunta: Pregunta;
-  pasarPregunta?: () => void;
+  pasarPregunta: () => void;
 }
 
 const PreguntaSimple: React.FC<PropsPreguntaSimple> = ({
   pregunta,
   pasarPregunta,
-}: PropsPreguntaSimple): JSX.Element => {
+}) => {
   const [negada, setNegada] = useState(false);
 
   const mostrarJustificacion = () => setNegada(true);
@@ -20,7 +20,7 @@ const PreguntaSimple: React.FC<PropsPreguntaSimple> = ({
 
   return (
     <>
-      <h4 className={stylesSeccion.Titulo}>{pregunta.pregunta}</h4>
+      <h4 className={stylesSeccion.Titulo}>{pregunta.texto}</h4>
       <div className={styles.Contenedor}>
         <ButtonGroup>
           <Button className={styles.BotonSi} onClick={pasarPregunta}>

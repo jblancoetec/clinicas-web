@@ -8,25 +8,14 @@ import {
   ProgressBar,
 } from "react-bootstrap";
 import stylesSeccion from "../styles/Seccion.module.css";
-import PreguntaSimple, { PropsPreguntaSimple } from "./PreguntaSimple";
-import Cuestionario from "./Cuestionario";
-
-const propsPreguntas: PropsPreguntaSimple[] = Cuestionario.map((pregunta) => {
-  const props: PropsPreguntaSimple = {
-    pregunta,
-  };
-  return props;
-});
-
-interface PropsBarraProgresar {
-  porcentaje: number
-}
+import PreguntaSimple from "./PreguntaSimple";
+import Cuestionario, { Pregunta } from "./Cuestionario";
 
 const cantidadPreguntas: number = Cuestionario.length;
 
-const SeccionPregunta: React.FC = (): JSX.Element => {
-  const [idPregunta, setIdPregunta] = useState(0);
-  const [finalizado, setFinalizado] = useState(false);
+const SeccionPregunta: React.FC = () => {
+  const [idPregunta, setIdPregunta] = useState<number>(0);
+  const [finalizado, setFinalizado] = useState<boolean>(false);
 
   const pasarPregunta = () => {
     const nextIdPregunta = Math.min(cantidadPreguntas - 1, idPregunta + 1);
@@ -34,23 +23,22 @@ const SeccionPregunta: React.FC = (): JSX.Element => {
     setFinalizado(idPregunta + 1 >= cantidadPreguntas);
   };
 
-  const preguntas: JSX.Element[] = propsPreguntas.map((pregunta, index) => {
-    pregunta.pasarPregunta = pasarPregunta;
-    return <PreguntaSimple {...pregunta} key={index} />;
-  });
-
-  const BarraProgreso: React.FC<PropsBarraProgresar> = ({porcentaje}: PropsBarraProgresar): JSX.Element => {
-    return <ProgressBar now={porcentaje} label={`${porcentaje}%`} style={{ marginTop: "3rem" , backgroundColor: "var (--violeta)"}}/>;
+  const construirPreguntaParaRenderizar = (pregunta: Pregunta): JSX.Element => {
+    return <PreguntaSimple pregunta={pregunta} pasarPregunta={pasarPregunta} />;
   };
 
-  const propsBarraProgresar: PropsBarraProgresar = {porcentaje:(idPregunta / cantidadPreguntas) * 100}
+  const pregunta = construirPreguntaParaRenderizar(Cuestionario[idPregunta]);
 
   return (
     <>
       <section className={stylesSeccion.Seccion}>
         <Container className={stylesSeccion.Contenedor}>
-          {preguntas[idPregunta]}
-          <BarraProgreso {...propsBarraProgresar} ></BarraProgreso>
+          {pregunta}
+          <ProgressBar
+            now={(idPregunta / cantidadPreguntas) * 100}
+            label={`${(idPregunta / cantidadPreguntas) * 100}%`}
+            style={{ marginTop: "3rem", backgroundColor: "var (--violeta)" }}
+          />
         </Container>
       </section>
 

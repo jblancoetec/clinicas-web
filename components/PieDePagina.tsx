@@ -5,20 +5,20 @@ import {
   faInstagram,
   IconDefinition,
 } from "@fortawesome/free-brands-svg-icons";
-import { faMap, faUser } from "@fortawesome/free-regular-svg-icons";
+import { faMap } from "@fortawesome/free-regular-svg-icons";
 import {
   faGlobe,
   faHospitalUser,
   faPhone,
 } from "@fortawesome/free-solid-svg-icons";
 
-type LinkFooter = {
+interface Link {
   href: string;
   icono: IconDefinition;
   texto: string;
-};
+}
 
-const links: LinkFooter[] = [
+const links: Link[] = [
   {
     href: "http://www.hospitaldeclinicas.uba.ar/",
     icono: faGlobe,
@@ -46,25 +46,27 @@ const links: LinkFooter[] = [
   },
 ];
 
-const linksARenderizar: JSX.Element[] = links.map(
-  ({ href, icono, texto }, index) => {
-    return (
-      <Nav.Item key={index}>
-        <Nav.Link href={href} style={{ color: "black" }}>
-          <FontAwesomeIcon
-            style={{
-              marginRight: "1rem",
-            }}
-            icon={icono}
-          />
-          {texto}
-        </Nav.Link>
-      </Nav.Item>
-    );
-  }
-);
+const convertirLinkParaRenderizar = (
+  { href, icono, texto }: Link,
+  index: number
+): JSX.Element => {
+  return (
+    <Nav.Item key={index}>
+      <Nav.Link href={href} style={{ color: "black" }}>
+        <FontAwesomeIcon
+          style={{
+            marginRight: "1rem",
+          }}
+          icon={icono}
+        />
+        {texto}
+      </Nav.Link>
+    </Nav.Item>
+  );
+};
+const linksARenderizar: JSX.Element[] = links.map(convertirLinkParaRenderizar);
 
-const Footer: React.FC = (): JSX.Element => {
+const Footer: React.FC = () => {
   return (
     <footer style={{ backgroundColor: "var(--gris)" }}>
       <Container>

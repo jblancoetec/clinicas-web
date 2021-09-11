@@ -1,12 +1,12 @@
 import React from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
 
-type LinkHeader = {
+interface Link {
   texto: string;
   href: string;
-};
+}
 
-const links: LinkHeader[] = [
+const links: Link[] = [
   {
     texto: "Información",
     href: "/#section-ley",
@@ -25,7 +25,10 @@ const links: LinkHeader[] = [
   },
 ];
 
-const linksARenderizar: JSX.Element[] = links.map(({ texto, href }, index) => {
+const prepararLinkParaRenderizar = (
+  { href, texto }: Link,
+  index: number
+): JSX.Element => {
   return (
     <Nav.Link
       href={href}
@@ -35,9 +38,11 @@ const linksARenderizar: JSX.Element[] = links.map(({ texto, href }, index) => {
       {texto}
     </Nav.Link>
   );
-});
+};
 
-const Header: React.FC = (): JSX.Element => {
+const linksARenderizar: JSX.Element[] = links.map(prepararLinkParaRenderizar);
+
+const Header: React.FC = () => {
   return (
     <header>
       <Navbar

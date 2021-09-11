@@ -4,7 +4,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import Image from "next/image";
 import imgPromoPrincipal from "../public/img/promoprincipal.png";
 
-const SeccionPrincipal: React.FC = (): JSX.Element => {
+const SeccionPrincipal: React.FC = () => {
   return (
     <>
       <section

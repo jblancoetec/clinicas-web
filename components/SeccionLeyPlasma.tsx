@@ -3,13 +3,12 @@ import { Image } from "react-bootstrap";
 import React from "react";
 import styles from "../styles/Seccion.module.css";
 
-const SeccionLeyPlasma: React.FC = (): JSX.Element => {
+const SeccionLeyPlasma: React.FC = () => {
   return (
     <>
       <section id="section-ley" className={styles.Seccion}>
         <Container className={styles.Contenedor}>
-          <h2 className={styles.Titulo}>
-          </h2>
+          <h2 className={styles.Titulo}></h2>
           <Row md={2}>
             <div>
               <Image

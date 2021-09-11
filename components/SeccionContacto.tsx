@@ -9,7 +9,7 @@ import {
 } from "react-bootstrap";
 import styles from "../styles/Seccion.module.css";
 
-const SeccionContacto: React.FC = (): JSX.Element => {
+const SeccionContacto: React.FC = () => {
   return (
     <>
       <section id="section-contacto" className={styles.Seccion}>

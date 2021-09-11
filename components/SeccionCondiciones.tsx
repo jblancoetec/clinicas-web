@@ -13,61 +13,66 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styles from "../styles/Seccion.module.css";
 
-type Condicion = {
+interface Condicion {
   icono: IconDefinition;
-  condicion: string;
-};
+  texto: string;
+}
 
 const condiciones: Condicion[] = [
   {
     icono: faUsers,
-    condicion: "Tener entre 18 y 65 Años",
+    texto: "Tener entre 18 y 65 Años",
   },
   {
     icono: faHandHoldingMedical,
-    condicion: "No deben tener antecedentes transfuncionales",
+    texto: "No deben tener antecedentes transfuncionales",
   },
   {
     icono: faWeight,
-    condicion: "Pesar mas de 50kg",
+    texto: "Pesar mas de 50kg",
   },
   {
     icono: faViruses,
-    condicion:
+    texto:
       "Haber cursado la infeccion y que hallan pasado los 28 dias de recuperacion, contando con 2 pruebas negativas de COVID-19",
   },
   {
     icono: faVirusSlash,
-    condicion:
+    texto:
       "No poseer enfermedades prexistente como hepatitis, alguna neoplasia o enfermedades cardiovasculares",
   },
   {
     icono: faClinicMedical,
-    condicion: "No haber tenido abortos, ni antecedentes gestionales",
+    texto: "No haber tenido abortos, ni antecedentes gestionales",
   },
 ];
 
+const prepararCondicionParaRenderizar = (
+  { icono, texto }: Condicion,
+  index: number
+): JSX.Element => {
+  return (
+    <Card key={index} style={{ border: "none" }}>
+      <FontAwesomeIcon
+        style={{
+          marginRight: "auto",
+          marginLeft: "auto",
+          fontSize: "4rem",
+        }}
+        icon={icono}
+      />
+      <Card.Body>
+        <Card.Text style={{ textAlign: "center" }}>{texto}</Card.Text>
+      </Card.Body>
+    </Card>
+  );
+};
+
 const condicionesARenderizar: JSX.Element[] = condiciones.map(
-  ({ icono, condicion }, index) => {
-    return (
-      <Card key={index} style={{ border: "none" }}>
-        <FontAwesomeIcon
-          style={{
-            marginRight: "auto",
-            marginLeft: "auto",
-            fontSize: "4rem",
-          }}
-          icon={icono}
-        />
-        <Card.Body>
-          <Card.Text style={{ textAlign: "center" }}>{condicion}</Card.Text>
-        </Card.Body>
-      </Card>
-    );
-  }
+  prepararCondicionParaRenderizar
 );
 
-const SeccionCondicionesBasicas = (): JSX.Element => {
+const SeccionCondicionesBasicas: React.FC = () => {
   return (
     <section id="section-condiciones" className={styles.Seccion}>
       <Container className={styles.Contenedor}>

@@ -19,8 +19,6 @@ const urlsFlayers: string[] = [
   "https://i.ibb.co/qYHRfRc/Microsoft-Teams-image-2.png",
 ];
 
-const complementoURL: string = "&feature=emb_logo";
-
 interface linkRedSocial {
   icono: IconDefinition;
   urlRedSocial: string;
@@ -41,8 +39,12 @@ const linksRedesSociales: linkRedSocial[] = [
   },
 ];
 
-const agregarLinksRedesSociales = (urlFlayer: string): JSX.Element[] => {
-  return linksRedesSociales.map(({ icono, urlRedSocial }, index) => {
+const agregarIconosRedesSociales = (urlFlayer: string): JSX.Element[] => {
+  const complementoURL: string = "&feature=emb_logo";
+  const construirIconoParaCompartirFlayer = (
+    { icono, urlRedSocial }: linkRedSocial,
+    index: number
+  ): JSX.Element => {
     return (
       <Nav.Item key={index}>
         <Nav.Link
@@ -53,30 +55,36 @@ const agregarLinksRedesSociales = (urlFlayer: string): JSX.Element[] => {
         </Nav.Link>
       </Nav.Item>
     );
-  });
+  };
+  return linksRedesSociales.map(construirIconoParaCompartirFlayer);
+};
+
+const prepararFlayerParaRenderizar = (
+  urlFlayer: string,
+  index: number
+): JSX.Element => {
+  return (
+    <Card key={index} style={{ border: "none" }}>
+      <Card.Img variant="top" src={urlFlayer}></Card.Img>
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+        }}
+      >
+        <h3>Compartir</h3>
+        <Nav>{agregarIconosRedesSociales(urlFlayer)}</Nav>
+      </div>
+    </Card>
+  );
 };
 
 const flayersARenderizar: JSX.Element[] = urlsFlayers.map(
-  (urlFlayer, index) => {
-    return (
-      <Card key={index} style={{ border: "none" }}>
-        <Card.Img variant="top" src={urlFlayer}></Card.Img>
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-          }}
-        >
-          <h3>Compartir</h3>
-          <Nav>{agregarLinksRedesSociales(urlFlayer)}</Nav>
-        </div>
-      </Card>
-    );
-  }
+  prepararFlayerParaRenderizar
 );
 
-const SectionMaterialCompartir: React.FC = (): JSX.Element => {
+const SectionMaterialCompartir: React.FC = () => {
   return (
     <section id="section-material" className={styles.Seccion}>
       <Container className={styles.Contenedor}>

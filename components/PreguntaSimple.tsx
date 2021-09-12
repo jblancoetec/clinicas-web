@@ -6,24 +6,24 @@ import { Pregunta } from "./Cuestionario";
 
 interface PropsPreguntaSimple {
   pregunta: Pregunta;
-  pasarPregunta: () => void;
+  aprobarRespuesta: () => void;
 }
 
 const PreguntaSimple: React.FC<PropsPreguntaSimple> = ({
   pregunta,
-  pasarPregunta,
+  aprobarRespuesta,
 }) => {
-  const [negada, setNegada] = useState(false);
+  const [equivocada, setEquivocada] = useState<boolean>(false);
 
-  const mostrarJustificacion = () => setNegada(true);
-  const ocultarJustifiacion = () => setNegada(false);
+  const mostrarJustificacion = () => setEquivocada(true);
+  const ocultarJustifiacion = () => setEquivocada(false);
 
   return (
     <>
       <h4 className={stylesSeccion.Titulo}>{pregunta.texto}</h4>
       <div className={styles.Contenedor}>
         <ButtonGroup>
-          <Button className={styles.BotonSi} onClick={pasarPregunta}>
+          <Button className={styles.BotonSi} onClick={aprobarRespuesta}>
             Si
           </Button>
           <Button className={styles.BotonNo} onClick={mostrarJustificacion}>
@@ -33,7 +33,7 @@ const PreguntaSimple: React.FC<PropsPreguntaSimple> = ({
       </div>
 
       <Modal
-        show={negada}
+        show={equivocada}
         onHide={ocultarJustifiacion}
         aria-labelledby="contained-modal-title-vcenter"
         centered

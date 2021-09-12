@@ -2,6 +2,7 @@ export interface Pregunta {
   texto: string;
   recomendacion: string;
 }
+
 const Cuestionario: Pregunta[] = [
   {
     texto: "¿Sos mayor de 18 años?",

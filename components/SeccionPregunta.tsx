@@ -24,7 +24,9 @@ const SeccionPregunta: React.FC = () => {
   };
 
   const construirPreguntaParaRenderizar = (pregunta: Pregunta): JSX.Element => {
-    return <PreguntaSimple pregunta={pregunta} pasarPregunta={pasarPregunta} />;
+    return (
+      <PreguntaSimple pregunta={pregunta} aprobarRespuesta={pasarPregunta} />
+    );
   };
 
   const pregunta = construirPreguntaParaRenderizar(Cuestionario[idPregunta]);

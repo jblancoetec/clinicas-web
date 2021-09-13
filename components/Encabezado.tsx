@@ -12,10 +12,6 @@ const links: Link[] = [
     href: "/#section-ley",
   },
   {
-    texto: "Formulario",
-    href: "/#section-contacto",
-  },
-  {
     texto: "Requisitos para ser donador",
     href: "/#section-condiciones",
   },

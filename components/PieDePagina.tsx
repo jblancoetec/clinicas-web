@@ -22,7 +22,7 @@ const links: Link[] = [
   {
     href: "http://www.hospitaldeclinicas.uba.ar/",
     icono: faGlobe,
-    texto: "Pagina oficial del Hospital de Clinicas",
+    texto: "Página oficial del Hospital de Clinicas",
   },
   {
     href: "https://www.instagram.com/hospitaldeclinicasok/",

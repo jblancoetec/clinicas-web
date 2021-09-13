@@ -8,7 +8,7 @@ const SeccionLeyPlasma: React.FC = () => {
     <>
       <section id="section-ley" className={styles.Seccion}>
         <Container className={styles.Contenedor}>
-          <h2 className={styles.Titulo}></h2>
+          <h2 className={styles.Titulo}>Información</h2>
           <Row md={2}>
             <div>
               <Image

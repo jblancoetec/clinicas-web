@@ -11,7 +11,7 @@ import stylesSeccion from "../styles/Seccion.module.css";
 import PreguntaSimple from "./PreguntaSimple";
 import Cuestionario, { Pregunta } from "./Cuestionario";
 
-const cantidadPreguntas: number = Cuestionario.length;
+const cantidadPreguntas: number = Cuestionario.preguntasPorSi.length;
 
 const SeccionPregunta: React.FC = () => {
   const [idPregunta, setIdPregunta] = useState<number>(0);
@@ -29,7 +29,9 @@ const SeccionPregunta: React.FC = () => {
     );
   };
 
-  const pregunta = construirPreguntaParaRenderizar(Cuestionario[idPregunta]);
+  const pregunta = construirPreguntaParaRenderizar(
+    Cuestionario.preguntasPorSi[idPregunta]
+  );
 
   return (
     <>

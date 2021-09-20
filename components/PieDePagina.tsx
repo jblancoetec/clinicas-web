@@ -52,7 +52,7 @@ const convertirLinkParaRenderizar = (
 ): JSX.Element => {
   return (
     <Nav.Item key={index}>
-      <Nav.Link href={href} style={{ color: "black" }}>
+      <Nav.Link href={href} style={{ color: "white" }}>
         <FontAwesomeIcon
           style={{
             marginRight: "1rem",
@@ -68,7 +68,8 @@ const linksARenderizar: JSX.Element[] = links.map(convertirLinkParaRenderizar);
 
 const Footer: React.FC = () => {
   return (
-    <footer style={{ backgroundColor: "var(--gris)" }}>
+    <footer style={{ backgroundColor: "var(--violeta)" }}>
+      
       <Container>
         <Nav className="justify-content-center">{linksARenderizar}</Nav>
       </Container>

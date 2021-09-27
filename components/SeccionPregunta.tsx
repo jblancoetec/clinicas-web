@@ -40,10 +40,10 @@ const SeccionPregunta: React.FC = () => {
           {pregunta}
           <ProgressBar
             now={(idPregunta / cantidadPreguntas) * 100}
-            label={`${(idPregunta / cantidadPreguntas) * 100}%`}
+            label={`${Math.round((idPregunta / cantidadPreguntas) * 100)}%`}
             style={{ marginTop: "3rem", backgroundColor: "var (--violeta)" }}
           />
-        </Container>
+        </Container>  
       </section>
 
       <Modal

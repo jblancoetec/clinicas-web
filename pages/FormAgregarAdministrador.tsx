@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Container, Form, FormGroup } from "react-bootstrap";
+import { Button, Container, Form, FormGroup, Row } from "react-bootstrap";
 import stylesSeccion from "../styles/Seccion.module.css";
 
 const FormAgregarAdministrador = () => {
@@ -8,7 +8,7 @@ const FormAgregarAdministrador = () => {
       <Container className={stylesSeccion.Contenedor}>
         <div
           style={{
-            width: "20rem",
+            width: "50rem",
             margin: "auto",
           }}
         >
@@ -19,35 +19,35 @@ const FormAgregarAdministrador = () => {
               flexDirection: "column",
               alignItems: "center",
             }}
-          >
-            <FormGroup style={{ marginBottom: "1rem" }}>
-              <Form.Label>Nombre</Form.Label>
+          > <Row sm={1} md={3}>
+          <FormGroup style={{ marginBottom: "1rem" }}>
+              <Form.Label>*Nombre</Form.Label>
               <Form.Control type="text" placeholder="Por ejemplo: Juan" />
             </FormGroup>
             <FormGroup style={{ marginBottom: "1rem" }}>
-              <Form.Label>Nombre de usuario</Form.Label>
+              <Form.Label>*Nombre de usuario</Form.Label>
               <Form.Control type="text" placeholder="Por ejemplo: jperez" />
             </FormGroup>
             <FormGroup style={{ marginBottom: "1rem" }}>
-              <Form.Label>Apellido</Form.Label>
+              <Form.Label>*Apellido</Form.Label>
               <Form.Control type="text" placeholder="Por ejemplo: Perez" />
             </FormGroup>
             <FormGroup style={{ marginBottom: "1rem" }}>
-              <Form.Label>Contraseña</Form.Label>
+              <Form.Label>*Contraseña</Form.Label>
               <Form.Control
                 type="password"
                 placeholder="Introduzca una contraseña"
               />
             </FormGroup>
             <FormGroup style={{ marginBottom: "1rem" }}>
-              <Form.Label>Confirmar contraseña</Form.Label>
+              <Form.Label>*Confirmar contraseña</Form.Label>
               <Form.Control
                 type="password"
                 placeholder="Repetir contraseña"
               />
             </FormGroup>
             <FormGroup style={{ marginBottom: "1rem" }}>
-                <Form.Label>Correo electronico</Form.Label>
+                <Form.Label>*Correo electronico</Form.Label>
                 <Form.Control
                   type="email"
                   placeholder="Por ejemplo: ejemplo@gmail.com"
@@ -55,6 +55,8 @@ const FormAgregarAdministrador = () => {
                   name="email"
                 />
               </FormGroup>
+          </Row>
+            
 
             <Button
               type="submit"

@@ -38,13 +38,12 @@ a {
   --rojo: #c80000;
   --rosa: #e3c7ed;
   --gris: #f7f7f7;
+  /* agregados para "eliminar", "editar", "contactar"*/
+  --Editar: #ffc107;
+  --Eliminar: #dc3545;
+  --Contactar: #28a745;
 }
 
 .progress-bar {
   background-color: var(--violeta);
-}
-
-#edit {
-  margin-left: auto;
-  margin-right: auto;
 }

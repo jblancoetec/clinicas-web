@@ -31,17 +31,32 @@ const ListadoDeDonadores = (): JSX.Element => {
             <td>362826364</td>
             <td>Donador de Plasma</td>
             <td>
-              <Button id="edit" variant="warning">
+              <Button
+                style={{
+                  backgroundColor: "var(--Editar)",
+                  borderColor: "var(--Editar)",
+                }}
+              >
                 <FontAwesomeIcon style={{}} icon={faEdit} />
               </Button>
             </td>
             <td>
-              <Button id="delete" variant="danger">
+              <Button
+                style={{
+                  backgroundColor: "var(--Eliminar)",
+                  borderColor: "var(--Eliminar)",
+                }}
+              >
                 <FontAwesomeIcon style={{}} icon={faTrashAlt} />
               </Button>
             </td>
             <td>
-              <Button id="llamar" variant="success">
+              <Button
+                style={{
+                  backgroundColor: "var(--Contactar)",
+                  borderColor: "var(--Contactar)",
+                }}
+              >
                 <FontAwesomeIcon style={{}} icon={faPhoneAlt} />
               </Button>
             </td>

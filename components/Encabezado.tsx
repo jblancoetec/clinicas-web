@@ -8,6 +8,10 @@ interface Link {
 
 const links: Link[] = [
   {
+    texto: "Agregar un nuevo administrador",
+    href: "/#section-usuario",
+  },
+  {
     texto: "Información",
     href: "/#section-ley",
   },

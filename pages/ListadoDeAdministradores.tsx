@@ -1,6 +1,5 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-<link rel="styles" href="globals.css" />;
 import { faEdit } from "@fortawesome/free-solid-svg-icons";
 import { faTrashAlt } from "@fortawesome/free-regular-svg-icons";
 import { Button, Container, Table } from "react-bootstrap";
@@ -16,8 +15,8 @@ const ListadoDeAdministradores = (): JSX.Element => {
             <th>Email</th>
             <th>Telefono</th>
             <th>Usuario</th>
-            <th>Editar</th>
-            <th>Eliminar</th>
+            <th style={{ textAlign: "center" }}>Editar</th>
+            <th style={{ textAlign: "center" }}>Eliminar</th>
           </tr>
         </thead>
         <tbody>
@@ -27,14 +26,20 @@ const ListadoDeAdministradores = (): JSX.Element => {
             <td>@mdo</td>
             <td>362826364</td>
             <td>@mdo</td>
-            <td>
-              <Button id="edit" variant="warning">
-                <FontAwesomeIcon style={{}} icon={faEdit} />
+
+            <td style={{ textAlign: "center" }}>
+              <Button
+                style={{ backgroundColor: "var(--Editar)", border: "none" }}
+              >
+                <FontAwesomeIcon icon={faEdit} />
               </Button>
             </td>
-            <td>
-              <Button id="delete" variant="danger">
-                <FontAwesomeIcon style={{}} icon={faTrashAlt} />
+
+            <td style={{ textAlign: "center" }}>
+              <Button
+                style={{ backgroundColor: "var(--Eliminar)", border: "none" }}
+              >
+                <FontAwesomeIcon icon={faTrashAlt} />
               </Button>
             </td>
           </tr>

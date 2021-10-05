@@ -1,11 +1,10 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-<link rel="styles" href="globals.css" />;
+import link from "next/link";
 import { faEdit } from "@fortawesome/free-solid-svg-icons";
 import { faTrashAlt } from "@fortawesome/free-regular-svg-icons";
 import { faPhoneAlt } from "@fortawesome/free-solid-svg-icons";
 import { Button, Container, Table } from "react-bootstrap";
-import link from "next/link";
 
 const ListadoDeDonadores = (): JSX.Element => {
   return (
@@ -16,13 +15,14 @@ const ListadoDeDonadores = (): JSX.Element => {
             <th>Nombre</th>
             <th>Apellido</th>
             <th>Email</th>
-            <th>Telefono</th>
+            <th>Teléfono</th>
             <th>Tipo de Donador</th>
-            <th>Editar</th>
-            <th>Eliminar</th>
-            <th>Contactar</th>
+            <th style={{ textAlign: "center" }}>Editar</th>
+            <th style={{ textAlign: "center" }}>Eliminar</th>
+            <th style={{ textAlign: "center" }}>Contactar</th>
           </tr>
         </thead>
+
         <tbody>
           <tr>
             <td>fer</td>
@@ -30,34 +30,37 @@ const ListadoDeDonadores = (): JSX.Element => {
             <td>Oi@gmail.com</td>
             <td>362826364</td>
             <td>Donador de Plasma</td>
-            <td>
+
+            <td style={{ textAlign: "center" }}>
               <Button
                 style={{
                   backgroundColor: "var(--Editar)",
-                  borderColor: "var(--Editar)",
+                  border: "none",
                 }}
               >
-                <FontAwesomeIcon style={{}} icon={faEdit} />
+                <FontAwesomeIcon icon={faEdit} />
               </Button>
             </td>
-            <td>
+
+            <td style={{ textAlign: "center" }}>
               <Button
                 style={{
                   backgroundColor: "var(--Eliminar)",
-                  borderColor: "var(--Eliminar)",
+                  border: "none",
                 }}
               >
-                <FontAwesomeIcon style={{}} icon={faTrashAlt} />
+                <FontAwesomeIcon icon={faTrashAlt} />
               </Button>
             </td>
-            <td>
+
+            <td style={{ textAlign: "center" }}>
               <Button
                 style={{
                   backgroundColor: "var(--Contactar)",
-                  borderColor: "var(--Contactar)",
+                  border: "none",
                 }}
               >
-                <FontAwesomeIcon style={{}} icon={faPhoneAlt} />
+                <FontAwesomeIcon icon={faPhoneAlt} />
               </Button>
             </td>
           </tr>

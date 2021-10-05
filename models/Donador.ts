@@ -1,4 +1,12 @@
 import mongoose from "mongoose";
+interface Donador extends Document{
+  nombre:string;
+  apellido:string;
+  email:string;
+  telefono:string;
+  Tipo_Donador:string;
+}
+
 
 const DonadorSchema = new mongoose.Schema({
   nombre: {
@@ -14,7 +22,7 @@ const DonadorSchema = new mongoose.Schema({
     required: [true, "Ingrese su correo electronico."],
   },
   telefono: {
-    type: Number,
+    type: String,
     required: [true, "Ingrese su numero telefonico."],
   },
   Tipo_Donador: {
@@ -22,6 +30,8 @@ const DonadorSchema = new mongoose.Schema({
     require: [true, "Ingrese el tipo de donación"],
   },
 });
+
+//const Donador : model <Donador> = model (donador, donadorescheme)
 
 export default mongoose.models.Donador ||
   mongoose.model("Donador", DonadorSchema);

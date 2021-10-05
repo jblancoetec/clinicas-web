@@ -4,11 +4,16 @@ import link from "next/link";
 import { faEdit } from "@fortawesome/free-solid-svg-icons";
 import { faTrashAlt } from "@fortawesome/free-regular-svg-icons";
 import { faPhoneAlt } from "@fortawesome/free-solid-svg-icons";
+import { faUserPlus } from "@fortawesome/free-solid-svg-icons";
 import { Button, Container, Table } from "react-bootstrap";
 
 const ListadoDeDonadores = (): JSX.Element => {
   return (
     <Container>
+      <br />
+      <h3 style={{ textAlign: "center" }}>Listado De Donadores</h3>
+      <br />
+
       <Table striped bordered hover size="sm">
         <thead>
           <tr>
@@ -66,6 +71,16 @@ const ListadoDeDonadores = (): JSX.Element => {
           </tr>
         </tbody>
       </Table>
+      <Button
+        style={{
+          backgroundColor: "var(--verde)",
+          border: "none",
+          color: "var(--negro)",
+        }}
+      >
+        <FontAwesomeIcon icon={faUserPlus} />
+        Agregar Donador/a
+      </Button>
     </Container>
   );
 };

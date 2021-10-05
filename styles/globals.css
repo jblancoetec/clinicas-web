@@ -42,6 +42,7 @@ a {
   --Editar: #ffc107;
   --Eliminar: #dc3545;
   --Contactar: #28a745;
+  --Negro: rgb(0, 0, 0);
 }
 
 .progress-bar {

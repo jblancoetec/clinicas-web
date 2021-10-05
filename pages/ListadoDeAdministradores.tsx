@@ -50,16 +50,19 @@ const ListadoDeAdministradores = (): JSX.Element => {
           </tr>
         </tbody>
       </Table>
-      <Button
-        style={{
-          backgroundColor: "var(--verde)",
-          border: "none",
-          color: "var(--Negro)",
-        }}
-      >
-        <FontAwesomeIcon icon={faUserPlus} />
-        Agregar Administrador
-      </Button>
+
+      <Container style={{ textAlign: "center" }}>
+        <Button
+          style={{
+            backgroundColor: "var(--verde)",
+            border: "none",
+            color: "var(--Negro)",
+          }}
+        >
+          <FontAwesomeIcon icon={faUserPlus} />
+          Agregar Administrador
+        </Button>
+      </Container>
     </Container>
   );
 };

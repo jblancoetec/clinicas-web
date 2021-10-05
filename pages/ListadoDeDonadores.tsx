@@ -25,10 +25,10 @@ const ListadoDeDonadores = (): JSX.Element => {
 
         <tbody>
           <tr>
-            <td>fer</td>
-            <td>llusco</td>
-            <td>Oi@gmail.com</td>
-            <td>362826364</td>
+            <td>Nombre1</td>
+            <td>Apellido1</td>
+            <td>ejemplo@gmail.com</td>
+            <td>214</td>
             <td>Donador de Plasma</td>
 
             <td style={{ textAlign: "center" }}>
@@ -63,18 +63,6 @@ const ListadoDeDonadores = (): JSX.Element => {
                 <FontAwesomeIcon icon={faPhoneAlt} />
               </Button>
             </td>
-          </tr>
-
-          <tr>
-            <td>MARIAAAAAA</td>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-          </tr>
-          <tr>
-            <td>MARCOS</td>
-            <td>Larry the Bird</td>
-            <td>@twitter</td>
           </tr>
         </tbody>
       </Table>

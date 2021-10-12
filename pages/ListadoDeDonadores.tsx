@@ -9,10 +9,17 @@ import { Button, Container, Table } from "react-bootstrap";
 import Link from "next/link";
 import conectarDB from "../lib/conexionDB";
 import Donador from "../models/Donador";
+import { IDonador } from "../models/Donador";
+import axios, { AxiosRequestConfig, AxiosResponse } from "axios";
+
+interface PropsListadoDeDonadores {
+  donadores: IDonador[];
+}
 
 const ListadoDeDonadores = ({ donadores }: any): JSX.Element => {
   return (
     <Container>
+      <div>{JSON.stringify(donadores)}</div>
       <br />
       <h3 style={{ textAlign: "center" }}>Listado De Donadores</h3>
       <br />
@@ -92,21 +99,45 @@ const ListadoDeDonadores = ({ donadores }: any): JSX.Element => {
   );
 };
 
-export const getServerSideProps = async () => {
+/*export const getServerSideProps = async () => {
   await conectarDB();
 
-  /* find all the data in our database */
+  
   const result = await Donador.find({});
   const donadores = result.map((doc) => {
     const donador = doc.toObject();
     console.log(donador);
-    
 
     donador._id = donador._id.toString();
     return donador;
   });
 
   return { props: { donadores } };
+};*/
+
+export const getServerSideProps = async () => {
+  const config: AxiosRequestConfig = {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    baseURL: process.env.API_URL,
+  };
+  try {
+    const res: AxiosResponse = await axios.get("/getDonadores", config);
+    const donadores = res.data;
+    return {
+      props: { donadores },
+    };
+  } catch (error) {
+    console.log(error);
+    return {
+      redirect: {
+        destination: "/",
+        statusCode: 307,
+      },
+    };
+  }
 };
 
 export default ListadoDeDonadores;

@@ -30,4 +30,5 @@ const AdministradorSchema: Schema = new Schema<IAdministrador>({
   },
 });
 
-export default models.Administrador ||  model("Administrador", AdministradorSchema);
+export default models.Administrador ||
+  model("Administrador", AdministradorSchema);

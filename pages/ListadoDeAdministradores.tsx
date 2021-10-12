@@ -5,11 +5,17 @@ import { faTrashAlt } from "@fortawesome/free-regular-svg-icons";
 import { faUserPlus } from "@fortawesome/free-solid-svg-icons";
 import { Button, Container, Table } from "react-bootstrap";
 import conectarDB from "../lib/conexionDB";
+import { IAdministrador } from "../models/Administrador";
+import axios, { AxiosRequestConfig, AxiosResponse } from "axios"
 
+interface PropsListadoDeAdministradores {
+  administradores: IAdministrador[];
+}
 
-const ListadoDeAdministradores = (): JSX.Element => {
+const ListadoDeAdministradores : React.FC<PropsListadoDeAdministradores> = ({administradores}): JSX.Element => {
   return (
     <Container>
+      <div>{JSON.stringify(administradores)}</div>
       <br />
       <h3 style={{ textAlign: "center" }}>Listado De Administradores</h3>
       <br />
@@ -69,5 +75,29 @@ const ListadoDeAdministradores = (): JSX.Element => {
   );
 };
 
+export const getServerSideProps = async () => {
+  const config: AxiosRequestConfig = {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    baseURL: process.env.API_URL,
+  };
+  try {
+    const res: AxiosResponse = await axios.get("/getAdministradores", config);
+    const administradores = res.data;
+    return {
+      props: { administradores },
+    };
+  } catch (error) {
+    console.log(error);
+		return {
+      redirect: {
+        destination: "/",
+        statusCode: 307,
+      },
+    };
+  }
+};
 
 export default ListadoDeAdministradores;

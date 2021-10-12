@@ -3,8 +3,8 @@ import conectarDB from "../../../lib/conexionDB";
 import Administrador from "../../../models/Administrador";
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
-    await conectarDB();
     try {
+        await conectarDB();
         const administrador= await Administrador.create(
             req.body
         )

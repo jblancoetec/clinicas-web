@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next" ;
-import conectarDB from "../../../lib/conexionDB";
-import Administrador from "../../../models/Administrador";
+import conectarDB from "../../../../lib/conexionDB";
+import Administrador from "../../../../models/Administrador";
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     await conectarDB();

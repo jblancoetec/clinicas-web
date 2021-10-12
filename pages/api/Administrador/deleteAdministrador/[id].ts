@@ -1,6 +1,6 @@
-import { NextApiRequest, NextApiResponse } from "next";
-import conectarDB from "../../../lib/conexionDB";
-import Donador from "../../../models/Donador";
+import { NextApiRequest, NextApiResponse } from "next" ;
+import conectarDB from "../../../../lib/conexionDB";
+import Administrador from "../../../../models/Administrador";
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     await conectarDB();
@@ -9,8 +9,8 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     } = req;
   
     try {
-      const deletedDonador = await Donador.deleteOne({_id: id})
-      if (!deletedDonador) {
+      const deletedAdministrador = await Administrador.deleteOne({_id: id})
+      if (!deletedAdministrador) {
           return res.status(400).json({success:false})
       }
       res.status(201).json({ succsess: true, data: {} });

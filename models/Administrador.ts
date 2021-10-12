@@ -1,6 +1,12 @@
-import mongoose from "mongoose";
-
-const AdministradorSchema = new mongoose.Schema({
+import {model. Schema, Model, Document} from "mongoose";
+interface IAdministrador extends Document{
+nombre: string;
+apellido: string;
+email:string;
+telefono: string;
+usuario: string;
+}
+const AdministradorSchema:Schema = new Schema({
   nombre: {
     type: String,
     required: [true, "Ingrese su nombre."],
@@ -14,7 +20,7 @@ const AdministradorSchema = new mongoose.Schema({
     required: [true, "Ingrese su correo electronico."],
   },
   telefono: {
-    type: Number,
+    type: String,
     required: [true, "Ingrese su numero telefonico."],
   },
   usuario: {
@@ -22,6 +28,8 @@ const AdministradorSchema = new mongoose.Schema({
     require: [true, "Ingrese el usuario"],
   },
 });
-
+const Administrador: Model<IAdministrador> = model ('Administrador',AdministradorSchema)
 export default mongoose.models.Administrador ||
   mongoose.model("Administrador", AdministradorSchema);
+
+  

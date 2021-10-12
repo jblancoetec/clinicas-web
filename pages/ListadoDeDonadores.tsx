@@ -6,8 +6,11 @@ import { faTrashAlt } from "@fortawesome/free-regular-svg-icons";
 import { faPhoneAlt } from "@fortawesome/free-solid-svg-icons";
 import { faUserPlus } from "@fortawesome/free-solid-svg-icons";
 import { Button, Container, Table } from "react-bootstrap";
+import Link from "next/link";
+import conectarDB from "../lib/conexionDB";
+import Donador from "../models/Donador";
 
-const ListadoDeDonadores = (): JSX.Element => {
+const ListadoDeDonadores = ({ donadores }: any): JSX.Element => {
   return (
     <Container>
       <br />
@@ -29,46 +32,48 @@ const ListadoDeDonadores = (): JSX.Element => {
         </thead>
 
         <tbody>
-          <tr>
-            <td>Nombre1</td>
-            <td>Apellido1</td>
-            <td>ejemplo@gmail.com</td>
-            <td>214</td>
-            <td>Donador de Plasma</td>
+          {donadores.map((donador: any, index: number) => (
+            <tr key={index}>
+              <td> {donador.nombre}</td>
+              <td>{donador.apellido}</td>
+              <td>{donador.email}</td>
+              <td>{donador.telefono}</td>
+              <td>{donador.Tipo}</td>
 
-            <td style={{ textAlign: "center" }}>
-              <Button
-                style={{
-                  backgroundColor: "var(--Editar)",
-                  border: "none",
-                }}
-              >
-                <FontAwesomeIcon icon={faEdit} />
-              </Button>
-            </td>
+              <td style={{ textAlign: "center" }}>
+                <Button
+                  style={{
+                    backgroundColor: "var(--Editar)",
+                    border: "none",
+                  }}
+                >
+                  <FontAwesomeIcon icon={faEdit} />
+                </Button>
+              </td>
 
-            <td style={{ textAlign: "center" }}>
-              <Button
-                style={{
-                  backgroundColor: "var(--Eliminar)",
-                  border: "none",
-                }}
-              >
-                <FontAwesomeIcon icon={faTrashAlt} />
-              </Button>
-            </td>
+              <td style={{ textAlign: "center" }}>
+                <Button
+                  style={{
+                    backgroundColor: "var(--Eliminar)",
+                    border: "none",
+                  }}
+                >
+                  <FontAwesomeIcon icon={faTrashAlt} />
+                </Button>
+              </td>
 
-            <td style={{ textAlign: "center" }}>
-              <Button
-                style={{
-                  backgroundColor: "var(--Contactar)",
-                  border: "none",
-                }}
-              >
-                <FontAwesomeIcon icon={faPhoneAlt} />
-              </Button>
-            </td>
-          </tr>
+              <td style={{ textAlign: "center" }}>
+                <Button
+                  style={{
+                    backgroundColor: "var(--Contactar)",
+                    border: "none",
+                  }}
+                >
+                  <FontAwesomeIcon icon={faPhoneAlt} />
+                </Button>
+              </td>
+            </tr>
+          ))}
         </tbody>
       </Table>
       <Container style={{ textAlign: "center" }}>
@@ -86,4 +91,22 @@ const ListadoDeDonadores = (): JSX.Element => {
     </Container>
   );
 };
+
+export const getServerSideProps = async () => {
+  await conectarDB();
+
+  /* find all the data in our database */
+  const result = await Donador.find({});
+  const donadores = result.map((doc) => {
+    const donador = doc.toObject();
+    console.log(donador);
+    
+
+    donador._id = donador._id.toString();
+    return donador;
+  });
+
+  return { props: { donadores } };
+};
+
 export default ListadoDeDonadores;

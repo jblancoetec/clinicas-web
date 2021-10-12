@@ -4,8 +4,6 @@ import { faEdit } from "@fortawesome/free-solid-svg-icons";
 import { faTrashAlt } from "@fortawesome/free-regular-svg-icons";
 import { faUserPlus } from "@fortawesome/free-solid-svg-icons";
 import { Button, Container, Table } from "react-bootstrap";
-import Link from 'next/link'
-import Administrador from '../models/Administrador'
 import conectarDB from "../lib/conexionDB";
 
 
@@ -70,18 +68,6 @@ const ListadoDeAdministradores = (): JSX.Element => {
     </Container>
   );
 };
-
-export async function getServerSideProps() {
-  await conectarDB()
-  const result = await Administrador.find({})
-  const admins = result.map((doc) => {
-    const admin = doc.toObject()
-    admin._id = admin._id.toString()
-    return admin
-  })
-
-  return { props: { admins: admins } }
-}
 
 
 export default ListadoDeAdministradores;

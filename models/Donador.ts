@@ -1,14 +1,13 @@
-import mongoose from "mongoose";
-interface Donador extends Document{
-  nombre:string;
-  apellido:string;
-  email:string;
-  telefono:string;
-  Tipo_Donador:string;
+import { model, Schema, models } from "mongoose";
+export interface IDonador {
+  nombre: string;
+  apellido: string;
+  email: string;
+  telefono: string;
+  tipo_donador: string;
 }
 
-
-const DonadorSchema = new mongoose.Schema({
+const DonadorSchema = new Schema<IDonador>({
   nombre: {
     type: String,
     required: [true, "Ingrese su nombre."],
@@ -25,7 +24,7 @@ const DonadorSchema = new mongoose.Schema({
     type: String,
     required: [true, "Ingrese su numero telefonico."],
   },
-  Tipo_Donador: {
+  tipo_donador: {
     type: String,
     require: [true, "Ingrese el tipo de donación"],
   },
@@ -33,5 +32,4 @@ const DonadorSchema = new mongoose.Schema({
 
 //const Donador : model <Donador> = model (donador, donadorescheme)
 
-export default mongoose.models.Donador ||
-  mongoose.model("Donador", DonadorSchema);
+export default models.Donador || model("Donador", DonadorSchema);

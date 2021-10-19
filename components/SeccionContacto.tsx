@@ -9,6 +9,10 @@ import {
 } from "react-bootstrap";
 import styles from "../styles/Seccion.module.css";
 
+const checkFormulario = (tipoDonador: string, nombre: string, apellido: string, telefono: string, correo: string) => {
+
+}
+
 const SeccionContacto: React.FC = () => {
   return (
     <>
@@ -60,7 +64,7 @@ const SeccionContacto: React.FC = () => {
                   name="email"
                 />
               </Form.Group>
-              <Button
+              <Button disabled
                 type="submit"
                 style={{ backgroundColor: "var(--violeta)" }}
               >

@@ -14,14 +14,40 @@ const Cuestionario = {
       recomendacion:
         "Lamentablemente, por cuestiones de salud, el peso mínimo para poder donar es de 50kg",
     },
-    {
-      texto: "¿Pesas más de 50kg?",
-      recomendacion:
-        "Lamentablemente, por cuestiones de salud, el peso mínimo para poder donar es de 50kg",
-    },
-   
   ],
-  preguntasPorNo: [],
+  preguntasPorNo: [
+    {
+      texto: "¿Ha donado sangre en las últimas 8 semanas?",
+      recomendacion: "",
+    },
+    {
+      texto: "Sufrió algún inconveniente con posterioridad a la donación?",
+      recomendacion: "",
+    },
+    {
+      texto:
+        "¿Lo han rechazado como donante de sangre o le dijeron que no puede donar?",
+      recomendacion: "",
+    },
+    {
+      texto: "Está tomando alguna medicación?",
+      recomendacion: "",
+    },
+    {
+      texto:
+        "¿Ha padecido alguna enfermedad grave que exigió control médico periódico?",
+      recomendacion: "",
+    },
+    {
+      texto:
+        "¿Ha padecido o padece enfermedades del corazón (infarto, angina de pecho, etc.)?",
+      recomendacion: "",
+    },
+    {
+      texto: "¿Ha recibido transfusiones de sangre?9",
+      recomendacion: "",
+    },
+  ],
 };
 
 export default Cuestionario;

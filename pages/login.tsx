@@ -34,6 +34,7 @@ const login = () => {
               alt="logo del hospital de clinica"
               style={{
                 width: "30rem",
+                border: "none",
               }}
             />
           </div>

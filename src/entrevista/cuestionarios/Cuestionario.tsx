@@ -44,7 +44,7 @@ const Cuestionario = {
       recomendacion: "",
     },
     {
-      texto: "¿Ha recibido transfusiones de sangre?9",
+      texto: "¿Ha recibido transfusiones de sangre?",
       recomendacion: "",
     },
   ],

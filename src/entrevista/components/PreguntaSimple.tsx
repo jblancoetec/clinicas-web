@@ -1,18 +1,14 @@
 import React, { useState } from "react";
-import stylesSeccion from "../styles/Seccion.module.css";
-import styles from "../styles/PreguntaSimple.module.css";
+import styles from "./PreguntaSimple.module.css";
 import { ButtonGroup, Button, Modal, Alert } from "react-bootstrap";
-import { Pregunta } from "./Cuestionario";
+import { Pregunta } from "../cuestionarios/Cuestionario";
 
-interface PropsPreguntaSimple {
+interface Props {
   pregunta: Pregunta;
   aprobarRespuesta: () => void;
 }
 
-const PreguntaSimple: React.FC<PropsPreguntaSimple> = ({
-  pregunta,
-  aprobarRespuesta,
-}) => {
+const PreguntaSimple = ({ pregunta, aprobarRespuesta }: Props) => {
   const [equivocada, setEquivocada] = useState<boolean>(false);
 
   const mostrarJustificacion = () => setEquivocada(true);
@@ -20,7 +16,15 @@ const PreguntaSimple: React.FC<PropsPreguntaSimple> = ({
 
   return (
     <>
-      <h4 className={stylesSeccion.Titulo}>{pregunta.texto}</h4>
+      <h4
+        style={{
+          textAlign: "center",
+          color: "var(--violeta)",
+          margin: "1rem auto 2rem auto",
+        }}
+      >
+        {pregunta.texto}
+      </h4>
       <div className={styles.Contenedor}>
         <ButtonGroup>
           <Button className={styles.BotonSi} onClick={aprobarRespuesta}>

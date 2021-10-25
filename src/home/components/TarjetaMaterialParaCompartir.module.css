@@ -1,0 +1,14 @@
+.Tarjeta {
+  border: none;
+}
+.TarjetaCuerpo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.TarjetaEnlaces {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

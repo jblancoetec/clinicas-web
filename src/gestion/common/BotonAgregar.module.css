@@ -1,0 +1,9 @@
+.Boton {
+  background-color: var(--verde);
+  border: none;
+  color: var(--Negro);
+}
+
+.Contenedor {
+  text-align: center;
+}

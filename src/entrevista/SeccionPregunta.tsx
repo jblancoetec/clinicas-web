@@ -1,21 +1,13 @@
 import React, { useState } from "react";
-import {
-  Container,
-  ButtonGroup,
-  Button,
-  Modal,
-  Alert,
-  ProgressBar,
-} from "react-bootstrap";
-import stylesSeccion from "../styles/Seccion.module.css";
-import PreguntaSimple from "./PreguntaSimple";
-import Cuestionario, { Pregunta } from "./Cuestionario";
+import { Container, Modal, Alert, ProgressBar } from "react-bootstrap";
+import PreguntaSimple from "./components/PreguntaSimple";
+import Cuestionario, { Pregunta } from "./cuestionarios/Cuestionario";
 
 const cantidadPreguntas: number = Cuestionario.preguntasPorSi.length;
 
-const SeccionPregunta: React.FC = () => {
-  const [idPregunta, setIdPregunta] = useState<number>(0);
-  const [finalizado, setFinalizado] = useState<boolean>(false);
+const SeccionPregunta = () => {
+  const [idPregunta, setIdPregunta] = useState(0);
+  const [finalizado, setFinalizado] = useState(false);
 
   const pasarPregunta = () => {
     const nextIdPregunta = Math.min(cantidadPreguntas - 1, idPregunta + 1);
@@ -35,15 +27,27 @@ const SeccionPregunta: React.FC = () => {
 
   return (
     <>
-      <section className={stylesSeccion.Seccion}>
-        <Container className={stylesSeccion.Contenedor}>
+      <section
+        style={{
+          backgroundColor: "transparent",
+          margin: "2rem auto 1rem auto",
+        }}
+      >
+        <Container
+          style={{
+            backgroundColor: "white",
+            borderRadius: "1rem",
+            overflow: "auto",
+            padding: "1rem",
+          }}
+        >
           {pregunta}
           <ProgressBar
             now={(idPregunta / cantidadPreguntas) * 100}
             label={`${Math.round((idPregunta / cantidadPreguntas) * 100)}%`}
             style={{ marginTop: "3rem", backgroundColor: "var (--violeta)" }}
           />
-        </Container>  
+        </Container>
       </section>
 
       <Modal

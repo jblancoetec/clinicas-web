@@ -1,12 +1,12 @@
 import { model, Schema, models, ObjectId } from "mongoose";
 
-export interface ITurnos {
+export interface ITurno {
   paciente: ObjectId;   
   email: string; 
   fecha: Date;  
     
   }                                                 
-  const TurnosSchema = new Schema<ITurnos>({
+  const TurnoSchema = new Schema<ITurno>({
     paciente: {
       type: Schema.Types.ObjectId, 
       ref: 'Donador',
@@ -23,5 +23,5 @@ export interface ITurnos {
   
   //const Donador : model <Donador> = model (donador, donadorescheme)
   
-  export default models.Turnos || model("Turnos", TurnosSchema);
+  export default models.Turno || model("Turnos", TurnoSchema);
   

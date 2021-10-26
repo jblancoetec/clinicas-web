@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import conectarDB from "../../../../lib/conexionDB";
-import Turnos from "../../../../models/Turnos";
+import Turno from "../../../../models/Turno";
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   await conectarDB();
@@ -9,7 +9,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   } = req;
 
   try {
-    const deletedTurno = await Turnos.deleteOne({ _id: id });
+    const deletedTurno = await Turno.deleteOne({ _id: id });
     if (!deletedTurno) {
       return res.status(400).json({ success: false });
     }

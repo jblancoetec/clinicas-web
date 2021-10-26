@@ -6,7 +6,7 @@ import { IDonador } from "../../../models/Donador";
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
     await conectarDB();
-    const Donadores: IDonador[] = await Donador.find();
+    const Donadores: IDonador[] = await Donador.find({});
     res.status(200).json(Donadores);
   } catch (error) {
     console.log(error);

@@ -1,12 +1,12 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import conectarDB from "../../../lib/conexionDB";
-import Turnos from "../../../models/Turnos";
-import { ITurnos } from "../../../models/Turnos";
+import Turno from "../../../models/Turno";
+import {ITurno} from "../../../models/Turno";
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
     await conectarDB();
-    const turno: ITurnos[] = await Turnos.find();
+    const turno: ITurno[] = await Turno.find({});
     res.status(200).json(turno);
   } catch (error) {
     console.log(error);

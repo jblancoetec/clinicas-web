@@ -9,7 +9,7 @@ interface Props {
   donadores: IDonador[];
 }
 
-const encabezado = [
+const encabezados = [
   "Nombre",
   "Apellido",
   "Email",
@@ -19,12 +19,12 @@ const encabezado = [
 
 const acciones = ["Editar", "Eliminar", "Contactar"];
 
-const TablaDeDonadores = ({ donadores }: Props): JSX.Element => {
+const TablaDeDonadores = ({ donadores }: Props) => {
   return (
     <>
       <Tabla
         titulo="Listado de Donadores"
-        encabezado={encabezado}
+        encabezados={encabezados}
         acciones={acciones}
       >
         {donadores.map((donador: IDonador) => (

@@ -7,7 +7,7 @@ import BotonAgregar from "../common/BotonAgregar";
 interface Props {
   administradores: IAdministrador[];
 }
-const encabezado = ["Nombre", "Apellido", "Email", "Telefono", "Usuario"];
+const encabezados = ["Nombre", "Apellido", "Email", "Telefono", "Usuario"];
 
 const acciones = ["Editar", "Eliminar"];
 
@@ -15,7 +15,7 @@ const TablaDeAdministradores = ({ administradores }: Props) => (
   <>
     <Tabla
       titulo="Listado de Administradores"
-      encabezado={encabezado}
+      encabezados={encabezados}
       acciones={acciones}
     >
       {administradores.map((administrador: IAdministrador) => (

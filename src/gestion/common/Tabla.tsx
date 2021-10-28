@@ -4,24 +4,24 @@ import style from "./Tabla.module.css";
 
 interface Props {
   titulo: string;
-  encabezado: string[];
+  encabezados: string[];
   acciones: string[];
   children: React.ReactNode;
 }
-const Tabla = ({ titulo, encabezado, acciones, children }: Props) => {
+const Tabla = ({ titulo, encabezados, acciones, children }: Props) => {
   return (
     <Container>
       <h3>{titulo}</h3>
       <Table striped bordered hover size="sm">
         <thead>
           <tr>
-            {encabezado.map((encabezado, index) => (
-              <th className={style.EncabezadoColumna} key={index}>
+            {encabezados.map((encabezado, index) => (
+              <th className={style.EncabezadoDatos} key={index}>
                 {encabezado}
               </th>
             ))}
             {acciones.map((accion, index) => (
-              <th className={style.AccionColumna} key={index}>
+              <th className={style.EncabezadoAcciones} key={index}>
                 {accion}
               </th>
             ))}

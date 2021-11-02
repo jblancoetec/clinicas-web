@@ -11,7 +11,7 @@ const administradores = ({ documentos }: Props) => {
 
 export const getServerSideProps = async () => {
   return await obtenerDocumentos<IAdministrador>(
-    "/administrador/getAdministradores"
+    "/Administrador/getAdministradores"
   );
 };
 

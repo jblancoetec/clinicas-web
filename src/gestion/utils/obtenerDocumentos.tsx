@@ -1,13 +1,14 @@
 import axios, { AxiosRequestConfig, AxiosResponse } from "axios";
 
+const config: AxiosRequestConfig = {
+  method: "GET",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  baseURL: process.env.API_URL,
+};
+
 const obtenerDocumentos = async <Type,>(url: string) => {
-  const config: AxiosRequestConfig = {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    baseURL: process.env.API_URL,
-  };
   try {
     const res: AxiosResponse = await axios.get<Type[]>(url, config);
     const documentos = res.data;

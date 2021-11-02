@@ -9,6 +9,6 @@ const donadores = ({ documentos }: Props) => (
 );
 
 export const getServerSideProps = async () => {
-  return await obtenerDocumentos<IDonador>("/donador/getDonadores");
+  return await obtenerDocumentos<IDonador>("/Donador/getDonadores");
 };
 export default donadores;

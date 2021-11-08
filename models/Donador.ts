@@ -1,4 +1,4 @@
-import { model, Schema, models } from "mongoose";
+import { model, Schema, models, ObjectId } from "mongoose";
 
 export interface IDonador {
   nombre: string;
@@ -6,6 +6,7 @@ export interface IDonador {
   email: string;
   telefono: string;
   tipo_donador: string;
+  _id: ObjectId;
 }
 
 const DonadorSchema = new Schema<IDonador>({

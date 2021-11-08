@@ -1,4 +1,4 @@
-import { model, Schema, models } from "mongoose";
+import { model, Schema, models, ObjectId } from "mongoose";
 
 export interface IAdministrador {
   nombre: string;
@@ -6,7 +6,9 @@ export interface IAdministrador {
   email: string;
   telefono: string;
   usuario: string;
+  _id: ObjectId;
 }
+
 const AdministradorSchema: Schema = new Schema<IAdministrador>({
   nombre: {
     type: String,

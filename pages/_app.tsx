@@ -4,7 +4,7 @@ import { config } from "@fortawesome/fontawesome-svg-core";
 import "../styles/globals.css";
 import "../styles/normalize.css";
 import type { AppProps } from "next/app";
-import Layout from "../src/layout/Layout";
+import Layout from "../src/_layout/Layout";
 
 config.autoAddCss = false;
 

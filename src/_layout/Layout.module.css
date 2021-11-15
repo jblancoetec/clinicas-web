@@ -1,0 +1,22 @@
+.Header {
+  height: 3rem;
+  background-color: white;
+  font-family: var(--nueva-fuente-texto);
+  font-size: 1rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+.Nav {
+  width: 100%;
+}
+
+.Contenedor {
+  display: flex;
+  justify-content: space-between;
+}
+
+.Main {
+  background-color: var(--gris);
+}

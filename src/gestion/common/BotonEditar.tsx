@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
 import { Button, Modal } from "react-bootstrap";
 import styles from "./BotonEditar.module.css";
-//import Formulario from "../Formulario/Editar/Donador";
+import Formulario from "../Formulario/Editar/Donador";
 
 interface Props {
   children: React.ReactNode;

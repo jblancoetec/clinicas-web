@@ -10,6 +10,7 @@ import {
 } from "react-bootstrap";
 
 import stylesSeccion from "../shared/Seccion.module.css";
+import Link from "next/link";
 
 const login = () => {
   return (
@@ -63,13 +64,14 @@ const login = () => {
                 placeholder="Ingrese su contraseña"
               />
             </FormGroup>
+
             <Button
               type="submit"
               style={{
                 backgroundColor: "var(--violeta)",
               }}
             >
-              Iniciar
+              <Link href="/gestion/home">Iniciar</Link>
             </Button>
           </Form>
         </div>

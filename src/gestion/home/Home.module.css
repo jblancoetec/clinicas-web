@@ -1,0 +1,13 @@
+.Contenedor {
+  height: 100%;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@media screen and (max-width: 1024px) {
+  .Contenedor {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+  }
+}

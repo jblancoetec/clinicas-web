@@ -2,7 +2,7 @@ import React from "react";
 import { IDonador } from "../../../models/Donador";
 import Tabla from "../common/Tabla";
 import Registro from "./RegistroDeDonador";
-import Boton from "../common/BotonAgregar";
+//import Boton from "../common/BotonAgregar";
 import BotonAgregar from "../common/BotonAgregar";
 
 interface Props {

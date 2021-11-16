@@ -3,7 +3,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { Button } from "react-bootstrap";
 import { IDonador } from "../../../models/Donador";
-import BotonEliminar from "../common/BotonEliminar"
+import BotonEliminar from "../common/BotonEliminar";
+import BotonEditar from "../common/BotonEditar";
+import Formulario from "../Formulario/Editar/Donador";
+import BotonContactar from "../common/BotonContactar";
 
 interface Props {
   donador: IDonador;
@@ -17,17 +20,15 @@ const RegistroDeDonador = ({ donador }: Props) => {
       <td>{donador.telefono}</td>
       <td>{donador.tipo_donador}</td>
       <td style={{ textAlign: "center" }}>
-        <Button style={{ backgroundColor: "var(--Editar)", border: "none" }}>
-          <FontAwesomeIcon icon={faEdit} />
-        </Button>
+        <BotonEditar>
+          <Formulario />
+        </BotonEditar>
       </td>
       <td style={{ textAlign: "center" }}>
-        <BotonEliminar url={`/Donador/deleteDonador/${donador._id}`}/> 
+        <BotonEliminar url={`/Donador/deleteDonador/${donador._id}`} />
       </td>
       <td style={{ textAlign: "center" }}>
-        <Button style={{ backgroundColor: "var(--Contactar)", border: "none" }}>
-          <FontAwesomeIcon icon={faPhoneAlt} />
-        </Button>
+        <BotonContactar />
       </td>
     </tr>
   );

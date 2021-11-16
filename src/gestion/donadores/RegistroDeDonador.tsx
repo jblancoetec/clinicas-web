@@ -1,8 +1,9 @@
-import { faTrashAlt } from "@fortawesome/free-regular-svg-icons";
 import { faEdit, faPhoneAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React from "react";
 import { Button } from "react-bootstrap";
 import { IDonador } from "../../../models/Donador";
+import BotonEliminar from "../common/BotonEliminar"
 
 interface Props {
   donador: IDonador;
@@ -21,9 +22,7 @@ const RegistroDeDonador = ({ donador }: Props) => {
         </Button>
       </td>
       <td style={{ textAlign: "center" }}>
-        <Button style={{ backgroundColor: "var(--Eliminar)", border: "none" }}>
-          <FontAwesomeIcon icon={faTrashAlt} />
-        </Button>
+        <BotonEliminar url={`/Donador/deleteDonador/${donador._id}`}/> 
       </td>
       <td style={{ textAlign: "center" }}>
         <Button style={{ backgroundColor: "var(--Contactar)", border: "none" }}>

@@ -4,6 +4,7 @@ import React from "react";
 import { Button } from "react-bootstrap";
 import styles from "./BotonEliminar.module.css"
 import eliminarDocumentos from "../utils/eliminarDocumento"
+
 interface Props{
   url :string
 }

@@ -1,7 +1,7 @@
-import { faEdit, faPhoneAlt } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+//import { faEdit, faPhoneAlt } from "@fortawesome/free-solid-svg-icons";
+//import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+//import { Button } from "react-bootstrap";
 import React from "react";
-import { Button } from "react-bootstrap";
 import { IDonador } from "../../../models/Donador";
 import BotonEliminar from "../common/BotonEliminar";
 import BotonEditar from "../common/BotonEditar";

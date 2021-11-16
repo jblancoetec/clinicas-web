@@ -1,17 +1,17 @@
 import React from "react";
 import { Button, Container, Form, FormGroup, Row } from "react-bootstrap";
 
-const FormAgregarAdministrador = () => {
+const FormAgregarDonador = () => {
   return (
     <section>
       <Container>
         <div
           style={{
-            width: "50rem",
+            width: "auto",
             margin: "auto",
           }}
         >
-          <h2>Agregar un nuevo usuario</h2>
+          <h2 style={{ textAlign: "center" }}>Editar donador</h2>
           <Form
             style={{
               display: "flex",
@@ -29,7 +29,6 @@ const FormAgregarAdministrador = () => {
                 <Form.Label>*Apellido</Form.Label>
                 <Form.Control type="text" placeholder="Por ejemplo: Perez" />
               </FormGroup>
-
               <FormGroup style={{ marginBottom: "1rem" }}>
                 <Form.Label>*Correo electronico</Form.Label>
                 <Form.Control
@@ -67,4 +66,4 @@ const FormAgregarAdministrador = () => {
     </section>
   );
 };
-export default FormAgregarAdministrador;
+export default FormAgregarDonador;

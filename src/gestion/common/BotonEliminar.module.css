@@ -1,4 +1,11 @@
+<<<<<<< Updated upstream
 .Boton{
     background-color: var(--Eliminar);
     border: none;
 }
+=======
+.Boton {
+  background-color: var(--Eliminar);
+  border: none;
+}
+>>>>>>> Stashed changes

@@ -1,9 +1,17 @@
+<<<<<<< Updated upstream
 import { faEdit, faPhoneAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { Button } from "react-bootstrap";
 import { IDonador } from "../../../models/Donador";
 import BotonEliminar from "../common/BotonEliminar"
+=======
+import { IDonador } from "../../../models/Donador";
+import BotonContactar from "../common/BotonContactar";
+import BotonEditar from "../common/BotonEditar";
+import BotonEliminar from "../common/BotonEliminar";
+import Formulario from "../Formulario/Editar/Donador";
+>>>>>>> Stashed changes
 
 interface Props {
   donador: IDonador;
@@ -17,17 +25,19 @@ const RegistroDeDonador = ({ donador }: Props) => {
       <td>{donador.telefono}</td>
       <td>{donador.tipo_donador}</td>
       <td style={{ textAlign: "center" }}>
-        <Button style={{ backgroundColor: "var(--Editar)", border: "none" }}>
-          <FontAwesomeIcon icon={faEdit} />
-        </Button>
+        <BotonEditar>
+          <Formulario />
+        </BotonEditar>
       </td>
       <td style={{ textAlign: "center" }}>
+<<<<<<< Updated upstream
         <BotonEliminar url={`/Donador/deleteDonador/${donador._id}`}/> 
+=======
+        <BotonEliminar />
+>>>>>>> Stashed changes
       </td>
       <td style={{ textAlign: "center" }}>
-        <Button style={{ backgroundColor: "var(--Contactar)", border: "none" }}>
-          <FontAwesomeIcon icon={faPhoneAlt} />
-        </Button>
+        <BotonContactar />
       </td>
     </tr>
   );

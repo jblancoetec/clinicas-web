@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { Button } from "react-bootstrap";
 import { IAdministrador } from "../../../models/Administrador";
+import BotonEliminar from "../common/BotonEliminar"
 
 interface Props {
   administrador: IAdministrador;
@@ -17,9 +18,7 @@ const RegistroDeAdministrador = ({ administrador }: Props) => {
       <td>{administrador.telefono}</td>
       <td>{administrador.usuario}</td>
       <td style={{ textAlign: "center" }}>
-        <Button style={{ backgroundColor: "var(--Editar)", border: "none" }}>
-          <FontAwesomeIcon icon={faEdit} />
-        </Button>
+      <BotonEliminar/>
       </td>
       <td style={{ textAlign: "center" }}>
         <Button style={{ backgroundColor: "var(--Eliminar)", border: "none" }}>

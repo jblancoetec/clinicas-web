@@ -1,4 +1,4 @@
-import { faEdit } from "@fortawesome/free-regular-svg-icons";
+import { faTrashAlt } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { Button } from "react-bootstrap";
@@ -15,7 +15,7 @@ const eliminar = () => {
   return (
     <>
       <Button className = {styles.Boton} onClick={eliminar}>
-        <FontAwesomeIcon icon={faEdit} />
+        <FontAwesomeIcon icon={faTrashAlt} />
       </Button>
     </>
   );

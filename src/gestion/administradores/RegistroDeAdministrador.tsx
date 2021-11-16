@@ -1,5 +1,4 @@
-import { faTrashAlt } from "@fortawesome/free-regular-svg-icons";
-import { faEdit } from "@fortawesome/free-solid-svg-icons";
+import { faEdit, faPhoneAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { Button } from "react-bootstrap";
@@ -18,12 +17,12 @@ const RegistroDeAdministrador = ({ administrador }: Props) => {
       <td>{administrador.telefono}</td>
       <td>{administrador.usuario}</td>
       <td style={{ textAlign: "center" }}>
-      <BotonEliminar url={`/Administrador/deleteAdministrador/${administrador._id}`}/> 
+      <Button style={{ backgroundColor: "var(--Editar)", border: "none" }}>
+          <FontAwesomeIcon icon={faEdit} />
+        </Button>
       </td>
       <td style={{ textAlign: "center" }}>
-        <Button style={{ backgroundColor: "var(--Eliminar)", border: "none" }}>
-          <FontAwesomeIcon icon={faTrashAlt} />
-        </Button>
+        <BotonEliminar url={`/Administrador/deleteAdministrador/${administrador._id}`}/> 
       </td>
     </tr>
   );

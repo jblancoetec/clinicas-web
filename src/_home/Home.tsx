@@ -8,19 +8,19 @@ const _Home = () => {
       <Columna
         mensaje="SANGRE"
         urlImagen="https://upload.wikimedia.org/wikipedia/commons/6/63/Mar%C3%ADa_Eugenia_Vidal_con_la_campa%C3%B1a_de_donaci%C3%B3n_voluntaria_de_sangre_%287396688818%29.jpg"
-        urlInformacion="/"
+        urlInformacion="/promocion/donacionSangre"
         urlFormularioEvaluacion="/quieroDonar"
       />
       <Columna
         mensaje="PLASMA"
         urlImagen="https://live.staticflickr.com/2808/33081727711_c35b1840d7_h.jpg"
-        urlInformacion="/"
+        urlInformacion="/promocion/donacionPlasma"
         urlFormularioEvaluacion="/quieroDonar"
       />
       <Columna
         mensaje="PLAQUETAS"
         urlImagen="https://upload.wikimedia.org/wikipedia/commons/8/80/Donaci%C3%B3n_sangu%C3%ADnea_por_aferesis.jpg"
-        urlInformacion="/"
+        urlInformacion="/promocion/donacionPlaqueta"
         urlFormularioEvaluacion="/quieroDonar"
       />
     </Container>

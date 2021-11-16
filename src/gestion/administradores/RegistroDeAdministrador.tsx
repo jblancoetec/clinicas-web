@@ -18,7 +18,7 @@ const RegistroDeAdministrador = ({ administrador }: Props) => {
       <td>{administrador.telefono}</td>
       <td>{administrador.usuario}</td>
       <td style={{ textAlign: "center" }}>
-      <BotonEliminar/>
+      <BotonEliminar url={`/Administrador/deleteAdministrador/${administrador._id}`}/> 
       </td>
       <td style={{ textAlign: "center" }}>
         <Button style={{ backgroundColor: "var(--Eliminar)", border: "none" }}>

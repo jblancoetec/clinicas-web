@@ -8,9 +8,9 @@ const config: AxiosRequestConfig = {
   baseURL: process.env.API_URL,
 };
 
-const eliminarDocumentos = async <Type,>(url: string) => {
+const eliminarDocumentos = async (url: string) => {
   try {
-    await axios.delete<Type[]>(url, config);
+    await axios.delete(url, config);
   } catch (error) {
     console.log(error);
     return {

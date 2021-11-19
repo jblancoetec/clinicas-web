@@ -12,8 +12,12 @@ const _Layout = ({ children }: Props) => {
       <header className={styles.Header}>
         <nav className={styles.Nav}>
           <Container className={styles.Contenedor}>
-            <Link href="/">HOME</Link>
-            <Link href="/login">ACCEDER</Link>
+            <Link href="/">
+              <a>HOME</a>
+            </Link>
+            <Link href="/login">
+              <a>ACCEDER</a>
+            </Link>
           </Container>
         </nav>
       </header>

@@ -71,7 +71,9 @@ const login = () => {
                 backgroundColor: "var(--violeta)",
               }}
             >
-              <Link href="/gestion/home">Iniciar</Link>
+              <Link href="/gestion/home">
+                <a>Iniciar</a>
+              </Link>
             </Button>
           </Form>
         </div>

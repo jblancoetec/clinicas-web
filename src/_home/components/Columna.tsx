@@ -14,31 +14,31 @@ const Columna = ({
   urlImagen,
   urlInformacion,
   urlFormularioEvaluacion,
-}: Props) => {
-  return (
-    <div
-      className={styles.Columna}
-      style={{
-        backgroundImage: `url(${urlImagen})`,
-      }}
-    >
-      <div className={`${styles.Opacidad} ${styles.Contenedor}`}>
-        <div className={styles.Encabezado}>Vos tambien podes</div>
-        <div className={styles.Mensaje}>
-          <Link href={urlInformacion}>
-            <>
-              DONAR <br /> {mensaje}
-            </>
-          </Link>
-        </div>
-        <div className={styles.Botones}>
-          <Button variant="outline-light" className={styles.Boton}>
-            <Link href={urlFormularioEvaluacion}>CUESTIONARIO DE APTITUD</Link>
-          </Button>
-        </div>
+}: Props) => (
+  <div
+    className={styles.Columna}
+    style={{
+      backgroundImage: `url(${urlImagen})`,
+    }}
+  >
+    <div className={`${styles.Opacidad} ${styles.Contenedor}`}>
+      <div className={styles.Encabezado}>Vos tambien podes</div>
+      <div className={styles.Mensaje}>
+        <Link href={urlInformacion}>
+          <a>
+            DONAR <br /> {mensaje}
+          </a>
+        </Link>
+      </div>
+      <div className={styles.Botones}>
+        <Link href={urlFormularioEvaluacion}>
+          <a className={`${styles.Boton} btn btn-outline-light`}>
+            CUESTIONARIO DE APTITUD
+          </a>
+        </Link>
       </div>
     </div>
-  );
-};
+  </div>
+);
 
 export default Columna;

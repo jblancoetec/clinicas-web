@@ -19,7 +19,9 @@ const Columna = ({ titulo, url, descripcion, urlImagen }: Props) => {
     >
       <div className={`${styles.Opacidad} ${styles.Contenedor}`}>
         <div className={styles.Mensaje}>
-          <Link href={url}>{titulo}</Link>
+          <Link href={url}>
+            <a>{titulo}</a>
+          </Link>
         </div>
         <div className={styles.Encabezado}>{descripcion}</div>
       </div>

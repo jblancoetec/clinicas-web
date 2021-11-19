@@ -2,8 +2,8 @@ import React from "react";
 import { IDonador } from "../../../models/Donador";
 import Tabla from "../common/Tabla";
 import Registro from "./RegistroDeDonador";
-//import Boton from "../common/BotonAgregar";
 import BotonAgregar from "../common/BotonAgregar";
+import Donador from "../formularios/editar/Donador";
 
 interface Props {
   donadores: IDonador[];
@@ -31,7 +31,7 @@ const TablaDeDonadores = ({ donadores }: Props) => {
           <Registro key={donador.email} donador={donador} />
         ))}
       </Tabla>
-      <BotonAgregar texto="Agregar Donador/a" />
+      <BotonAgregar formulario={<Donador />}>Agregar donador/a</BotonAgregar>
     </>
   );
 };

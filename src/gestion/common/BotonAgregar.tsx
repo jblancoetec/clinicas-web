@@ -3,26 +3,31 @@ import React from "react";
 import { Button, Modal } from "react-bootstrap";
 import styles from "./BotonAgregar.module.css";
 import { useState } from "react";
-import { faEdit } from "@fortawesome/free-solid-svg-icons";
+import { faEdit, faUserPlus } from "@fortawesome/free-solid-svg-icons";
+import { Container } from "react-bootstrap";
 
 interface Props {
+  formulario: React.ReactNode;
   children: React.ReactNode;
 }
 
-const BotonAgregar = ({ children }: Props) => {
+const BotonAgregar = ({ formulario, children }: Props) => {
   const [FormularioVisible, setFormlarioVisible] = useState(false);
 
-  const CerrarFormulario = () => setFormlarioVisible(false);
-  const AbrirFormulario = () => setFormlarioVisible(true);
+  const cerrarFormulario = () => setFormlarioVisible(false);
+  const abrirFormulario = () => setFormlarioVisible(true);
 
   return (
     <>
-      <Button className={styles.Boton} onClick={AbrirFormulario}>
-        <FontAwesomeIcon icon={faEdit} />
-      </Button>
+      <Container className={styles.Contenedor}>
+        <Button className={styles.Boton} onClick={abrirFormulario}>
+          <div className={styles.Texto}>{children}</div>
+          <FontAwesomeIcon icon={faUserPlus} />
+        </Button>
+      </Container>
 
-      <Modal show={FormularioVisible} onHide={CerrarFormulario}>
-        {children}
+      <Modal show={FormularioVisible} onHide={cerrarFormulario}>
+        {formulario}
       </Modal>
     </>
   );

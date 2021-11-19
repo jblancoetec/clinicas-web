@@ -4,3 +4,7 @@
 .EncabezadoAcciones {
   text-align: center;
 }
+
+.Tabla {
+  overflow-x: auto;
+}

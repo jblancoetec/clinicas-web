@@ -1,0 +1,16 @@
+.Formulario {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.Titulo {
+  text-align: center;
+}
+
+.Contenedor {
+  width: 210px;
+  margin-left: auto;
+  margin-right: auto;
+}

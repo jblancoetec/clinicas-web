@@ -3,6 +3,7 @@ import { IAdministrador } from "../../../models/Administrador";
 import Tabla from "../common/Tabla";
 import RegistroDeAdministrador from "./RegistroDeAdministrador";
 import BotonAgregar from "../common/BotonAgregar";
+import Donador from "../formularios/editar/Donador";
 
 interface Props {
   administradores: IAdministrador[];
@@ -25,7 +26,7 @@ const TablaDeAdministradores = ({ administradores }: Props) => (
         />
       ))}
     </Tabla>
-    <BotonAgregar texto="Agregar Donador/a" />
+    <BotonAgregar formulario={Donador}>Agregar administrador/a</BotonAgregar>
   </>
 );
 

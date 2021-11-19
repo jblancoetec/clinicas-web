@@ -7,3 +7,7 @@
 .Contenedor {
   text-align: center;
 }
+.Texto {
+  display: inline;
+  margin-right: 16px;
+}

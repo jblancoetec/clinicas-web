@@ -1,11 +1,8 @@
-//import { faEdit, faPhoneAlt } from "@fortawesome/free-solid-svg-icons";
-//import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-//import { Button } from "react-bootstrap";
 import React from "react";
 import { IDonador } from "../../../models/Donador";
 import BotonEliminar from "../common/BotonEliminar";
 import BotonEditar from "../common/BotonEditar";
-import Formulario from "../Formulario/Editar/Donador";
+import Donador from "../formularios/editar/Donador";
 import BotonContactar from "../common/BotonContactar";
 
 interface Props {
@@ -21,7 +18,7 @@ const RegistroDeDonador = ({ donador }: Props) => {
       <td>{donador.tipo_donador}</td>
       <td style={{ textAlign: "center" }}>
         <BotonEditar>
-          <Formulario />
+          <Donador />
         </BotonEditar>
       </td>
       <td style={{ textAlign: "center" }}>

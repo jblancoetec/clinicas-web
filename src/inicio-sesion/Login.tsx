@@ -66,7 +66,6 @@ const login = () => {
             </FormGroup>
 
             <Button
-              type="submit"
               style={{
                 backgroundColor: "var(--violeta)",
               }}

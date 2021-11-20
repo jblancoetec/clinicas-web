@@ -2,7 +2,7 @@ import { Container } from "react-bootstrap";
 import styles from "./Home.module.css";
 import Columna from "./components/Columna";
 
-const _Home = () => {
+const Home = () => {
   return (
     <Container fluid className={styles.Contenedor}>
       <Columna
@@ -27,4 +27,4 @@ const _Home = () => {
   );
 };
 
-export default _Home;
+export default Home;

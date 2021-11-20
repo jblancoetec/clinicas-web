@@ -3,19 +3,16 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { Button } from "react-bootstrap";
 import styles from "./BotonEliminar.module.css";
-import eliminarDocumentos from "../utils/eliminarDocumento";
+import eliminarDocumento from "../utils/eliminarDocumento";
 
 interface Props {
-  url: string;
+  onClick: () => void;
 }
 
-const BotonEliminar = ({ url }: Props) => {
-  const eliminar = () => {
-    eliminarDocumentos(url);
-  };
+const BotonEliminar = ({ onClick }: Props) => {
   return (
     <>
-      <Button className={styles.Boton} onClick={eliminar}>
+      <Button className={styles.Boton} onClick={onClick}>
         <FontAwesomeIcon icon={faTrashAlt} />
       </Button>
     </>

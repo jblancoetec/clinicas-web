@@ -5,21 +5,14 @@ const config: AxiosRequestConfig = {
   headers: {
     "Content-Type": "application/json",
   },
-  baseURL: process.env.API_URL,
 };
 
-const eliminarDocumentos = async (url: string) => {
+const eliminarDocumento = async (url: string): Promise<void> => {
   try {
     await axios.delete(url, config);
   } catch (error) {
     console.log(error);
-    return {
-      redirect: {
-        destination: "/gestion/administradores",
-        statusCode: 307,
-      },
-    };
   }
 };
 
-export default eliminarDocumentos;
+export default eliminarDocumento;

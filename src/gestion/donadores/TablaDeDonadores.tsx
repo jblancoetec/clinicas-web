@@ -1,13 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import { IDonador } from "../../../models/Donador";
 import Tabla from "../common/Tabla";
 import Registro from "./RegistroDeDonador";
 import BotonAgregar from "../common/BotonAgregar";
-import Donador from "../formularios/editar/Donador";
-
-interface Props {
-  donadores: IDonador[];
-}
+import FormEditarDonador from "../formularios/editar/Donador";
+import { DocsContext } from "../contextos/DocsContextProvider";
 
 const encabezados = [
   "Nombre",
@@ -19,7 +16,8 @@ const encabezados = [
 
 const acciones = ["Editar", "Eliminar", "Contactar"];
 
-const TablaDeDonadores = ({ donadores }: Props) => {
+const TablaDeDonadores = () => {
+  const { docs } = useContext(DocsContext);
   return (
     <>
       <Tabla
@@ -27,11 +25,13 @@ const TablaDeDonadores = ({ donadores }: Props) => {
         encabezados={encabezados}
         acciones={acciones}
       >
-        {donadores.map((donador: IDonador) => (
-          <Registro key={donador.email} donador={donador} />
+        {docs.map((donador, index) => (
+          <Registro key={index} donador={donador as IDonador} />
         ))}
       </Tabla>
-      <BotonAgregar formulario={<Donador />}>Agregar donador/a</BotonAgregar>
+      <BotonAgregar formulario={<FormEditarDonador />}>
+        Agregar donador/a
+      </BotonAgregar>
     </>
   );
 };

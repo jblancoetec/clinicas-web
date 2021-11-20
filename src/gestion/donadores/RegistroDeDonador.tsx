@@ -1,28 +1,30 @@
-import React from "react";
+import React, { useContext } from "react";
 import { IDonador } from "../../../models/Donador";
 import BotonEliminar from "../common/BotonEliminar";
 import BotonEditar from "../common/BotonEditar";
 import Donador from "../formularios/editar/Donador";
 import BotonContactar from "../common/BotonContactar";
+import { DocsContext } from "../contextos/DocsContextProvider";
 
 interface Props {
   donador: IDonador;
 }
 const RegistroDeDonador = ({ donador }: Props) => {
+  const { eliminarDoc } = useContext(DocsContext);
   return (
     <tr>
       <td>{donador.nombre}</td>
       <td>{donador.apellido}</td>
       <td>{donador.email}</td>
       <td>{donador.telefono}</td>
-      <td>{donador.tipo_donador}</td>
+      <td>{donador.tipo}</td>
       <td style={{ textAlign: "center" }}>
         <BotonEditar>
           <Donador />
         </BotonEditar>
       </td>
       <td style={{ textAlign: "center" }}>
-        <BotonEliminar url={`/Donador/deleteDonador/${donador._id}`} />
+        <BotonEliminar onClick={() => eliminarDoc(donador._id)} />
       </td>
       <td style={{ textAlign: "center" }}>
         <BotonContactar />

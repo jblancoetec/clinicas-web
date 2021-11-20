@@ -1,17 +1,18 @@
 import { IAdministrador } from "../../models/Administrador";
 import TablaDeAdministradores from "../../src/gestion/administradores/TablaDeAdministradores";
-import GestionAdministradores from "../../src/gestion/contextos/GestionAdministradores";
 import obtenerDocumentos from "../../src/gestion/utils/obtenerDocumentos";
+import DocsContextProvider from "../../src/gestion/contextos/DocsContextProvider";
+import { IApi } from "../../src/gestion/contextos/Interfaces";
 
 interface Props {
   documentos: IAdministrador[];
-  api: string;
+  api: IApi;
 }
 
 const Administradores = ({ documentos, api }: Props) => (
-  <GestionAdministradores api={api} documentos={documentos}>
+  <DocsContextProvider api={api} documentos={documentos}>
     <TablaDeAdministradores />
-  </GestionAdministradores>
+  </DocsContextProvider>
 );
 
 export const getServerSideProps = async () => {
@@ -20,7 +21,12 @@ export const getServerSideProps = async () => {
       documentos: await obtenerDocumentos<IAdministrador>(
         `${process.env.API_URL}/Administrador/getAdministradores`
       ),
-      api: process.env.API_URL,
+      api: {
+        urlDelete: `${process.env.API_URL}/Administrador/deleteAdministrador`,
+        urlPost: `${process.env.API_URL}/Administrador/postAdministrador`,
+        urlPut: `${process.env.API_URL}/Administrador/putAdministrador`,
+        urlGet: `${process.env.API_URL}/Administrador/getAdministradores`,
+      },
     },
   };
 };

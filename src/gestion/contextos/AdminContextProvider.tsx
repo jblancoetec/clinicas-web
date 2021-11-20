@@ -25,7 +25,7 @@ interface Props {
   children: React.ReactNode;
 }
 
-const GestionAdministradores = ({ api, documentos, children }: Props) => {
+const AdminContextProvider = ({ api, documentos, children }: Props) => {
   const [administradores, setAdministradores] = useState(documentos);
 
   const eliminarAdministrador = (id: ObjectId) => {
@@ -63,4 +63,4 @@ const GestionAdministradores = ({ api, documentos, children }: Props) => {
     </AdminContext.Provider>
   );
 };
-export default GestionAdministradores;
+export default AdminContextProvider;

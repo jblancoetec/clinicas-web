@@ -4,15 +4,15 @@ import React from "react";
 import { Button } from "react-bootstrap";
 import { IAdministrador } from "../../../models/Administrador";
 import BotonEliminar from "../common/BotonEliminar";
-import { AdminContext } from "../contextos/GestionAdministradores";
 import { useContext } from "react";
+import { DocsContext } from "../contextos/DocsContextProvider";
 
 interface Props {
   administrador: IAdministrador;
 }
 
 const RegistroDeAdministrador = ({ administrador }: Props) => {
-  const { eliminarAdministrador } = useContext(AdminContext);
+  const { eliminarDoc } = useContext(DocsContext);
 
   return (
     <tr>
@@ -27,9 +27,7 @@ const RegistroDeAdministrador = ({ administrador }: Props) => {
         </Button>
       </td>
       <td style={{ textAlign: "center" }}>
-        <BotonEliminar
-          onClick={() => eliminarAdministrador(administrador._id)}
-        />
+        <BotonEliminar onClick={() => eliminarDoc(administrador._id)} />
       </td>
     </tr>
   );

@@ -5,7 +5,7 @@ export interface IDonador {
   apellido: string;
   email: string;
   telefono: string;
-  tipo_donador: string;
+  tipo: string;
   _id: ObjectId;
 }
 
@@ -26,7 +26,7 @@ const DonadorSchema = new Schema<IDonador>({
     type: String,
     required: [true, "Ingrese su numero telefonico."],
   },
-  tipo_donador: {
+  tipo: {
     type: String,
     require: [true, "Ingrese el tipo de donación"],
   },

@@ -19,13 +19,13 @@ export const getServerSideProps = async () => {
   return {
     props: {
       documentos: await obtenerDocumentos<IDonador>(
-        `${process.env.API_URL}/Administrador/getAdministradores`
+        `${process.env.API_URL}/Donador/getDonadores`
       ),
       api: {
-        urlDelete: `${process.env.API_URL}/Administrador/deleteAdministrador`,
-        urlPost: `${process.env.API_URL}/Administrador/postAdministrador`,
-        urlPut: `${process.env.API_URL}/Administrador/putAdministrador`,
-        urlGet: `${process.env.API_URL}/Administrador/getAdministradores`,
+        urlDelete: `${process.env.API_URL}/Donador/deleteDonador`,
+        urlPost: `${process.env.API_URL}/Donador/postDonador`,
+        urlPut: `${process.env.API_URL}/Donador/putDonador`,
+        urlGet: `${process.env.API_URL}/Donador/getDonadores`,
       },
     },
   };

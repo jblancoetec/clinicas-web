@@ -3,16 +3,16 @@ import conectarDB from "../../../../lib/conexionDB";
 import Administrador from "../../../../models/Administrador";
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
-  await conectarDB();
-  const {
-    query: { id },
-  } = req;
-
   try {
-    const administrador = await Administrador.findByIdAndUpdate(id, req.body, {
-      new: true,
-      runValidators: true,
-    });
+    await conectarDB();
+    const administrador = await Administrador.findByIdAndUpdate(
+      req.query._id,
+      req.body,
+      {
+        new: true,
+        runValidators: true,
+      }
+    );
     if (!administrador) {
       return res.status(400).json({ success: false });
     }

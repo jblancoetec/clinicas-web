@@ -3,17 +3,20 @@ import conectarDB from "../../../../lib/conexionDB";
 import Donador from "../../../../models/Donador";
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
-  await conectarDB();
-  const {
-    query: { id },
-  } = req;
-
   try {
-    const deletedDonador = await Donador.deleteOne({ _id: id });
-    if (!deletedDonador) {
+    await conectarDB();
+    const donador = await Donador.findByIdAndUpdate(
+      req.query._id as string,
+      req.body,
+      {
+        new: true,
+        runValidators: true,
+      }
+    );
+    if (!donador) {
       return res.status(400).json({ success: false });
     }
-    res.status(201).json({ succsess: true, data: {} });
+    res.status(201).json({ succsess: true, data: donador });
   } catch (error) {
     console.log(error);
     res.status(400).json({ success: false });

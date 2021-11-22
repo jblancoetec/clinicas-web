@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { Button } from "react-bootstrap";
 import styles from "./BotonEliminar.module.css";
-import eliminarDocumento from "../utils/eliminarDocumento";
+import eliminarDocumento from "../api/eliminarDocumento";
 
 interface Props {
   onClick: () => void;

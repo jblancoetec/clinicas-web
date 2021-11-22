@@ -1,7 +1,7 @@
 import { ObjectId } from "mongoose";
 import { createContext, useState } from "react";
 import { IApi, TDoc } from "./Interfaces";
-import eliminarDocumento from "../utils/eliminarDocumento";
+import eliminarDocumento from "../api/eliminarDocumento";
 
 interface IContexto {
   api: IApi;

@@ -1,6 +1,6 @@
 import { ITurno } from "../../models/Turno";
 import TablaDeTurnos from "../../src/gestion/turnos/TablaDeTurnos";
-import obtenerDocumentos from "../../src/gestion/utils/obtenerDocumentos";
+import obtenerDocumentos from "../../src/gestion/api/obtenerDocumentos";
 
 interface Props {
   documentos: ITurno[];
@@ -10,9 +10,7 @@ const turnos = ({ documentos }: Props) => {
 };
 
 export const getServerSideProps = async () => {
-  return await obtenerDocumentos<ITurno>(
-    "/Turno/getTurnos"
-  );
+  return await obtenerDocumentos<ITurno>("/Turno/getTurnos");
 };
 
 export default turnos;

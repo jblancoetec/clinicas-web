@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import conectarDB from "../../../lib/conexionDB";
+import conectarDB from "../../../db/conexionDB";
 import Turno from "../../../models/Turno";
 import { ITurno } from "../../../models/Turno";
 import moment from "moment";

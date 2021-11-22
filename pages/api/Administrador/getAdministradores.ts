@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import conectarDB from "../../../lib/conexionDB";
+import conectarDB from "../../../db/conexionDB";
 import Administrador from "../../../models/Administrador";
 import { IAdministrador } from "../../../models/Administrador";
 

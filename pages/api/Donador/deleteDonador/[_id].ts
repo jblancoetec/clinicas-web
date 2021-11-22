@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import conectarDB from "../../../../lib/conexionDB";
+import conectarDB from "../../../../db/conexionDB";
 import Donador from "../../../../models/Donador";
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {

@@ -2,7 +2,7 @@ import React from "react";
 import Tabla from "../common/Tabla";
 import RegistroDeAdministrador from "./RegistroDeAdministrador";
 import BotonAgregar from "../common/BotonAgregar";
-import Donador from "../formularios/editar/Donador";
+import FormEditarDonador from "../formularios/editar/Donador";
 import { IAdministrador } from "../../../models/Administrador";
 import { DocsContext } from "../contextos/DocsContextProvider";
 import { useContext } from "react";
@@ -27,7 +27,9 @@ const TablaDeAdministradores = () => {
           />
         ))}
       </Tabla>
-      <BotonAgregar formulario={Donador}>Agregar administrador/a</BotonAgregar>
+      <BotonAgregar formulario={<FormEditarDonador />}>
+        Agregar administrador/a
+      </BotonAgregar>
     </>
   );
 };

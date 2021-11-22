@@ -2,32 +2,25 @@ import React from "react";
 import { ITurno } from "../../../models/Turno";
 import Tabla from "../common/Tabla";
 import Registro from "./RegistroDeTurno";
+import { useContext } from "react";
+import { DocsContext } from "../contextos/DocsContextProvider";
 
-interface Props {
-  turnos: ITurno[];
-}
+const encabezados = ["Hora de visita"];
 
-const encabezados = [
-  "Nombre",
-  "Apellido",
-  "Email",
-  "Telefono",
-  "Tipo de donador",
-  "Hora de visita",
-];
+const acciones = ["Donador", "Editar", "Eliminar"];
 
-const acciones = ["Editar", "Eliminar"];
+const TablaDeTurnos = () => {
+  const { docs } = useContext(DocsContext);
 
-const TablaDeTurnos = ({ turnos }: Props) => {
   return (
     <>
       <Tabla
-        titulo="Listado de Turnos"
+        titulo="Turnos del dia"
         encabezados={encabezados}
         acciones={acciones}
       >
-        {turnos.map((turno: ITurno) => (
-          <Registro key={turno.email} turno={turno} />
+        {docs.map((turno, index) => (
+          <Registro key={index} turno={turno as ITurno} />
         ))}
       </Tabla>
     </>

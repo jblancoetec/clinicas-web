@@ -19,7 +19,7 @@ const Home = () => {
       />
       <Columna
         titulo="Turnos"
-        url="/gestion/donadores"
+        url="/gestion/turnos"
         descripcion="Turnos cargados en el sistema"
         urlImagen="https://p0.piqsels.com/preview/17/490/484/paper-business-document-office.jpg"
       />

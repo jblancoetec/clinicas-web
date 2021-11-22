@@ -11,7 +11,6 @@ const RegistroDeTurno = ({ turno }: Props) => {
   return (
     <tr>
       <td>{turno.paciente}</td>
-      <td>{turno.email}</td>
       <td>{turno.fecha}</td>
       <td style={{ textAlign: "center" }}>
         <Button style={{ backgroundColor: "var(--Editar)", border: "none" }}>
@@ -23,7 +22,6 @@ const RegistroDeTurno = ({ turno }: Props) => {
           <FontAwesomeIcon icon={faTrashAlt} />
         </Button>
       </td>
-      
     </tr>
   );
 };

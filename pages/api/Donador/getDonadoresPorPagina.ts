@@ -5,12 +5,18 @@ import { IDonador } from "../../../models/Donador";
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
+    const pagina: number = Number(req.body.pagina) || 1;
+    const limite: number = Number(req.body.limite) || 10;
+
     await conectarDB();
-    const donadores: IDonador[] = await Donador.find({});
-    res.status(200).json(donadores);
+    const Donadores: IDonador[] = await Donador.find({})
+      .skip((pagina - 1) * limite)
+      .limit(limite);
+
+    res.status(200).json(Donadores);
   } catch (error) {
-    console.log(error);
-    res.status(400);
+    res.status(400).json({ success: false });
   }
 };
+
 export default handler;

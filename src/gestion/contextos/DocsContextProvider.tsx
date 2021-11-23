@@ -2,7 +2,11 @@ import { ObjectId } from "mongoose";
 import { createContext, useState } from "react";
 import { IApi, TDoc } from "./Interfaces";
 import eliminarDocumento from "../api/eliminarDocumento";
+<<<<<<< Updated upstream
 import editarDocumento from "../api/editarDocumento";
+=======
+import agregarDocumento from "../api/agregarDocumento";
+>>>>>>> Stashed changes
 
 interface IContexto {
   api: IApi;
@@ -35,6 +39,7 @@ const DocsContextProvider = ({ api, documentos, children }: Props) => {
   };
 
   const agregarDoc = (doc: TDoc) => {
+    agregarDocumento(`${api.urlPost}`, doc);
     return setDocs([...docs, doc]);
   };
 

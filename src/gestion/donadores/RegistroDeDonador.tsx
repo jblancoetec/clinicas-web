@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { IDonador } from "../../../models/Donador";
 import BotonEliminar from "../common/BotonEliminar";
 import BotonEditar from "../common/BotonEditar";
-import Donador from "../formularios/editar/Donador";
+import FormDonador from "../formularios/editar/FormDonador";
 import BotonContactar from "../common/BotonContactar";
 import { DocsContext } from "../contextos/DocsContextProvider";
 
@@ -20,7 +20,7 @@ const RegistroDeDonador = ({ donador }: Props) => {
       <td>{donador.tipo}</td>
       <td style={{ textAlign: "center" }}>
         <BotonEditar>
-          <Donador />
+          <FormDonador />
         </BotonEditar>
       </td>
       <td style={{ textAlign: "center" }}>

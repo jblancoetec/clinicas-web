@@ -16,6 +16,7 @@
     "@fortawesome/react-fontawesome": "^0.1.14",
     "axios": "^0.23.0",
     "bootstrap": "^5.0.2",
+    "bson": "^4.6.0",
     "framer-motion": "^4.1.17",
     "moment": "^2.29.1",
     "mongoose": "^6.0.12",

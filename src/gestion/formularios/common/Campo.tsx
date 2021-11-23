@@ -11,7 +11,7 @@ const Campo = ({ label, placeholder, type }: Props) => {
       <Form.Label>{label}</Form.Label>
       <Form.Control
         type={type}
-        id={label}
+        id={label.replaceAll("_", "").replaceAll("*", "").toLocaleLowerCase()}
         name={label.replaceAll("_", "").replaceAll("*", "").toLocaleLowerCase()}
         placeholder={placeholder}
       />

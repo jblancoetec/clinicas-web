@@ -2,7 +2,7 @@ import React from "react";
 import Tabla from "../common/Tabla";
 import RegistroDeAdministrador from "./RegistroDeAdministrador";
 import BotonAgregar from "../common/BotonAgregar";
-import FormEditarDonador from "../formularios/editar/Donador";
+import FormEditarDonador from "../formularios/editar/FormDonador";
 import { IAdministrador } from "../../../models/Administrador";
 import { DocsContext } from "../contextos/DocsContextProvider";
 import { useContext } from "react";

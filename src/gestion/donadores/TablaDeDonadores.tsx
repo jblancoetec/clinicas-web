@@ -3,7 +3,7 @@ import { IDonador } from "../../../models/Donador";
 import Tabla from "../common/Tabla";
 import Registro from "./RegistroDeDonador";
 import BotonAgregar from "../common/BotonAgregar";
-import FormEditarDonador from "../formularios/editar/Donador";
+import FormEditarDonador from "../formularios/editar/FormDonador";
 import { DocsContext } from "../contextos/DocsContextProvider";
 
 const encabezados = [

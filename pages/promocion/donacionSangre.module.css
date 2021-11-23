@@ -1,0 +1,76 @@
+.encabezado {
+  width: 100%;
+  height: 600px;
+  background: url(https://media.istockphoto.com/photos/professional-doctor-preparing-patient-for-procedure-picture-id627290560?b=1&k=20&m=627290560&s=170667a&w=0&h=Td_EW4WqCgoBKPBnjcQMPKSCNBOPIhz4zysJKW9QmqA=);
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+}
+
+.contenedor_requisitos {
+  padding: 60px 0;
+  width: 90%;
+  max-width: 1000px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.titulo {
+  color: #9e1010;
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.textoheader {
+  display: flex;
+  height: 85%;
+  width: 100%;
+  align-items: flex-end;
+  flex-direction: row-reverse;
+  padding: 30px 50px 0 0;
+}
+
+.boton {
+  padding: 15px;
+  font-size: 30px;
+  font-weight: bold;
+  color: #fff;
+  background: #9e1010;
+  border-radius: 0.5em;
+  cursor: pointer;
+}
+
+/* Requisitos */
+
+.cards {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cards .card {
+  display: flex;
+  width: 46%;
+  height: 200px;
+  align-items: center;
+  justify-content: center;
+}
+
+.cards .card img {
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+  border-radius: 0.8em;
+}
+
+.cards .card > .texto_card p {
+  font-weight: 300;
+  padding-top: 5px;
+  color: #000;
+}
+
+/* difusión */
+
+.difusion {
+  padding-bottom: 30px;
+}

@@ -1,5 +1,10 @@
+import { Card } from "react-bootstrap";
+import styles from "./donacionPlaqueta.module.css";
+
 const donacionPlaqueta = () => {
-  return <div>donacionPlaqueta</div>;
+  return <div>donacionPlasma</div>;
+
 };
 
 export default donacionPlaqueta;
+

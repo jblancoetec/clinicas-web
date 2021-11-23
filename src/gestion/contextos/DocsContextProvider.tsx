@@ -2,6 +2,7 @@ import { ObjectId } from "mongoose";
 import { createContext, useState } from "react";
 import { IApi, TDoc } from "./Interfaces";
 import eliminarDocumento from "../api/eliminarDocumento";
+import editarDocumento from "../api/editarDocumento";
 
 interface IContexto {
   api: IApi;
@@ -38,6 +39,7 @@ const DocsContextProvider = ({ api, documentos, children }: Props) => {
   };
 
   const editarDoc = (doc: TDoc) => {
+    editarDocumento(`${api.urlPut}`);
     return setDocs(
       docs.map((docActual) => (docActual._id === doc._id ? doc : docActual))
     );

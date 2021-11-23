@@ -4,12 +4,13 @@ import React, { useState } from "react";
 import { Button, Modal } from "react-bootstrap";
 import styles from "./BotonEditar.module.css";
 import Donador from "../formularios/editar/Donador";
+import editarDocumento from "../api/eliminarDocumento"
 
 interface Props {
-  children: React.ReactNode;
+  onClick: () => void;
 }
 
-const BotonEditar = ({ children }: Props) => {
+const BotonEditar = ({ onClick }: Props) => {
   const [FormularioVisible, setFormlarioVisible] = useState(false);
 
   const CerrarFormulario = () => setFormlarioVisible(false);
@@ -22,7 +23,7 @@ const BotonEditar = ({ children }: Props) => {
       </Button>
 
       <Modal show={FormularioVisible} onHide={CerrarFormulario}>
-        {children}
+        {onClick}
       </Modal>
     </>
   );

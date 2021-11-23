@@ -6,6 +6,8 @@ import { IAdministrador } from "../../../models/Administrador";
 import BotonEliminar from "../common/BotonEliminar";
 import { useContext } from "react";
 import { DocsContext } from "../contextos/DocsContextProvider";
+import BotonEditar from "../common/BotonEditar";
+import editarDocumentos from "../api/editarDocumento";
 
 interface Props {
   administrador: IAdministrador;
@@ -13,6 +15,7 @@ interface Props {
 
 const RegistroDeAdministrador = ({ administrador }: Props) => {
   const { eliminarDoc } = useContext(DocsContext);
+  const { editarDoc } = useContext(DocsContext);
 
   return (
     <tr>
@@ -22,9 +25,7 @@ const RegistroDeAdministrador = ({ administrador }: Props) => {
       <td>{administrador.telefono}</td>
       <td>{administrador.usuario}</td>
       <td style={{ textAlign: "center" }}>
-        <Button style={{ backgroundColor: "var(--Editar)", border: "none" }}>
-          <FontAwesomeIcon icon={faEdit} />
-        </Button>
+        <BotonEditar onClick={() => editarDoc(administrador)}/>
       </td>
       <td style={{ textAlign: "center" }}>
         <BotonEliminar onClick={() => eliminarDoc(administrador._id)} />

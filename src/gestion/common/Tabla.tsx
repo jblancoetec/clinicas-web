@@ -10,9 +10,10 @@ interface Props {
 }
 const Tabla = ({ titulo, encabezados, acciones, children }: Props) => {
   return (
-    <Container>
+    <>
       <h3>{titulo}</h3>
-      <Table className={styles.Tabla}>
+
+      <Table responsive className={styles.Tabla}>
         <thead>
           <tr>
             {encabezados.map((encabezado, index) => (
@@ -29,7 +30,7 @@ const Tabla = ({ titulo, encabezados, acciones, children }: Props) => {
         </thead>
         <tbody>{children}</tbody>
       </Table>
-    </Container>
+    </>
   );
 };
 

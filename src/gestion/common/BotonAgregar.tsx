@@ -3,8 +3,7 @@ import React from "react";
 import { Button, Modal } from "react-bootstrap";
 import styles from "./BotonAgregar.module.css";
 import { useState } from "react";
-import { faEdit, faUserPlus } from "@fortawesome/free-solid-svg-icons";
-import { Container } from "react-bootstrap";
+import { faUserPlus } from "@fortawesome/free-solid-svg-icons";
 
 interface Props {
   formulario: React.ReactNode;
@@ -19,13 +18,12 @@ const BotonAgregar = ({ formulario, children }: Props) => {
 
   return (
     <>
-      <Container className={styles.Contenedor}>
+      <div className={styles.Contenedor}>
         <Button className={styles.Boton} onClick={abrirFormulario}>
           <div className={styles.Texto}>{children}</div>
           <FontAwesomeIcon icon={faUserPlus} />
         </Button>
-      </Container>
-
+      </div>
       <Modal show={FormularioVisible} onHide={cerrarFormulario}>
         {formulario}
       </Modal>

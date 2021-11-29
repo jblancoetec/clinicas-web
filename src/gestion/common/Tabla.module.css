@@ -4,7 +4,6 @@
 .EncabezadoAcciones {
   text-align: center;
 }
-
 .Tabla {
-  overflow-x: auto;
+  white-space: nowrap;
 }

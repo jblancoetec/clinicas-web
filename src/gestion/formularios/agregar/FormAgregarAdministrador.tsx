@@ -1,15 +1,10 @@
 import React from "react";
 import { Button, Container, Form, FormGroup, Row } from "react-bootstrap";
-import styles from "../editar/FormDonador.module.css";
+import styles from "../common/Form.module.css";
 import Campo from "../common/Campo";
 import Menu from "../common/Menu";
-import { IDonador } from "../../../../models/Donador";
 
-interface Props {
-  donador: IDonador;
-}
-
-const FormDonador = ({ donador }: Props) => {
+const FormAgregarAdministrador = () => {
   return (
     <div className={styles.Contenedor}>
       <h2 className={styles.Titulo}>Agregar administrador</h2>
@@ -39,4 +34,4 @@ const FormDonador = ({ donador }: Props) => {
     </div>
   );
 };
-export default FormDonador;
+export default FormAgregarAdministrador;

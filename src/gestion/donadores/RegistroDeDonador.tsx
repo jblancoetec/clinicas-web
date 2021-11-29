@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { IDonador } from "../../../models/Donador";
 import BotonEliminar from "../common/BotonEliminar";
 import BotonEditar from "../common/BotonEditar";
-import FormDonador from "../formularios/editar/FormDonador";
+import FormEditarDonador from "../formularios/editar/FormEditarDonador";
 import BotonContactar from "../common/BotonContactar";
 import { DocsContext } from "../contextos/DocsContextProvider";
 
@@ -19,9 +19,7 @@ const RegistroDeDonador = ({ donador }: Props) => {
       <td>{donador.telefono}</td>
       <td>{donador.tipo}</td>
       <td style={{ textAlign: "center" }}>
-        <BotonEditar>
-          <FormDonador />
-        </BotonEditar>
+        <BotonEditar formulario={<FormEditarDonador donador={donador} />} />
       </td>
       <td style={{ textAlign: "center" }}>
         <BotonEliminar onClick={() => eliminarDoc(donador._id)} />

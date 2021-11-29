@@ -1,4 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 html,
 body {
@@ -23,34 +22,12 @@ a:hover {
   box-sizing: border-box;
 }
 
-#__next {
-  min-height: 100vh;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto 1fr auto;
-  grid-template-areas:
-    "header"
-    "main"
-    "footer";
-}
-#__next > header {
-  grid-area: header;
-}
-#__next > main {
-  grid-area: main;
-}
-#__next > footer {
-  grid-area: footer;
-}
-
 :root {
-  --fuente-texto: "PT Serif", serif;
-  --nueva-fuente-texto: "Roboto", sans-serif;
+  --fuente-texto: "Roboto", sans-serif;
   --width-max: 1024px;
   --violeta: #31008b;
   --azul: #0061db;
   --verde: #85e68f;
-  --naranja: #FFBD5;
   --amarillo: #ffe784;
   --rojo: #c80000;
   --rosa: #e3c7ed;

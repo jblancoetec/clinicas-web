@@ -8,22 +8,20 @@ interface Props {
 
 const _Layout = ({ children }: Props) => {
   return (
-    <>
+    <div className={styles.Contenedor}>
       <header className={styles.Header}>
-        <nav className={styles.Nav}>
-          <Container className={styles.Contenedor}>
-            <Link href="/">
-              <a>HOME</a>
-            </Link>
-            <Link href="/login">
-              <a>ACCEDER</a>
-            </Link>
-          </Container>
-        </nav>
+        <Container className={styles.Enlaces}>
+          <Link href="/">
+            <a>HOME</a>
+          </Link>
+          <Link href="/inicio">
+            <a>ACCEDER</a>
+          </Link>
+        </Container>
       </header>
 
       <main className={styles.Main}>{children}</main>
-    </>
+    </div>
   );
 };
 

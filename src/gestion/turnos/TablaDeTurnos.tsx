@@ -4,6 +4,7 @@ import Tabla from "../common/Tabla";
 import Registro from "./RegistroDeTurno";
 import { useContext } from "react";
 import { DocsContext } from "../contextos/DocsContextProvider";
+import { Container } from "react-bootstrap";
 
 const encabezados = ["Hora de visita"];
 
@@ -13,7 +14,7 @@ const TablaDeTurnos = () => {
   const { docs } = useContext(DocsContext);
 
   return (
-    <>
+    <Container>
       <Tabla
         titulo="Turnos del dia"
         encabezados={encabezados}
@@ -23,7 +24,7 @@ const TablaDeTurnos = () => {
           <Registro key={index} turno={turno as ITurno} />
         ))}
       </Tabla>
-    </>
+    </Container>
   );
 };
 

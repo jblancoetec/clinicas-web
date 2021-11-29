@@ -1,0 +1,42 @@
+.Logo {
+  width: 100%;
+}
+
+.Titulo {
+  text-align: center;
+  color: var(--violeta);
+}
+
+.Marco {
+  max-width: 425px;
+  margin: 0 auto;
+}
+.Formulario > .CampoDeTexto {
+  color: var(--violeta);
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.Boton {
+  display: flex;
+  justify-content: center;
+}
+
+.Boton > button {
+  background-color: var(--violeta);
+  color: white;
+  border: none;
+}
+
+.Boton > button:hover {
+  background-color: var(--violeta);
+  color: white;
+  border: none;
+}
+
+.Boton > button:focus {
+  background-color: var(--violeta);
+  border: none;
+  outline: none;
+  box-shadow: none;
+}

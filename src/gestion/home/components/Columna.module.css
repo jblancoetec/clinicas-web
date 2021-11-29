@@ -35,7 +35,7 @@
 }
 
 .Mensaje {
-  font-family: var(--nueva-fuente-texto);
+  font-family: var(--fuente-texto);
   color: white;
   font-size: 4rem;
   text-align: center;

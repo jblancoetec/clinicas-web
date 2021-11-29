@@ -1,5 +1,4 @@
 import axios, { AxiosRequestConfig, AxiosResponse } from "axios";
-import { IAdministrador } from "../../../models/Administrador";
 
 const config: AxiosRequestConfig = {
   method: "GET",

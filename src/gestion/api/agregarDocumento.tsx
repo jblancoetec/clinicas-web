@@ -1,6 +1,6 @@
 import axios, { AxiosRequestConfig, AxiosResponse } from "axios";
 
-const agregarDocumento = async (url: string, documento: any) => {
+const agregarDocumento = async <Type,>(url: string, documento: any) => {
   const config: AxiosRequestConfig = {
     method: "POST",
     headers: {
@@ -10,7 +10,8 @@ const agregarDocumento = async (url: string, documento: any) => {
   };
 
   try {
-    await axios.post(url, config);
+    const res: AxiosResponse<Type> = await axios.post<Type>(url, config);
+    return res;
   } catch (error) {
     console.log(error);
   }

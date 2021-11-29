@@ -6,7 +6,7 @@ export interface IDonador {
   email: string;
   telefono: string;
   tipo: string;
-  _id: ObjectId;
+  _id: string;
 }
 
 const DonadorSchema = new Schema<IDonador>({

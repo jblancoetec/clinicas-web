@@ -16,7 +16,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     if (!donador) {
       return res.status(400).json({ success: false });
     }
-    res.status(201).json({ succsess: true, data: donador });
+    res.status(200).json({ succsess: true, data: donador });
   } catch (error) {
     console.log(error);
     res.status(400).json({ success: false });

@@ -7,7 +7,7 @@ export interface IAdministrador {
   telefono: string;
   usuario: string;
   password: string;
-  _id: ObjectId;
+  _id: string;
 }
 
 const AdministradorSchema: Schema = new Schema<IAdministrador>({

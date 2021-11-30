@@ -1,6 +1,7 @@
 import axios, { AxiosRequestConfig, AxiosResponse } from "axios";
+import { TDoc } from "../contextos/Interfaces";
 
-const editarDocumentos = async <Type,>(url: string, doc: any) => {
+const editarDocumentos = async <Type,>(url: string, doc: TDoc) => {
   const config: AxiosRequestConfig = {
     method: "PUT",
     headers: {

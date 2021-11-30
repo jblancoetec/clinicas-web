@@ -8,7 +8,7 @@ import { DocsContext } from "../contextos/DocsContextProvider";
 import { useContext } from "react";
 import { Container } from "react-bootstrap";
 
-const encabezados = ["Nombre", "Apellido", "Email", "Telefono", "Usuario"];
+const encabezados = ["Nombre", "Apellido", "Email"];
 
 const acciones = ["Editar", "Eliminar"];
 

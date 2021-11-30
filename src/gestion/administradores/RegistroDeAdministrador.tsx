@@ -3,7 +3,7 @@ import { IAdministrador } from "../../../models/Administrador";
 import BotonEliminar from "../common/BotonEliminar";
 import { useContext } from "react";
 import { DocsContext } from "../contextos/DocsContextProvider";
-import BotonEditar from "../common/BotonEditar";
+// import BotonEditar from "../common/BotonEditar";
 import { Alert, Modal } from "react-bootstrap";
 
 interface Props {
@@ -31,8 +31,6 @@ const RegistroDeAdministrador = ({ administrador }: Props) => {
         <td>{administrador.nombre}</td>
         <td>{administrador.apellido}</td>
         <td>{administrador.email}</td>
-        <td>{administrador.telefono}</td>
-        <td>{administrador.usuario}</td>
         <td style={{ textAlign: "center" }}>
           {/* <BotonEditar formulario /> */}
         </td>

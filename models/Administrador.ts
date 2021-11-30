@@ -4,8 +4,6 @@ export interface IAdministrador {
   nombre: string;
   apellido: string;
   email: string;
-  telefono: string;
-  usuario: string;
   password: string;
   _id: string;
 }
@@ -22,14 +20,6 @@ const AdministradorSchema: Schema = new Schema<IAdministrador>({
   email: {
     type: String,
     required: [true, "Ingrese su correo electronico."],
-  },
-  telefono: {
-    type: String,
-    required: [true, "Ingrese su numero telefonico."],
-  },
-  usuario: {
-    type: String,
-    require: [true, "Ingrese el usuario"],
   },
   password: {
     type: String,

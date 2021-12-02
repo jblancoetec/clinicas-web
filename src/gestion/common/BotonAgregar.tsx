@@ -24,7 +24,7 @@ const BotonAgregar = ({ formulario, children }: Props) => {
           <FontAwesomeIcon icon={faUserPlus} />
         </Button>
       </div>
-      <Modal show={FormularioVisible} onHide={cerrarFormulario}>
+      <Modal size="sm" show={FormularioVisible} onHide={cerrarFormulario}>
         {formulario}
       </Modal>
     </>

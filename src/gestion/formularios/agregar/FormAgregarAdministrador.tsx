@@ -52,7 +52,7 @@ const FormAgregarAdministrador = () => {
 
   return (
     <div className={styles.Contenedor}>
-      <h2 className={styles.Titulo}>Agregar administrador</h2>
+      <h4 className={styles.Titulo}>Agregar administrador</h4>
       <Form className={styles.Formulario} onSubmit={handleSubmit(agregar)}>
         {formulario.map(({ label, placeholder, id, type }, index) => (
           <div key={index}>
@@ -67,16 +67,14 @@ const FormAgregarAdministrador = () => {
           </div>
         ))}
 
-        <div>
-          <Button
-            type="submit"
-            style={{
-              backgroundColor: "var(--violeta)",
-            }}
-          >
-            Agregar
-          </Button>
-        </div>
+        <Button
+          type="submit"
+          style={{
+            backgroundColor: "var(--violeta)",
+          }}
+        >
+          Agregar
+        </Button>
       </Form>
     </div>
   );

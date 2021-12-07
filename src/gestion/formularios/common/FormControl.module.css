@@ -1,0 +1,8 @@
+.Error {
+  color: red;
+}
+
+.Error::before {
+  content: "*";
+  color: red;
+}

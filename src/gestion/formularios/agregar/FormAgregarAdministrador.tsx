@@ -1,37 +1,72 @@
-import React from "react";
+import React, { createContext } from "react";
 import { Button, Form } from "react-bootstrap";
 import styles from "../common/Form.module.css";
-import Campo from "../common/Campo";
-import Menu from "../common/Menu";
-import agregarDocumento from "../../api/agregarDocumento";
+import FormControl from "../common/FormControl";
+import { useForm } from "react-hook-form";
+import { FormDataAdministrador } from "../common/interfaces";
+
+interface IFormulario {
+  label: string;
+  placeholder: string;
+  id: "nombre" | "apellido" | "email" | "password";
+  type: string;
+}
+
+const formulario: IFormulario[] = [
+  {
+    label: "Nombre",
+    placeholder: "Por ejemplo: Juan",
+    id: "nombre",
+    type: "text",
+  },
+  {
+    label: "Apellido",
+    placeholder: "Por ejemplo: Perez",
+    id: "apellido",
+    type: "text",
+  },
+  {
+    label: "Correo electrónico",
+    placeholder: "Por ejemplo: jperez@email.com",
+    id: "email",
+    type: "text",
+  },
+  {
+    label: "Contraseña",
+    placeholder: "Una contraseña segura",
+    id: "password",
+    type: "password",
+  },
+];
 
 const FormAgregarAdministrador = () => {
-  const registrarNuevoAdministrador = (
-    evento: React.FormEvent<HTMLFormElement>
-  ) => {
-    console.log("Registrar nuevo administrador");
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<FormDataAdministrador>();
+
+  const agregar = (data: any) => {
+    console.log(data);
   };
 
   return (
     <div className={styles.Contenedor}>
-      <h2 className={styles.Titulo}>Agregar administrador</h2>
-      <Form
-        className={styles.Formulario}
-        onSubmit={registrarNuevoAdministrador}
-      >
-        <Campo label="*Nombre" placeholder="Por ejemplo: Juan" type="text" />
-        <Campo label="*Apellido" placeholder="Por ejemplo: Perez" type="text" />
-        <Campo
-          label="*Correo electronico"
-          placeholder="Por ejemplo: jperez@mail.com"
-          type="email"
-        />
-        <Campo
-          label="*Telefono"
-          placeholder="Por ejemplo: 15555555"
-          type="tel"
-        />
-        <Menu />
+      <h4 className={styles.Titulo}>Agregar administrador</h4>
+      <Form className={styles.Formulario} onSubmit={handleSubmit(agregar)}>
+        {formulario.map(({ label, placeholder, id, type }, index) => (
+          <div key={index}>
+            {FormControl<FormDataAdministrador>({
+              label,
+              placeholder,
+              id,
+              type,
+              register,
+              errors,
+            })}
+          </div>
+        ))}
+
         <Button
           type="submit"
           style={{

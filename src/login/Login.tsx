@@ -2,7 +2,8 @@ import { Button, Container, Form, FormGroup, Image } from "react-bootstrap";
 
 import styles from "./Login.module.css";
 import router from "next/router";
-import { useRef } from "react";
+import React, { useRef } from "react";
+import Link from "next/link";
 
 const Login = () => {
   const name = useRef<HTMLInputElement>(null);
@@ -40,7 +41,17 @@ const Login = () => {
           </FormGroup>
 
           <div className={styles.Boton}>
-            <Button type="submit">Iniciar</Button>
+            <Link href="/gestion/home">
+              <a
+                className="btn"
+                style={{
+                  color: "white",
+                  backgroundColor: "var(--violeta)",
+                }}
+              >
+                Iniciar
+              </a>
+            </Link>
           </div>
         </Form>
       </div>

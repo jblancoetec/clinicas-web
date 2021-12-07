@@ -8,6 +8,11 @@ const Login = () => {
   const name = useRef<HTMLInputElement>(null);
   const password = useRef<HTMLInputElement>(null);
 
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    router.push("/gestion/home");
+  };
+
   return (
     <Container className={styles.Contendor}>
       <div className={styles.Marco}>
@@ -16,7 +21,7 @@ const Login = () => {
           <Image src="clinicLogo.png" alt="logo" className={styles.Logo} />
         </div>
 
-        <Form className={styles.Formulario} action="/api/Login/login">
+        <Form className={styles.Formulario} onSubmit={handleSubmit}>
           <FormGroup className={styles.CampoDeTexto}>
             <Form.Label>Usuario</Form.Label>
             <Form.Control

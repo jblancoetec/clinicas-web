@@ -1,4 +1,3 @@
-import { Button } from "react-bootstrap";
 import Link from "next/link";
 import styles from "./Columna.module.css";
 

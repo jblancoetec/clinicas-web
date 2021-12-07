@@ -7,16 +7,15 @@
   position: relative;
 }
 
-.contenedor_requisitos {
-  padding: 60px 0;
-  width: 90%;
-  max-width: 1000px;
-  margin: auto;
-  overflow: hidden;
+.contenedor {
+  margin: 16px auto;
+  background-color: white;
+  border-radius: 16px;
+  padding: 32px 16px;
 }
 
 .titulo {
-  color: #9e1010;
+  color: black;
   font-size: 30px;
   text-align: center;
   margin-bottom: 60px;
@@ -36,41 +35,18 @@
   font-size: 30px;
   font-weight: bold;
   color: #fff;
-  background: #9e1010;
+  background: var(--rojo-sangre);
   border-radius: 0.5em;
   cursor: pointer;
 }
-
-/* Requisitos */
-
-.cards {
-  display: flex;
-  justify-content: space-between;
+.boton:hover {
+  color: white;
 }
 
-.cards .card {
-  display: flex;
-  width: 46%;
-  height: 200px;
-  align-items: center;
-  justify-content: center;
-}
-
-.cards .card img {
-  width: 100px;
-  height: 100px;
-  display: inline-block;
-  border-radius: 0.8em;
-}
-
-.cards .card > .texto_card p {
-  font-weight: 300;
-  padding-top: 5px;
-  color: #000;
-}
-
-/* difusión */
-
-.difusion {
-  padding-bottom: 30px;
+.Flayers {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(256px, 1fr));
+  grid-auto-rows: 256px;
+  gap: 8px 8px;
+  overflow-x: auto;
 }

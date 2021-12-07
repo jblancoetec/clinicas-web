@@ -32,6 +32,7 @@
   color: #fff;
   text-align: center;
   text-shadow: 2px 2px 4px black;
+  user-select: none;
 }
 
 .Mensaje {
@@ -41,6 +42,7 @@
   text-align: center;
   text-shadow: 2px 2px 4px black;
   font-weight: bold;
+  user-select: none;
 }
 
 @media screen and (max-width: 600px) {

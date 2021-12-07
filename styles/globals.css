@@ -37,4 +37,8 @@ a:hover {
   --Eliminar: #dc3545;
   --Contactar: #28a745;
   --Negro: rgb(0, 0, 0);
+  /* para promocion */
+  --rojo-sangre: #cc0000;
+  --amarillo-plasma: #ffd962;
+  --azul-plaquetas: #6d9eeb;
 }

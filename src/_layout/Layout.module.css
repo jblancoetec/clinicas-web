@@ -5,11 +5,7 @@
   font-weight: bold;
   display: flex;
   align-items: center;
-  color: var(--violeta);
-}
-
-.Nav {
-  width: 100%;
+  color: black;
 }
 
 .Enlaces {

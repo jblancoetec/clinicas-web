@@ -1,0 +1,19 @@
+.Card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 150px;
+  margin: 0 auto;
+}
+
+.Icono {
+  font-size: 100px;
+  margin-bottom: 20px;
+}
+
+.Texto {
+  text-align: center;
+  font-family: var(--fuente-texto);
+  font-size: 18px;
+  color: black;
+}

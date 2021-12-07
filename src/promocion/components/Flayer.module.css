@@ -1,0 +1,28 @@
+.Background {
+  width: 100%;
+  height: 100%;
+}
+
+.Background:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 16px;
+}
+
+.ContenedorIconosShare {
+  display: none;
+}
+
+.Background:hover > .ContenedorIconosShare {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.IconoShare {
+  color: white;
+  font-size: 2.5rem;
+  margin: 0.5rem;
+}

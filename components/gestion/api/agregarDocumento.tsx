@@ -1,19 +1,20 @@
 import axios, { AxiosRequestConfig, AxiosResponse } from "axios";
 
-const agregarDocumento = async <Type,>(url: string, documento: any) => {
+const agregarDocumento = async <T,>(url: string, data: any): Promise<T> => {
   const config: AxiosRequestConfig = {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
-    data: { documento },
+    data,
   };
 
   try {
-    const res: AxiosResponse<Type> = await axios.post<Type>(url, config);
-    return res;
+    const res: AxiosResponse<T> = await axios.post<T>(url, config);
+    return res?.data && res.status == 200 ? res.data : ({} as T);
   } catch (error) {
     console.log(error);
+    return {} as T;
   }
 };
 

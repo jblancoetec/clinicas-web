@@ -1,19 +1,19 @@
 import axios, { AxiosRequestConfig, AxiosResponse } from "axios";
-import { TDoc } from "../contextos/Interfaces";
 
-const editarDocumentos = async <Type,>(url: string, doc: TDoc) => {
+const editarDocumentos = async <T,>(url: string, data: any): Promise<T> => {
   const config: AxiosRequestConfig = {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
     },
-    data: { doc },
+    data,
   };
   try {
-    const res: AxiosResponse = await axios.put<Type>(url, config);
-    return res;
+    const res: AxiosResponse<T> = await axios.put<T>(url, config);
+    return res?.data && res.status === 200 ? res.data : ({} as T);
   } catch (error) {
     console.log(error);
+    return {} as T;
   }
 };
 

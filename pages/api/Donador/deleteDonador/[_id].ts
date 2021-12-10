@@ -5,14 +5,14 @@ import Donador from "../../../../models/Donador";
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
     await conectarDB();
-    const deletedDonador = await Donador.deleteOne(req.query);
-    if (!deletedDonador) {
-      return res.status(400).json({ success: false });
+    const donador = await Donador.findByIdAndDelete(req.query._id);
+    if (!donador) {
+      return res.status(400);
     }
-    res.status(200).json({ succsess: true, data: {} });
+    res.status(200).json(donador);
   } catch (error) {
     console.log(error);
-    res.status(400).json({ success: false });
+    res.status(400);
   }
 };
 export default handler;

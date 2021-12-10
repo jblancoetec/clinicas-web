@@ -8,13 +8,13 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   const hoy = moment().startOf("day");
   try {
     await conectarDB();
-    const turno: ITurno[] = await Turno.find({
+    const turnos: ITurno[] = await Turno.find({
       fecha: {
         $gte: hoy.toDate(),
         $lte: moment(hoy).endOf("day").toDate(),
       },
     });
-    res.status(200).json(turno);
+    res.status(200).json(turnos);
   } catch (error) {
     console.log(error);
     res.status(400);

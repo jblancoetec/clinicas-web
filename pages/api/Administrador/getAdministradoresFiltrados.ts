@@ -7,7 +7,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
     await conectarDB();
     const AdministradoresFiltrados: IAdministrador[] = await Administrador.find(
-      req.body
+      req.body.data
     );
     res.status(200).json(AdministradoresFiltrados);
   } catch (error) {

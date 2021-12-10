@@ -1,8 +1,8 @@
 import { IDonador } from "../../models/Donador";
-import TablaDeDonadores from "../../src/gestion/donadores/TablaDeDonadores";
-import obtenerDocumentos from "../../src/gestion/api/obtenerDocumentos";
-import DocsContextProvider from "../../src/gestion/contextos/DocsContextProvider";
-import { IApi } from "../../src/gestion/contextos/Interfaces";
+import TablaDeDonadores from "../../components/gestion/donadores/TablaDeDonadores";
+import obtenerDocumentos from "../../components/gestion/api/obtenerDocumentos";
+import DocsContextProvider from "../../components/gestion/contextos/DocsContextProvider";
+import { IApi } from "../../components/gestion/contextos/Interfaces";
 
 interface Props {
   documentos: IDonador[];

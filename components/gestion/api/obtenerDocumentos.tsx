@@ -7,11 +7,10 @@ const config: AxiosRequestConfig = {
   },
 };
 
-const obtenerDocumentos = async <Type,>(url: string): Promise<Type[]> => {
+const obtenerDocumentos = async <T,>(url: string): Promise<T[]> => {
   try {
-    const res: AxiosResponse<Type[]> = await axios.get<Type[]>(url, config);
-    const documentos: Type[] = res.data;
-    return documentos;
+    const res: AxiosResponse<T[]> = await axios.get<T[]>(url, config);
+    return res?.data ? res.data : [];
   } catch (error) {
     console.log(error);
     return [];

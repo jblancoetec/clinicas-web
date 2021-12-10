@@ -1,8 +1,8 @@
 import { IAdministrador } from "../../models/Administrador";
-import TablaDeAdministradores from "../../src/gestion/administradores/TablaDeAdministradores";
-import obtenerDocumentos from "../../src/gestion/api/obtenerDocumentos";
-import DocsContextProvider from "../../src/gestion/contextos/DocsContextProvider";
-import { IApi } from "../../src/gestion/contextos/Interfaces";
+import TablaDeAdministradores from "../../components/gestion/administradores/TablaDeAdministradores";
+import obtenerDocumentos from "../../components/gestion/api/obtenerDocumentos";
+import DocsContextProvider from "../../components/gestion/contextos/DocsContextProvider";
+import { IApi } from "../../components/gestion/contextos/Interfaces";
 
 interface Props {
   documentos: IAdministrador[];

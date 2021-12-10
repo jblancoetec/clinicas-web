@@ -1,18 +1,19 @@
-import React, { createContext } from "react";
+import React from "react";
 import { Button, Form } from "react-bootstrap";
 import styles from "../common/Form.module.css";
 import FormControl from "../common/FormControl";
 import { useForm } from "react-hook-form";
 import { FormDataAdministrador } from "../common/interfaces";
+import { useDocsContext } from "../../contextos/DocsContextProvider";
 
-interface IFormulario {
+interface IEntrada {
   label: string;
   placeholder: string;
   id: "nombre" | "apellido" | "email" | "password";
   type: string;
 }
 
-const formulario: IFormulario[] = [
+const entradas: IEntrada[] = [
   {
     label: "Nombre",
     placeholder: "Por ejemplo: Juan",
@@ -46,21 +47,20 @@ const FormAgregarAdministrador = () => {
     formState: { errors },
   } = useForm<FormDataAdministrador>();
 
+  const { agregarDoc } = useDocsContext();
+
   const agregar = (data: any) => {
-    console.log(data);
+    agregarDoc(data);
   };
 
   return (
     <div className={styles.Contenedor}>
       <h4 className={styles.Titulo}>Agregar administrador</h4>
       <Form className={styles.Formulario} onSubmit={handleSubmit(agregar)}>
-        {formulario.map(({ label, placeholder, id, type }, index) => (
+        {entradas.map((entrada, index) => (
           <div key={index}>
             {FormControl<FormDataAdministrador>({
-              label,
-              placeholder,
-              id,
-              type,
+              ...entrada,
               register,
               errors,
             })}

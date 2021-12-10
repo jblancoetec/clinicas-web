@@ -7,19 +7,19 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     await conectarDB();
     const administrador = await Administrador.findByIdAndUpdate(
       req.query._id,
-      req.body,
+      req.body.data,
       {
         new: true,
         runValidators: true,
       }
     );
     if (!administrador) {
-      return res.status(400).json({ success: false });
+      return res.status(400);
     }
-    res.status(200).json({ succsess: true, data: administrador });
+    res.status(200).json(administrador);
   } catch (error) {
     console.log(error);
-    res.status(400).json({ success: false });
+    res.status(400);
   }
 };
 export default handler;

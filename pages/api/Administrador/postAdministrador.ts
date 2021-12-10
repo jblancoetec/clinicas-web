@@ -5,11 +5,11 @@ import Administrador from "../../../models/Administrador";
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
     await conectarDB();
-    const administrador = await Administrador.create(req.body);
-    res.status(200).json({ succsess: true, data: administrador });
+    const administrador = await Administrador.create(req.body.data);
+    res.status(200).json(administrador);
   } catch (error) {
     console.log(error);
-    res.status(400).json({ success: false });
+    res.status(400);
   }
 };
 export default handler;

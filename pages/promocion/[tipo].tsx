@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
-import HomeSangre from "../../src/promocion/sangre/Home";
-import HomePlasma from "../../src/promocion/plasma/Home";
-import HomePlaquetas from "../../src/promocion/plaquetas/Home";
+import HomeSangre from "../../components/promocion/sangre/Home";
+import HomePlasma from "../../components/promocion/plasma/Home";
+import HomePlaquetas from "../../components/promocion/plaquetas/Home";
 
 const HomePromocion = () => {
   const router = useRouter();

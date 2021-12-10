@@ -9,14 +9,14 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   } = req;
 
   try {
-    const deletedTurno = await Turno.deleteOne({ _id: id });
-    if (!deletedTurno) {
-      return res.status(400).json({ success: false });
+    const turno = await Turno.findByIdAndDelete(req.query._id);
+    if (!turno) {
+      return res.status(404);
     }
-    res.status(200).json({ succsess: true, data: {} });
+    res.status(200).json(turno);
   } catch (error) {
     console.log(error);
-    res.status(400).json({ success: false });
+    res.status(400);
   }
 };
 export default handler;

@@ -1,8 +1,8 @@
 import { ITurno } from "../../models/Turno";
-import TablaDeTurnos from "../../src/gestion/turnos/TablaDeTurnos";
-import obtenerDocumentos from "../../src/gestion/api/obtenerDocumentos";
-import DocsContextProvider from "../../src/gestion/contextos/DocsContextProvider";
-import { IApi } from "../../src/gestion/contextos/Interfaces";
+import TablaDeTurnos from "../../components/gestion/turnos/TablaDeTurnos";
+import obtenerDocumentos from "../../components/gestion/api/obtenerDocumentos";
+import DocsContextProvider from "../../components/gestion/contextos/DocsContextProvider";
+import { IApi } from "../../components/gestion/contextos/Interfaces";
 
 interface Props {
   documentos: ITurno[];

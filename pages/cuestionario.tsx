@@ -1,4 +1,4 @@
-import Cuestionario from "../src/cuestionario/Cuestionario";
-import Preguntas from "../src/cuestionario/preguntas/PreguntasDonadorDeSangre";
+import Cuestionario from "../components/cuestionario/Cuestionario";
+import Preguntas from "../components/cuestionario/preguntas/PreguntasDonadorDeSangre";
 const cuestionario = () => <Cuestionario cuestionario={Preguntas} />;
 export default cuestionario;

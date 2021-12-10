@@ -7,12 +7,13 @@ const config: AxiosRequestConfig = {
   },
 };
 
-const eliminarDocumento = async (url: string) => {
+const eliminarDocumento = async <T,>(url: string): Promise<T> => {
   try {
-    const res = await axios.delete(url, config);
-    return res;
+    const res: AxiosResponse<T> = await axios.delete<T>(url, config);
+    return res?.data && res.status === 200 ? res.data : ({} as T);
   } catch (error) {
     console.log(error);
+    return {} as T;
   }
 };
 

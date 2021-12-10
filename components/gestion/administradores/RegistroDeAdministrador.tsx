@@ -1,8 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { IAdministrador } from "../../../models/Administrador";
 import BotonEliminar from "../common/BotonEliminar";
-import { useContext } from "react";
-import { DocsContext } from "../contextos/DocsContextProvider";
+import { useDocsContext } from "../contextos/DocsContextProvider";
 // import BotonEditar from "../common/BotonEditar";
 import { Alert, Modal } from "react-bootstrap";
 
@@ -11,18 +10,10 @@ interface Props {
 }
 
 const RegistroDeAdministrador = ({ administrador }: Props) => {
-  const { eliminarDoc } = useContext(DocsContext);
-  const { editarDoc } = useContext(DocsContext);
-  const [error, setError] = useState(false);
+  const { eliminarDoc, editarDoc } = useDocsContext();
 
-  const eliminar = async () => {
-    const res = await eliminarDoc(administrador._id);
-    setError(res !== 200);
-  };
-
-  const editar = async () => {
-    const res = await editarDoc(administrador);
-    setError(res !== 200);
+  const eliminar = () => {
+    eliminarDoc(administrador._id);
   };
 
   return (
@@ -38,11 +29,6 @@ const RegistroDeAdministrador = ({ administrador }: Props) => {
           <BotonEliminar onClick={eliminar} />
         </td>
       </tr>
-      <Modal>
-        <Alert variant="danger" show={error}>
-          Ups!!! Algo salio mal
-        </Alert>
-      </Modal>
     </>
   );
 };

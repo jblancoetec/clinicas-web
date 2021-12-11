@@ -1,4 +1,4 @@
-import { model, Schema, models, ObjectId } from "mongoose";
+import { model, Schema, models } from "mongoose";
 
 export interface ITurno {
   _id_paciente: string;

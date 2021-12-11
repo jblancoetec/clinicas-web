@@ -11,15 +11,15 @@ interface Props {
 const BotonEditar = ({ formulario }: Props) => {
   const [FormularioVisible, setFormlarioVisible] = useState(false);
 
-  const CerrarFormulario = () => setFormlarioVisible(false);
-  const AbrirFormulario = () => setFormlarioVisible(true);
+  const cerrarFormulario = () => setFormlarioVisible(false);
+  const abrirFormulario = () => setFormlarioVisible(true);
 
   return (
     <>
-      <Button className={styles.Boton} onClick={AbrirFormulario}>
+      <Button className={styles.Boton} onClick={abrirFormulario}>
         <FontAwesomeIcon icon={faEdit} />
       </Button>
-      <Modal show={FormularioVisible} onHide={CerrarFormulario}>
+      <Modal show={FormularioVisible} onHide={cerrarFormulario}>
         {formulario}
       </Modal>
     </>

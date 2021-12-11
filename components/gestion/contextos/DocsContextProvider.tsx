@@ -3,13 +3,14 @@ import { IApi, TDoc } from "./Interfaces";
 import eliminarDocumento from "../api/eliminarDocumento";
 import agregarDocumento from "../api/agregarDocumento";
 import editarDocumento from "../api/editarDocumento";
+import { FormDataDoc } from "../formularios/common/interfaces";
 
 interface IContexto {
   api: IApi;
   docs: TDoc[];
-  agregarDoc: (data: any) => void;
+  agregarDoc: (data: FormDataDoc) => void;
   eliminarDoc: (id: string) => void;
-  editarDoc: (id: string, data: any) => void;
+  editarDoc: (id: string, data: FormDataDoc) => void;
 }
 
 export const DocsContext = createContext<IContexto>({
@@ -44,7 +45,7 @@ const DocsContextProvider = ({ api, documentos, children }: Props) => {
     }
   };
 
-  const agregarDoc = async (data: any) => {
+  const agregarDoc = async (data: FormDataDoc) => {
     try {
       const documento = await agregarDocumento<TDoc>(api.urlPost, data);
       setDocs([...docs, documento]);
@@ -53,7 +54,7 @@ const DocsContextProvider = ({ api, documentos, children }: Props) => {
     }
   };
 
-  const editarDoc = async (id: string, data: any) => {
+  const editarDoc = async (id: string, data: FormDataDoc) => {
     try {
       const documento = await editarDocumento<TDoc>(
         `${api.urlPut}/${id}`,

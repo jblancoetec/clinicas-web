@@ -5,6 +5,7 @@ import Administrador from "../../../../models/Administrador";
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
     await conectarDB();
+
     const administrador = await Administrador.findByIdAndUpdate(
       req.query._id,
       req.body.data,

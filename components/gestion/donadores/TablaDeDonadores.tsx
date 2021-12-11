@@ -3,9 +3,9 @@ import { IDonador } from "../../../models/Donador";
 import Tabla from "../common/Tabla";
 import Registro from "./RegistroDeDonador";
 import BotonAgregar from "../common/BotonAgregar";
-// import Formulario from "../formularios/agregar/FormAgregarDonador";
 import { DocsContext } from "../contextos/DocsContextProvider";
 import { Container } from "react-bootstrap";
+import Formulario from "../formularios/agregar/FormAgregarDonador";
 
 const encabezados = [
   "Nombre",
@@ -15,7 +15,7 @@ const encabezados = [
   "Tipo de donador",
 ];
 
-const acciones = ["Editar", "Eliminar", "Contactar"];
+const acciones = ["Editar", "Eliminar"];
 
 const TablaDeDonadores = () => {
   const { docs } = useContext(DocsContext);
@@ -30,7 +30,7 @@ const TablaDeDonadores = () => {
           <Registro key={index} donador={donador as IDonador} />
         ))}
       </Tabla>
-      {/* <BotonAgregar formulario={<Formulario />}>Agregar donador/a</BotonAgregar> */}
+      <BotonAgregar formulario={<Formulario />}>Agregar donador/a</BotonAgregar>
     </Container>
   );
 };

@@ -24,7 +24,7 @@ export const getServerSideProps = async () => {
       api: {
         urlDelete: `${process.env.API_URL}/Administrador/deleteAdministrador`,
         urlPost: `${process.env.API_URL}/Administrador/postAdministrador`,
-        urlPut: `${process.env.API_URL}/Administrador/putAdministrador`,
+        urlPut: `${process.env.API_URL}/Administrador/updateAdministrador`,
         urlGet: `${process.env.API_URL}/Administrador/getAdministradores`,
       },
     },

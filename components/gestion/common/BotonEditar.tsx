@@ -16,7 +16,7 @@ const BotonEditar = ({ formulario }: Props) => {
 
   return (
     <>
-      <Button className={styles.Boton} onClick={abrirFormulario}>
+      <Button variant="light" onClick={abrirFormulario}>
         <FontAwesomeIcon icon={faEdit} />
       </Button>
       <Modal show={FormularioVisible} onHide={cerrarFormulario}>

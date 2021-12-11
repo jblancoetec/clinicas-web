@@ -2,8 +2,9 @@ import { useForm } from "react-hook-form";
 import { IAdministrador } from "../../../../models/Administrador";
 import { FormDataAdministrador } from "../common/interfaces";
 import styles from "../common/Form.module.css";
-import { Button, Form, FormGroup, FormLabel } from "react-bootstrap";
+import { Form, FormGroup, FormLabel } from "react-bootstrap";
 import { useDocsContext } from "../../contextos/DocsContextProvider";
+import BotonSubmit from "../common/BotonSubmit";
 
 interface IDatoAEditar {
   label: string;
@@ -66,9 +67,7 @@ const FormEditarAdministrador = (administrador: IAdministrador) => {
           </FormGroup>
         ))}
 
-        <Button type="submit" className={styles.BotonSubmit}>
-          Editar
-        </Button>
+        <BotonSubmit />
       </Form>
     </div>
   );

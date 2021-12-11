@@ -19,8 +19,11 @@ const BotonAgregar = ({ formulario, children }: Props) => {
   return (
     <>
       <div className={styles.Contenedor}>
-        <Button className={styles.Boton} onClick={abrirFormulario}>
-          <div className={styles.Texto}>{children}</div>
+        <Button
+          variant="light"
+          className={styles.Boton}
+          onClick={abrirFormulario}
+        >
           <FontAwesomeIcon icon={faUserPlus} />
         </Button>
       </div>

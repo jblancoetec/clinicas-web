@@ -3,8 +3,9 @@ import { useForm } from "react-hook-form";
 import { IDonador } from "../../../../models/Donador";
 import { useDocsContext } from "../../contextos/DocsContextProvider";
 import { FormDataDonador } from "../common/interfaces";
+import { Form, FormGroup, FormLabel } from "react-bootstrap";
 import styles from "../common/Form.module.css";
-import { Button, Form, FormGroup, FormLabel } from "react-bootstrap";
+import BotonSubmit from "../common/BotonSubmit";
 
 interface IDatoAEditar {
   label: string;
@@ -79,10 +80,7 @@ const FormEditarDonador = (donador: IDonador) => {
             ))}
           </Form.Select>
         </Form.Group>
-
-        <Button type="submit" className={styles.BotonSubmit}>
-          Editar
-        </Button>
+        <BotonSubmit />
       </Form>
     </div>
   );

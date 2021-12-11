@@ -1,10 +1,11 @@
 import React from "react";
-import { Button, Form, FormGroup, FormLabel } from "react-bootstrap";
+import { Form, FormGroup, FormLabel } from "react-bootstrap";
 import styles from "../common/Form.module.css";
 import { useForm } from "react-hook-form";
 import { useDocsContext } from "../../contextos/DocsContextProvider";
 import { ErrorMessage } from "@hookform/error-message";
 import { FormDataDonador } from "../common/interfaces";
+import BotonSubmit from "../common/BotonSubmit";
 
 interface IDatoASolicitar {
   label: string;
@@ -92,9 +93,7 @@ const FormAgregarAdministrador = () => {
           </Form.Select>
         </Form.Group>
 
-        <Button type="submit" className={styles.BotonSubmit}>
-          Agregar
-        </Button>
+        <BotonSubmit />
       </Form>
     </div>
   );

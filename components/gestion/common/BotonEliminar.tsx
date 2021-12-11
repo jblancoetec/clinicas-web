@@ -11,7 +11,7 @@ interface Props {
 const BotonEliminar = ({ onClick }: Props) => {
   return (
     <>
-      <Button className={styles.Boton} onClick={onClick}>
+      <Button variant="danger" onClick={onClick}>
         <FontAwesomeIcon icon={faTrashAlt} />
       </Button>
     </>

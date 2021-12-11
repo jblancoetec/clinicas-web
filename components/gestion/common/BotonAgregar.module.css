@@ -1,12 +1,13 @@
 .Boton {
-  background-color: var(--verde);
-  border: none;
-  color: var(--Negro);
+  border-radius: 50%;
+  width: 64px;
+  height: 64px;
 }
 
 .Contenedor {
   text-align: center;
 }
+
 .Texto {
   display: inline;
   margin-right: 16px;

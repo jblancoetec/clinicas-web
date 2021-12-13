@@ -21,9 +21,7 @@ export const DocsContext = createContext<IContexto>({
   editarDoc: () => {},
 });
 
-export const useDocsContext = () => {
-  return useContext(DocsContext);
-};
+export const useDocsContext = () => useContext(DocsContext);
 
 interface Props {
   api: IApi;

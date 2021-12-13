@@ -2,7 +2,6 @@ import { faEdit } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
 import { Button, Modal } from "react-bootstrap";
-import styles from "./BotonEditar.module.css";
 
 interface Props {
   formulario: React.ReactNode;

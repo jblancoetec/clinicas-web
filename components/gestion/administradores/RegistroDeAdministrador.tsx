@@ -1,16 +1,16 @@
 import React from "react";
 import { IAdministrador } from "../../../models/Administrador";
 import BotonEliminar from "../common/BotonEliminar";
-import { useDocsContext } from "../contextos/DocsContextProvider";
+import { useDocsContext } from "../formularios/contextos/DocsContextProvider";
 import BotonEditar from "../common/BotonEditar";
-import Formulario from "../formularios/editar/FormEditarAdministrador";
+import FormularioEditar from "../formularios/editar/FormEditarAdministrador";
 
 interface Props {
   administrador: IAdministrador;
 }
 
 const RegistroDeAdministrador = ({ administrador }: Props) => {
-  const { eliminarDoc, editarDoc } = useDocsContext();
+  const { eliminarDoc } = useDocsContext();
 
   return (
     <>
@@ -19,10 +19,10 @@ const RegistroDeAdministrador = ({ administrador }: Props) => {
         <td>{administrador.apellido}</td>
         <td>{administrador.email}</td>
         <td style={{ textAlign: "center" }}>
-          <BotonEditar formulario={<Formulario {...administrador} />} />
+          <BotonEditar formulario={<FormularioEditar {...administrador} />} />
         </td>
         <td style={{ textAlign: "center" }}>
-          <BotonEliminar onClick={() => eliminarDoc(administrador._id)} />
+          <BotonEliminar id={administrador._id} />
         </td>
       </tr>
     </>

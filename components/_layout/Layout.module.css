@@ -6,22 +6,58 @@
   display: flex;
   align-items: center;
   color: black;
+  box-shadow: 2px 2px 16px black;
+}
+
+.HeaderGlass {
+  position: absolute;
+  height: 3rem;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
 }
 
 .Enlaces {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .Contenedor {
   min-height: 100vh;
-  padding: 0;
   display: grid;
-  grid-template-rows: 3rem 1fr;
   grid-template-columns: 1fr;
+}
+
+.GrillaEnUnaFila {
+  grid-template-rows: 1fr;
+}
+
+.GrillaEnDosFilas {
+  grid-template-rows: 3rem 1fr;
 }
 
 .Main {
   background-color: white;
   overflow-x: auto;
+}
+
+.Boton {
+  font-weight: bold;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: none;
+}
+
+.SeparadorHeader {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .SeparadorHeader {
+    display: none;
+    display: block;
+    background-color: transparent;
+  }
+  .GrillaEnUnaFila {
+    grid-template-rows: 3rem 1fr;
+  }
 }

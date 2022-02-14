@@ -1,10 +1,9 @@
 import React from "react";
-import { Form, FormGroup, FormLabel } from "react-bootstrap";
+import { Form } from "react-bootstrap";
 import styles from "../common/Form.module.css";
 import { useForm } from "react-hook-form";
 import { FormDataAdministrador } from "../common/interfaces";
-import { useDocsContext } from "../../contextos/DocsContextProvider";
-import { ErrorMessage } from "@hookform/error-message";
+import { useDocsContext } from "../contextos/DocsContextProvider";
 import BotonSubmit from "../common/BotonSubmit";
 
 interface IDatoASolicitar {
@@ -42,11 +41,7 @@ const datosASolicitar: IDatoASolicitar[] = [
 ];
 
 const FormAgregarAdministrador = () => {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm<FormDataAdministrador>();
+  const { register, handleSubmit } = useForm<FormDataAdministrador>();
 
   const { agregarDoc } = useDocsContext();
 
@@ -59,24 +54,16 @@ const FormAgregarAdministrador = () => {
       <h4 className={styles.Titulo}>Agregar administrador</h4>
       <Form className={styles.Formulario} onSubmit={handleSubmit(agregar)}>
         {datosASolicitar.map((dato, index) => (
-          <FormGroup className={styles.FormGroup} key={index}>
-            <FormLabel>{dato.label}</FormLabel>
+          <Form.Group className={styles.FormGroup} key={index}>
+            <Form.Label>{dato.label}</Form.Label>
             <Form.Control
               placeholder={dato.placeholder}
               id={dato.id}
               type={dato.type}
-              {...register(dato.id, {
-                required: "Este campo es obligatorio",
-              })}
+              required={true}
+              {...register(dato.id)}
             />
-            <ErrorMessage
-              errors={errors}
-              name={dato.id}
-              render={({ message }) => (
-                <div className={styles.Error}>{message}</div>
-              )}
-            />
-          </FormGroup>
+          </Form.Group>
         ))}
         <BotonSubmit />
       </Form>

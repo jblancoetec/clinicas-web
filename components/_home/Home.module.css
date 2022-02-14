@@ -5,7 +5,7 @@
   grid-template-columns: repeat(3, 1fr);
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 768px) {
   .Contenedor {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(3, 1fr);

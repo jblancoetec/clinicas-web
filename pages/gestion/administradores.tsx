@@ -1,23 +1,36 @@
 import { IAdministrador } from "../../models/Administrador";
 import TablaDeAdministradores from "../../components/gestion/administradores/TablaDeAdministradores";
-import obtenerDocumentos from "../../components/gestion/api/obtenerDocumentos";
-import DocsContextProvider from "../../components/gestion/contextos/DocsContextProvider";
-import { IApi } from "../../components/gestion/contextos/Interfaces";
+import obtenerDocumentos from "../../components/gestion/services/obtenerDocumentos";
+import DocsContextProvider from "../../components/gestion/formularios/contextos/DocsContextProvider";
+import { IApi } from "../../components/gestion/formularios/contextos/Interfaces";
+import { getSession } from "next-auth/react";
+import { GetServerSideProps, GetServerSidePropsContext } from "next";
+import { Session } from "next-auth";
+import Login from "../../components/login/Login";
 
-interface Props {
+const Administradores = ({
+  documentos,
+  api,
+  session,
+}: {
   documentos: IAdministrador[];
   api: IApi;
-}
+  session: Session | null;
+}) =>
+  session ? (
+    <DocsContextProvider api={api} documentos={documentos}>
+      <TablaDeAdministradores />
+    </DocsContextProvider>
+  ) : (
+    <Login errors={false} />
+  );
 
-const Administradores = ({ documentos, api }: Props) => (
-  <DocsContextProvider api={api} documentos={documentos}>
-    <TablaDeAdministradores />
-  </DocsContextProvider>
-);
-
-export const getServerSideProps = async () => {
+export const getServerSideProps: GetServerSideProps = async (
+  context: GetServerSidePropsContext
+) => {
   return {
     props: {
+      session: await getSession(context),
       documentos: await obtenerDocumentos<IAdministrador>(
         `${process.env.API_URL}/Administrador/getAdministradores`
       ),

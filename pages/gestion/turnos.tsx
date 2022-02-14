@@ -1,30 +1,41 @@
 import { ITurno } from "../../models/Turno";
 import TablaDeTurnos from "../../components/gestion/turnos/TablaDeTurnos";
-import obtenerDocumentos from "../../components/gestion/api/obtenerDocumentos";
-import DocsContextProvider from "../../components/gestion/contextos/DocsContextProvider";
-import { IApi } from "../../components/gestion/contextos/Interfaces";
+import obtenerDocumentos from "../../components/gestion/services/obtenerDocumentos";
+import { IApi } from "../../components/gestion/formularios/contextos/Interfaces";
+import TurnoContextProvider from "../../components/gestion/formularios/contextos/TurnoContextProvider";
+import { getSession } from "next-auth/react";
+import { GetServerSideProps, GetServerSidePropsContext } from "next";
+import { Session } from "next-auth";
+import Login from "../../components/login/Login";
 
-interface Props {
+const turnos = ({
+  documentos,
+  api,
+  session,
+}: {
   documentos: ITurno[];
   api: IApi;
-}
-const turnos = ({ documentos, api }: Props) => (
-  <DocsContextProvider api={api} documentos={documentos}>
-    <TablaDeTurnos />
-  </DocsContextProvider>
-);
+  session: Session | null;
+}) =>
+  session ? (
+    <TurnoContextProvider api={api} documentos={documentos}>
+      <TablaDeTurnos />
+    </TurnoContextProvider>
+  ) : (
+    <Login errors={false} />
+  );
 
-export const getServerSideProps = async () => {
+export const getServerSideProps: GetServerSideProps = async (
+  context: GetServerSidePropsContext
+) => {
   return {
     props: {
+      session: await getSession(context),
       documentos: await obtenerDocumentos<ITurno>(
         `${process.env.API_URL}/Turno/getTurnos`
       ),
       api: {
         urlDelete: `${process.env.API_URL}/Turno/deleteTurno`,
-        urlGet: `${process.env.API_URL}/Turno/getTurnos`,
-        urlPost: `${process.env.API_URL}/Turno/postTurno`,
-        urlPut: `${process.env.API_URL}/Turno/postTurno`,
       },
     },
   };

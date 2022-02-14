@@ -1,4 +1,11 @@
 // import Home from "../src/home/Home";
 import Home from "../components/_home/Home";
-const index = () => <Home />;
-export default index;
+import HomeAdmin from "../components/gestion/home/Home";
+import { useSession } from "next-auth/react";
+
+const Index = () => {
+  const { data: session } = useSession();
+  return session ? <HomeAdmin /> : <Home />;
+};
+
+export default Index;

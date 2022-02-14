@@ -1,0 +1,16 @@
+.Alerta {
+  margin: 0;
+}
+
+.Pregunta {
+  text-align: center;
+}
+
+.ContenedorBotones {
+  display: flex;
+  justify-content: center;
+}
+
+.ContenedorPregunta {
+  margin-top: 32px;
+}

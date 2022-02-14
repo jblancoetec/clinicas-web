@@ -13,6 +13,10 @@ export interface FormDataDonador {
   tipo?: string;
 }
 
+export type FormDataDonadorConTurno = FormDataDonador & {
+  fecha?: string;
+};
+
 export interface FormDataTurno {
   _id_paciente: string;
   fecha?: Date;

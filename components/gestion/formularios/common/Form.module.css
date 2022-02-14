@@ -36,3 +36,7 @@
 .FormGroup {
   margin-bottom: 16px;
 }
+
+.Turno {
+  display: flex;
+}

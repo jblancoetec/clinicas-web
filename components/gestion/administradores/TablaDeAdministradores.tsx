@@ -4,16 +4,15 @@ import RegistroDeAdministrador from "./RegistroDeAdministrador";
 import BotonAgregar from "../common/BotonAgregar";
 import Formulario from "../formularios/agregar/FormAgregarAdministrador";
 import { IAdministrador } from "../../../models/Administrador";
-import { DocsContext } from "../contextos/DocsContextProvider";
-import { useContext } from "react";
 import { Container } from "react-bootstrap";
+import { useDocsContext } from "../formularios/contextos/DocsContextProvider";
 
 const encabezados = ["Nombre", "Apellido", "Email"];
 
 const acciones = ["Editar", "Eliminar"];
 
 const TablaDeAdministradores = () => {
-  const { docs } = useContext(DocsContext);
+  const { docs } = useDocsContext();
   return (
     <Container>
       <Tabla
@@ -28,9 +27,7 @@ const TablaDeAdministradores = () => {
           />
         ))}
       </Tabla>
-      <BotonAgregar formulario={<Formulario />}>
-        Agregar administrador/a
-      </BotonAgregar>
+      <BotonAgregar formulario={<Formulario />} />
     </Container>
   );
 };

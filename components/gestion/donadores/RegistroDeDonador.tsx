@@ -3,13 +3,8 @@ import { IDonador } from "../../../models/Donador";
 import BotonEliminar from "../common/BotonEliminar";
 import BotonEditar from "../common/BotonEditar";
 import Formulario from "../formularios/editar/FormEditarDonador";
-import { useDocsContext } from "../contextos/DocsContextProvider";
 
-interface Props {
-  donador: IDonador;
-}
-const RegistroDeDonador = ({ donador }: Props) => {
-  const { eliminarDoc } = useDocsContext();
+const RegistroDeDonador = ({ donador }: { donador: IDonador }) => {
   return (
     <tr>
       <td>{donador.nombre}</td>
@@ -21,7 +16,7 @@ const RegistroDeDonador = ({ donador }: Props) => {
         <BotonEditar formulario={<Formulario {...donador} />} />
       </td>
       <td style={{ textAlign: "center" }}>
-        <BotonEliminar onClick={() => eliminarDoc(donador._id)} />
+        <BotonEliminar id={donador._id} />
       </td>
     </tr>
   );

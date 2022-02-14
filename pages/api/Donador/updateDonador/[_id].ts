@@ -5,7 +5,6 @@ import Donador from "../../../../models/Donador";
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
     await conectarDB();
-    console.log(req.body);
     const donador = await Donador.findByIdAndUpdate(
       req.query._id,
       req.body.data,

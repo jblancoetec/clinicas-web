@@ -41,7 +41,7 @@ Una vez descargado el código fuente, se debe ejecutar siguiente comando para in
 npm install
 ```
 
-Para ejecutar la aplicación en modo de desarrollo, ejecute el siguiente comando.
+Para ejecutar la aplicación en modo de desarrollo, debe renombrar el archivo `copy.env.local` como `env.local`.  Este archivo especifica las variables de entorno a tener en cuenta al momento de llevar el proyecto a producción. Una vez creado los valores por defecto para las variables de entorno, ejecutar el modo de desarrollo:
 
 ```shell
 npm run dev

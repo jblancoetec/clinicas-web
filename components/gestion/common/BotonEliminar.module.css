@@ -1,4 +1,11 @@
-.Boton {
-  background-color: var(--Eliminar);
-  border: none;
+.Alerta {
+  margin: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Parrafo {
+  text-align: center;
 }

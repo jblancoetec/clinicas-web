@@ -1,26 +1,15 @@
-import { faTrashAlt } from "@fortawesome/free-regular-svg-icons";
-import { faEdit, faPhoneAlt } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Button } from "react-bootstrap";
 import { ITurno } from "../../../models/Turno";
+import moment from "moment";
+import BotonEliminar from "../common/BotonEliminar";
 
-interface Props {
-  turno: ITurno;
-}
-const RegistroDeTurno = ({ turno }: Props) => {
+const RegistroDeTurno = ({ turno }: { turno: ITurno }) => {
   return (
     <tr>
-      <td>{turno.paciente}</td>
-      <td>{turno.fecha}</td>
+      <td>{moment(turno.fecha).format("DD/MM")}</td>
+      <td>{moment(turno.fecha).format("HH:mm")}</td>
+      <td>{turno.nombre}</td>
       <td style={{ textAlign: "center" }}>
-        <Button style={{ backgroundColor: "var(--Editar)", border: "none" }}>
-          <FontAwesomeIcon icon={faEdit} />
-        </Button>
-      </td>
-      <td style={{ textAlign: "center" }}>
-        <Button style={{ backgroundColor: "var(--Eliminar)", border: "none" }}>
-          <FontAwesomeIcon icon={faTrashAlt} />
-        </Button>
+        <BotonEliminar id={turno._id} />
       </td>
     </tr>
   );

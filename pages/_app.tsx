@@ -5,15 +5,15 @@ import "../styles/globals.css";
 import "../styles/normalize.css";
 import type { AppProps } from "next/app";
 import Layout from "../components/_layout/Layout";
-import UserContextProvider from "../components/contexto/UserContextProvider";
+import { SessionProvider } from "next-auth/react";
 
 config.autoAddCss = false;
 
 const MyApp = ({ Component, pageProps }: AppProps) => (
-  <UserContextProvider>
+  <SessionProvider>
     <Layout>
       <Component {...pageProps} />
     </Layout>
-  </UserContextProvider>
+  </SessionProvider>
 );
 export default MyApp;

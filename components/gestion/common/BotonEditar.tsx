@@ -1,13 +1,9 @@
 import { faEdit } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useState } from "react";
+import React, { ReactNode, useState } from "react";
 import { Button, Modal } from "react-bootstrap";
 
-interface Props {
-  formulario: React.ReactNode;
-}
-
-const BotonEditar = ({ formulario }: Props) => {
+const BotonEditar = ({ formulario }: { formulario: ReactNode }) => {
   const [FormularioVisible, setFormlarioVisible] = useState(false);
 
   const cerrarFormulario = () => setFormlarioVisible(false);

@@ -1,19 +1,17 @@
 import Link from "next/link";
 import styles from "./Columna.module.css";
 
-interface Props {
-  mensaje: string;
-  urlImagen: string;
-  urlInformacion: string;
-  urlFormularioEvaluacion: string;
-}
-
 const Columna = ({
   mensaje,
   urlImagen,
   urlInformacion,
-  urlFormularioEvaluacion,
-}: Props) => (
+  urlCuestionario,
+}: {
+  mensaje: string;
+  urlImagen: string;
+  urlInformacion: string;
+  urlCuestionario: string;
+}) => (
   <div
     className={styles.Columna}
     style={{
@@ -30,7 +28,7 @@ const Columna = ({
         </Link>
       </div>
       <div className={styles.Botones}>
-        <Link href={urlFormularioEvaluacion}>
+        <Link href={urlCuestionario}>
           <a className={`${styles.Boton} btn btn-outline-light`}>
             CUESTIONARIO DE APTITUD
           </a>

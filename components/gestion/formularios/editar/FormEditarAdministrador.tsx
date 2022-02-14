@@ -2,8 +2,8 @@ import { useForm } from "react-hook-form";
 import { IAdministrador } from "../../../../models/Administrador";
 import { FormDataAdministrador } from "../common/interfaces";
 import styles from "../common/Form.module.css";
-import { Form, FormGroup, FormLabel } from "react-bootstrap";
-import { useDocsContext } from "../../contextos/DocsContextProvider";
+import { Form } from "react-bootstrap";
+import { useDocsContext } from "../contextos/DocsContextProvider";
 import BotonSubmit from "../common/BotonSubmit";
 
 interface IDatoAEditar {
@@ -56,15 +56,15 @@ const FormEditarAdministrador = (administrador: IAdministrador) => {
       <h4 className={styles.Titulo}>Editar administrador</h4>
       <Form className={styles.Formulario} onSubmit={handleSubmit(editar)}>
         {datosAEditar.map((dato, index) => (
-          <FormGroup className={styles.FormGroup} key={index}>
-            <FormLabel>{dato.label}</FormLabel>
+          <Form.Group className={styles.FormGroup} key={index}>
+            <Form.Label>{dato.label}</Form.Label>
             <Form.Control
               placeholder={dato.placeholder}
               id={dato.id}
               type={dato.type}
               {...register(dato.id)}
             />
-          </FormGroup>
+          </Form.Group>
         ))}
 
         <BotonSubmit />

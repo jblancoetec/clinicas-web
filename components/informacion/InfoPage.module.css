@@ -1,0 +1,40 @@
+.Contenedor {
+  height: 100%;
+  background-position-y: top;
+  background-position-x: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.Mensaje {
+  font-family: var(--fuente-texto);
+  color: white;
+  font-size: 4rem;
+  text-shadow: 4px 4px 8px black;
+  font-weight: bold;
+  user-select: none;
+  text-align: center;
+}
+
+.Icono {
+  filter: drop-shadow(4px 4px 8px black);
+  color: white;
+  font-size: 4rem;
+  font-weight: bold;
+  user-select: none;
+}
+
+@media screen and (max-width: 576px) {
+  .Mensaje {
+    font-size: 3rem;
+  }
+
+  .Icono {
+    font-size: 3rem;
+  }
+}

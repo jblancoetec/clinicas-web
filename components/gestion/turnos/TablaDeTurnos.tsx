@@ -1,17 +1,15 @@
 import React from "react";
-import { ITurno } from "../../../models/Turno";
 import Tabla from "../common/Tabla";
 import Registro from "./RegistroDeTurno";
-import { useContext } from "react";
-import { DocsContext } from "../contextos/DocsContextProvider";
 import { Container } from "react-bootstrap";
+import { useTurnoContext } from "../formularios/contextos/TurnoContextProvider";
 
-const encabezados = ["Hora de visita"];
+const encabezados = ["Fecha", "Hora", "Nombre"];
 
-const acciones = ["Donador", "Editar", "Eliminar"];
+const acciones = ["Eliminar"];
 
 const TablaDeTurnos = () => {
-  const { docs } = useContext(DocsContext);
+  const { turnos } = useTurnoContext();
 
   return (
     <Container>
@@ -20,8 +18,8 @@ const TablaDeTurnos = () => {
         encabezados={encabezados}
         acciones={acciones}
       >
-        {docs.map((turno, index) => (
-          <Registro key={index} turno={turno as ITurno} />
+        {turnos.map((turno, index) => (
+          <Registro key={index} turno={turno} />
         ))}
       </Tabla>
     </Container>
